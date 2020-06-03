@@ -1,6 +1,6 @@
 /***********************************************************************
  * Module:  Talylor_Series.cpp
- * Author:  Muñoz Armas Francisco David & Daniela Orellana
+ * Author:  MuÃ±oz Armas Francisco David & Daniela Orellana
  * Modified: martes, 2 de junio de 2020 18:35:23
  * Purpose: Implementation of the class Talylor_Series
  ***********************************************************************/
@@ -43,10 +43,10 @@ double Taylor_Series::_taylor_seno(T base, int index)
 template<typename T>
 double Taylor_Series::_taylor_coseno(T base, int index)
 {
-	if (index <= 0) {
+	/*if (index <= 0) {
 		return -1;
 	}
 	else {
 		return -math.pow(base, index) / math.factorial(index) - _taylor_coseno(base, index-2);
-	}
+	}*/
 }
