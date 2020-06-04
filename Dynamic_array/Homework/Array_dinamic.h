@@ -14,13 +14,13 @@ using namespace std;
 class Array_dynamic {
 public:
 	template<typename T>
-	T* create_array(int _size, T* _array);
+	T* _create_array(int _size, T* _array);
 	template<typename T>
-	void set_cero(int _size, T* _array);
+	void _set_cero(int _size, T* _array);
 	template<typename T>
-	void input_num(T* _array, string input_text, int _size);
+	void _input_num(T* _array, string input_text, int _size);
 	template<typename T>
-	void print_array(T* _array, int _size);
+	void _print_array(T* _array, int _size);
 	template<typename T>
 	void _sort(T* _array, int _size);
 };
