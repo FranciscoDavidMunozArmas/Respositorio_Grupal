@@ -23,7 +23,7 @@ using namespace std;
 ////////////////////////////////////////////////////////////////////////
 
 template<typename T>
-int MCD_MCM::commun_minum(T* _array, int _size)
+int MCD_MCM::_commun_minum(T* _array, int _size)
 {
 	bool flag = true;
 	int max = 0, counter;
@@ -56,7 +56,7 @@ int MCD_MCM::commun_minum(T* _array, int _size)
 ////////////////////////////////////////////////////////////////////////
 
 template<typename T>
-int MCD_MCM::commun_maxinum(T* _array, int _size)
+int MCD_MCM::_commun_maxinum(T* _array, int _size)
 {
 	int minum, number, aux;
 	for (int i = 0; i < _size; i++) {
