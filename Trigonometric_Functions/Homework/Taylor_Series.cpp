@@ -43,10 +43,10 @@ double Taylor_Series::_taylor_seno(T base, int index)
 template<typename T>
 double Taylor_Series::_taylor_coseno(T base, int index)
 {
-	/*if (index <= 0) {
+	if(index <= 0){
 		return -1;
 	}
-	else {
+	else{
 		return -math.pow(base, index) / math.factorial(index) - _taylor_coseno(base, index-2);
-	}*/
+	}
 }
