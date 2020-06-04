@@ -25,10 +25,10 @@ using namespace std;
 ////////////////////////////////////////////////////////////////////////
 
 template<typename T>
-T* Array_dynamic::create_array(int _size, T* _array)
+T* Array_dynamic::_create_array(int _size, T* _array)
 {
 	T *aux = (T*)malloc(_size * sizeof(T));
-	set_cero(_size, aux);
+	_set_cero(_size, aux);
 	return aux;
 }
 
@@ -42,7 +42,7 @@ T* Array_dynamic::create_array(int _size, T* _array)
 ////////////////////////////////////////////////////////////////////////
 
 template<typename T>
-void Array_dynamic::set_cero(int _size, T* _array)
+void Array_dynamic::_set_cero(int _size, T* _array)
 {
 	for (int i = 0; i < _size; i++) {
 		*(_array + i) = 0;
@@ -59,7 +59,7 @@ void Array_dynamic::set_cero(int _size, T* _array)
 ////////////////////////////////////////////////////////////////////////
 
 template<typename T>
-void Array_dynamic::input_num(T* _array, string input_text, int _size)
+void Array_dynamic::_input_num(T* _array, string input_text, int _size)
 {
     Input input;
 	for (int i = 0; i < _size; i++) {
@@ -77,7 +77,7 @@ void Array_dynamic::input_num(T* _array, string input_text, int _size)
 ////////////////////////////////////////////////////////////////////////
 
 template<typename T>
-void Array_dynamic::print_array(T* _array, int _size)
+void Array_dynamic::_print_array(T* _array, int _size)
 {
 	for (int i = 0; i < _size; i++) {
 		cout << *(_array + i) << ", ";
