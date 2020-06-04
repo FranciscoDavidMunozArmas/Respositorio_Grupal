@@ -1,6 +1,6 @@
 /***********************************************************************
  * Module:  Trigonometry.cpp
- * Author:  Muñoz Armas Francisco David & Daniela Orellana
+ * Author:  MuÃ±oz Armas Francisco David & Daniela Orellana
  * Modified: martes, 2 de junio de 2020 18:35:34
  * Purpose: Implementation of the class Trigonometry
  ***********************************************************************/
@@ -16,16 +16,15 @@
 // Return:     float
 ////////////////////////////////////////////////////////////////////////
 
-template<typename T>
-double Trigonometry::_sen(T base)
-{
-	try {
-		if (base <= 0 || PI <= base) {
+template <typename T>
+double Trigonometry::_sen(T base){
+	try{
+		if(base <= 0 || PI <= base){
 			throw base;
 		}
 	}
-	catch (T e) {
-		base = _check_angle(base);
+	catch(T e){
+		base = -(_chek_angle(base));
 	}
 	return taylor._taylor_seno(base, 11);
 }
@@ -38,16 +37,18 @@ double Trigonometry::_sen(T base)
 // Return:     double
 ////////////////////////////////////////////////////////////////////////
 
-template<typename T>
-double Trigonometry::_cos(T base)
-{
-	try {
-		if (base <= 0 || PI <= base) {
+template <typename T>
+double Trigonometry::_cos(T base){
+	try{
+		if(base <= 0 || PI <= base){
 			throw base;
 		}
 	}
-	catch (T e) {
-		base = _check_angle(base);
+	catch(T e){
+		base = _chek_angle(base);
+		if(0 <= (base) || (base) <= PI/2){
+			return taylor._taylor_coseno(base, 12);
+		}
 	}
 	return taylor._taylor_coseno(base, 10);
 }
@@ -60,9 +61,8 @@ double Trigonometry::_cos(T base)
 // Return:     double
 ////////////////////////////////////////////////////////////////////////
 
-template<typename T>
-double Trigonometry::_tg(T base)
-{
+template <typename T>
+double Trigonometry::_tg(T base){
 	return _sen(base) / _cos(base);
 }
 
@@ -74,27 +74,20 @@ double Trigonometry::_tg(T base)
 // Return:     double
 ////////////////////////////////////////////////////////////////////////
 
-template<typename T>
-double Trigonometry::_check_angle(T base)
-{
+template <typename T>
+double Trigonometry::_check_angle(T base){
 	int count = 0;
-	if (PI < base) {
-		while (PI < base) {
+	if(PI < base){
+		while (PI < base){
 			count++;
 			base -= PI;
 		}
 	}
 	else if (base < 0){
-		while (base < 0) {
+		while (base < 0){
 			count++;
 			base += PI;
 		}
 	}
-
-	if (count%2 != 0 && count != 0) {
-		return -(base);
-	}
-	else {
-		return base;
-	}
+	return base; 
 }
