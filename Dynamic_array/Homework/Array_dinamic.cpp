@@ -16,8 +16,8 @@
 using namespace std;
 
 ////////////////////////////////////////////////////////////////////////
-// Name:       Array_dynamic::create_array(int _size, T* _array)
-// Purpose:    Implementation of Array_dynamic::create_array(int _size, T* _array)
+// Name:       Array_dynamic::_create_array(int _size, T* _array)
+// Purpose:    Implementation of Array_dynamic::_create_array()
 // Parameters:
 // - _array
 // - _size
@@ -33,8 +33,8 @@ T* Array_dynamic::_create_array(int _size, T* _array)
 }
 
 ////////////////////////////////////////////////////////////////////////
-// Name:       Array_dynamic::set_cero(int _size, T* _array)
-// Purpose:    Implementation of Array_dynamic::set_cero(int _size, T* _array)
+// Name:       Array_dynamic::_set_cero(int _size, T* _array)
+// Purpose:    Implementation of Array_dynamic::_set_cero()
 // Parameters:
 // - _array
 // - _size
@@ -50,8 +50,8 @@ void Array_dynamic::_set_cero(int _size, T* _array)
 }
 
 ////////////////////////////////////////////////////////////////////////
-// Name:       Array_dynamic::input_num(T* _array, string input_text, int _size)
-// Purpose:    Implementation of Array_dynamic::input_num(T* _array, string input_text, int _size)
+// Name:       Array_dynamic::_input_num(T* _array, string input_text, int _size)
+// Purpose:    Implementation of Array_dynamic::_input_num()
 // Parameters:
 // - _array
 // - _size
@@ -68,8 +68,8 @@ void Array_dynamic::_input_num(T* _array, string input_text, int _size)
 }
 
 ////////////////////////////////////////////////////////////////////////
-// Name:       Array_dynamic::print_array(T* _array, int _size)
-// Purpose:    Implementation of Array_dynamic::print_array(T* _array, int _size)
+// Name:       Array_dynamic::_print_array(T* _array, int _size)
+// Purpose:    Implementation of Array_dynamic::print_array()
 // Parameters:
 // - _array
 // - _size
@@ -86,7 +86,7 @@ void Array_dynamic::_print_array(T* _array, int _size)
 
 ////////////////////////////////////////////////////////////////////////
 // Name:       Array_dynamic::_sort(T* _array, int _size)
-// Purpose:    Implementation of Array_dynamic::_sort(T* _array, int _size)
+// Purpose:    Implementation of Array_dynamic::_sort()
 // Parameters:
 // - _array
 // - _size
