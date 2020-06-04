@@ -14,8 +14,8 @@
 using namespace std;
 
 ////////////////////////////////////////////////////////////////////////
-// Name:       MCD_MCM::commun_minum(T* _array, int _size)
-// Purpose:    Implementation of MCD_MCM::commun_minum(T* _array, int _size)
+// Name:       MCD_MCM::_commun_minum(T* _array, int _size)
+// Purpose:    Implementation of MCD_MCM::_commun_minum()
 // Parameters:
 // - _array
 // - _size
@@ -47,8 +47,8 @@ int MCD_MCM::_commun_minum(T* _array, int _size)
 }
 
 ////////////////////////////////////////////////////////////////////////
-// Name:       MCD_MCM::commun_maxinum(T* _array, int _size)
-// Purpose:    Implementation of MCD_MCM::commun_maxinum(T* _array, int _size)
+// Name:       MCD_MCM::_commun_maxinum(T* _array, int _size)
+// Purpose:    Implementation of MCD_MCM::_commun_maxinum()
 // Parameters:
 // - _array
 // - _size
