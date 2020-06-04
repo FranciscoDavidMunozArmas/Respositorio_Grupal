@@ -14,9 +14,9 @@ using namespace std;
 class MCD_MCM{
 public:
 	template<typename T>
-	int commun_minum(T* _array, int _size);
+	int _commun_minum(T* _array, int _size);
 	template<typename T>
-	int commun_maxinum(T* _array, int _size);
+	int _commun_maxinum(T* _array, int _size);
 };
 
 
