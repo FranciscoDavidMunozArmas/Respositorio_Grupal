@@ -1,4 +1,5 @@
 #include <iostream>
+#include <stdlib.h>
 #include "Array_dinamic.cpp"
 #include "MCD_MCM.cpp"
 #include "../Input.h"
@@ -19,4 +20,5 @@ int main()
     cout << "MCM: " << _mcd_mcm._commun_minum(_array, _size) << endl;
     cout << "MCD: "<< _mcd_mcm._commun_maxinum(_array, _size) << endl;
     free(_array);
+    system("pause");
 }
