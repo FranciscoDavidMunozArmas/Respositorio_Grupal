@@ -23,4 +23,5 @@ int main()
     cout << "Seno: " << process._sen(base) << endl;
     cout << "Coseno: " << process._cos(base) << endl;
     cout << "Tangente: " << process._tg(base) << endl;
+    system("pause");
 }
