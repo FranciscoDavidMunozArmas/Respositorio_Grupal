@@ -1,6 +1,7 @@
 /***********************************************************************
+ *            UNIVERSIDAD DE LAS FUERZAS ARMADAS ESPE
  * Module:  Array_dinamic.cpp
- * Author:  USUARIO
+ * Author:  David Muñoz & Daniela Orellana
  * Modified: lunes, 1 de junio de 2020 15:30:20
  * Purpose: Implementation of the class Array_dinamic
  ***********************************************************************/
