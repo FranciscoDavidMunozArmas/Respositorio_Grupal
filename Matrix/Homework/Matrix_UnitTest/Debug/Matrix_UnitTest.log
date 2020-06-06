@@ -1,0 +1,71 @@
+﻿  Matrix_UnitTest.cpp
+C:\Users\USUARIO\Desktop\C++\Semestre III\Matrix_\Input.cpp(40,14): warning C4101: 'e': variable local sin referencia
+C:\Users\USUARIO\Desktop\C++\Semestre III\Matrix_\Input.cpp(72,14): warning C4101: 'e': variable local sin referencia
+C:\Users\USUARIO\Desktop\C++\Semestre III\Matrix_\Input.cpp(107,14): warning C4101: 'e': variable local sin referencia
+C:\Users\USUARIO\Desktop\C++\Semestre III\Matrix_\Input.cpp(260,20): warning C4018: '<': no coinciden signed/unsigned
+C:\Users\USUARIO\Desktop\C++\Semestre III\Matrix_\To_number.cpp(58,13): warning C4244: 'return': conversión de 'double' a 'float'; posible pérdida de datos
+C:\Users\USUARIO\Desktop\C++\Semestre III\Matrix_\Verify_number.cpp(24,37): error C2084: la función 'bool is_int_number(std::string)' ya tiene un cuerpo
+C:\Users\USUARIO\Desktop\C++\Semestre III\Matrix_\Verify_number.cpp(24): message : vea la definición anterior de 'is_int_number'
+C:\Users\USUARIO\Desktop\C++\Semestre III\Matrix_\Verify_number.cpp(41,39): error C2084: la función 'bool is_float_number(std::string)' ya tiene un cuerpo
+C:\Users\USUARIO\Desktop\C++\Semestre III\Matrix_\Verify_number.cpp(41): message : vea la definición anterior de 'is_float_number'
+C:\Users\USUARIO\Desktop\C++\Semestre III\Matrix_\Input.cpp(29,1): error C2084: la función 'std::string Input::input(std::string)' ya tiene un cuerpo
+C:\Users\USUARIO\Desktop\C++\Semestre III\Matrix_\Input.cpp(28): message : vea la definición anterior de 'input'
+C:\Users\USUARIO\Desktop\C++\Semestre III\Matrix_\Input.cpp(58,1): error C2084: la función 'std::string Input::input_number(std::string)' ya tiene un cuerpo
+C:\Users\USUARIO\Desktop\C++\Semestre III\Matrix_\Input.cpp(57): message : vea la definición anterior de 'input_number'
+C:\Users\USUARIO\Desktop\C++\Semestre III\Matrix_\Input.cpp(67,9): error C2065: 'is_float_number': identificador no declarado
+C:\Users\USUARIO\Desktop\C++\Semestre III\Matrix_\Input.cpp(67,29): warning C4551: la llamada a la función no tiene lista de argumentos
+C:\Users\USUARIO\Desktop\C++\Semestre III\Matrix_\Input.cpp(93,1): error C2084: la función 'std::string Input::input_int_number(std::string)' ya tiene un cuerpo
+C:\Users\USUARIO\Desktop\C++\Semestre III\Matrix_\Input.cpp(92): message : vea la definición anterior de 'input_int_number'
+C:\Users\USUARIO\Desktop\C++\Semestre III\Matrix_\Input.cpp(102,9): error C2065: 'is_int_number': identificador no declarado
+C:\Users\USUARIO\Desktop\C++\Semestre III\Matrix_\Input.cpp(102,27): warning C4551: la llamada a la función no tiene lista de argumentos
+C:\Users\USUARIO\Desktop\C++\Semestre III\Matrix_\Input.cpp(128,1): error C2084: la función 'std::string Input::input_only_numbers(std::string)' ya tiene un cuerpo
+C:\Users\USUARIO\Desktop\C++\Semestre III\Matrix_\Input.cpp(127): message : vea la definición anterior de 'input_only_numbers'
+C:\Users\USUARIO\Desktop\C++\Semestre III\Matrix_\Input.cpp(158,1): error C2084: la función 'std::string Input::input_only_int(std::string)' ya tiene un cuerpo
+C:\Users\USUARIO\Desktop\C++\Semestre III\Matrix_\Input.cpp(157): message : vea la definición anterior de 'input_only_int'
+C:\Users\USUARIO\Desktop\C++\Semestre III\Matrix_\Input.cpp(188,1): error C2084: la función 'std::string Input::input_only_letters(std::string)' ya tiene un cuerpo
+C:\Users\USUARIO\Desktop\C++\Semestre III\Matrix_\Input.cpp(187): message : vea la definición anterior de 'input_only_letters'
+C:\Users\USUARIO\Desktop\C++\Semestre III\Matrix_\Input.cpp(219,1): error C2084: la función 'std::string Input::input_only_letters(std::string,Input::Case)' ya tiene un cuerpo
+C:\Users\USUARIO\Desktop\C++\Semestre III\Matrix_\Input.cpp(218): message : vea la definición anterior de 'input_only_letters'
+C:\Users\USUARIO\Desktop\C++\Semestre III\Matrix_\Input.cpp(258,59): error C2084: la función 'std::string Input::_delete(std::string)' ya tiene un cuerpo
+C:\Users\USUARIO\Desktop\C++\Semestre III\Matrix_\Input.cpp(258): message : vea la definición anterior de '_delete'
+C:\Users\USUARIO\Desktop\C++\Semestre III\Matrix_\Input.cpp(260,20): warning C4018: '<': no coinciden signed/unsigned
+C:\Users\USUARIO\Desktop\C++\Semestre III\Matrix_\To_number.cpp(24,23): error C2084: la función 'int to_int(char *)' ya tiene un cuerpo
+C:\Users\USUARIO\Desktop\C++\Semestre III\Matrix_\To_number.cpp(24): message : vea la definición anterior de 'to_int'
+C:\Users\USUARIO\Desktop\C++\Semestre III\Matrix_\To_number.cpp(35,22): error C2084: la función 'int to_int(char)' ya tiene un cuerpo
+C:\Users\USUARIO\Desktop\C++\Semestre III\Matrix_\To_number.cpp(35): message : vea la definición anterior de 'to_int'
+C:\Users\USUARIO\Desktop\C++\Semestre III\Matrix_\To_number.cpp(46,24): error C2084: la función 'int to_int(std::string)' ya tiene un cuerpo
+C:\Users\USUARIO\Desktop\C++\Semestre III\Matrix_\To_number.cpp(46): message : vea la definición anterior de 'to_int'
+C:\Users\USUARIO\Desktop\C++\Semestre III\Matrix_\To_number.cpp(57,27): error C2084: la función 'float to_float(char *)' ya tiene un cuerpo
+C:\Users\USUARIO\Desktop\C++\Semestre III\Matrix_\To_number.cpp(57): message : vea la definición anterior de 'to_float'
+C:\Users\USUARIO\Desktop\C++\Semestre III\Matrix_\To_number.cpp(68,28): error C2084: la función 'float to_float(std::string)' ya tiene un cuerpo
+C:\Users\USUARIO\Desktop\C++\Semestre III\Matrix_\To_number.cpp(68): message : vea la definición anterior de 'to_float'
+C:\Users\USUARIO\Desktop\C++\Semestre III\Matrix_\To_number.cpp(79,29): error C2084: la función 'double to_double(char *)' ya tiene un cuerpo
+C:\Users\USUARIO\Desktop\C++\Semestre III\Matrix_\To_number.cpp(79): message : vea la definición anterior de 'to_double'
+C:\Users\USUARIO\Desktop\C++\Semestre III\Matrix_\To_number.cpp(90,35): error C2084: la función 'double to_double(std::string)' ya tiene un cuerpo
+C:\Users\USUARIO\Desktop\C++\Semestre III\Matrix_\To_number.cpp(90): message : vea la definición anterior de 'to_double'
+C:\Users\USUARIO\Desktop\C++\Semestre III\Matrix_\Matrix_\Matrix_.cpp(10,14): error C2011: 'Matrix': nueva definición del tipo 'class'
+C:\Users\USUARIO\Desktop\C++\Semestre III\Matrix_\Matrix_\Matrix_.cpp(10): message : vea la declaración de 'Matrix'
+C:\Users\USUARIO\Desktop\C++\Semestre III\Matrix_\Matrix_\Matrix_.cpp(34,13): error C2995: 'T **Matrix::_create_matrix(int,T **)': ya se ha definido la plantilla de función
+C:\Users\USUARIO\Desktop\C++\Semestre III\Matrix_\Matrix_\Matrix_.cpp(13): message : vea la declaración de 'Matrix::_create_matrix'
+C:\Users\USUARIO\Desktop\C++\Semestre III\Matrix_\Matrix_\Matrix_.cpp(54,14): error C2995: 'void Matrix::_set_cero(int,T **)': ya se ha definido la plantilla de función
+C:\Users\USUARIO\Desktop\C++\Semestre III\Matrix_\Matrix_\Matrix_.cpp(15): message : vea la declaración de 'Matrix::_set_cero'
+C:\Users\USUARIO\Desktop\C++\Semestre III\Matrix_\Matrix_\Matrix_.cpp(74,14): error C2995: 'void Matrix::_input_num(T **,std::string,int)': ya se ha definido la plantilla de función
+C:\Users\USUARIO\Desktop\C++\Semestre III\Matrix_\Matrix_\Matrix_.cpp(17): message : vea la declaración de 'Matrix::_input_num'
+C:\Users\USUARIO\Desktop\C++\Semestre III\Matrix_\Matrix_\Matrix_.cpp(94,14): error C2995: 'void Matrix::_print_matrix(T **,int)': ya se ha definido la plantilla de función
+C:\Users\USUARIO\Desktop\C++\Semestre III\Matrix_\Matrix_\Matrix_.cpp(19): message : vea la declaración de 'Matrix::_print_matrix'
+C:\Users\USUARIO\Desktop\C++\Semestre III\Matrix_\Matrix_\Matrix_.cpp(115,14): error C2995: 'void Matrix::_change_matrix(T **,T **,int)': ya se ha definido la plantilla de función
+C:\Users\USUARIO\Desktop\C++\Semestre III\Matrix_\Matrix_\Matrix_.cpp(21): message : vea la declaración de 'Matrix::_change_matrix'
+C:\Users\USUARIO\Desktop\C++\Semestre III\Matrix_\Matrix_\Matrix_.cpp(125,1): error C2084: la función 'int main(void)' ya tiene un cuerpo
+C:\Users\USUARIO\Desktop\C++\Semestre III\Matrix_\Matrix_\Matrix_.cpp(124): message : vea la definición anterior de 'main'
+C:\Users\USUARIO\Desktop\C++\Semestre III\Matrix_\Matrix_UnitTest\Matrix_UnitTest.cpp(18,11): error C2079: '_matrix' utiliza class 'Matrix' sin definir
+C:\Users\USUARIO\Desktop\C++\Semestre III\Matrix_\Matrix_UnitTest\Matrix_UnitTest.cpp(40,11): error C2079: '_matrix' utiliza class 'Matrix' sin definir
+C:\Users\USUARIO\Desktop\C++\Semestre III\Matrix_\Matrix_UnitTest\Matrix_UnitTest.cpp(62,11): error C2079: '_matrix' utiliza class 'Matrix' sin definir
+C:\Users\USUARIO\Desktop\C++\Semestre III\Matrix_\Matrix_UnitTest\Matrix_UnitTest.cpp(84,11): error C2079: '_matrix' utiliza class 'Matrix' sin definir
+C:\Users\USUARIO\Desktop\C++\Semestre III\Matrix_\Matrix_UnitTest\Matrix_UnitTest.cpp(107,11): error C2079: '_matrix' utiliza class 'Matrix' sin definir
+C:\Users\USUARIO\Desktop\C++\Semestre III\Matrix_\Matrix_UnitTest\Matrix_UnitTest.cpp(130,11): error C2079: '_matrix' utiliza class 'Matrix' sin definir
+C:\Users\USUARIO\Desktop\C++\Semestre III\Matrix_\Matrix_UnitTest\Matrix_UnitTest.cpp(153,11): error C2079: '_matrix' utiliza class 'Matrix' sin definir
+C:\Users\USUARIO\Desktop\C++\Semestre III\Matrix_\Matrix_UnitTest\Matrix_UnitTest.cpp(172,11): error C2079: '_matrix' utiliza class 'Matrix' sin definir
+C:\Users\USUARIO\Desktop\C++\Semestre III\Matrix_\Matrix_UnitTest\Matrix_UnitTest.cpp(191,11): error C2079: '_matrix' utiliza class 'Matrix' sin definir
+C:\Users\USUARIO\Desktop\C++\Semestre III\Matrix_\Matrix_UnitTest\Matrix_UnitTest.cpp(210,11): error C2079: '_matrix' utiliza class 'Matrix' sin definir
+C:\Users\USUARIO\Desktop\C++\Semestre III\Matrix_\Matrix_UnitTest\Matrix_UnitTest.cpp(235,11): error C2079: '_matrix' utiliza class 'Matrix' sin definir
+C:\Users\USUARIO\Desktop\C++\Semestre III\Matrix_\Matrix_UnitTest\Matrix_UnitTest.cpp(260,11): error C2079: '_matrix' utiliza class 'Matrix' sin definir
