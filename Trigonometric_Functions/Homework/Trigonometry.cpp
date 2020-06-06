@@ -1,4 +1,5 @@
 /***********************************************************************
+ *            UNIVERSIDAD DE LAS FUERZAS ARMADAS ESPE
  * Module:  Trigonometry.cpp
  * Author:  Muñoz Armas Francisco David & Daniela Orellana
  * Modified: martes, 2 de junio de 2020 18:35:34
