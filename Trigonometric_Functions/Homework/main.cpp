@@ -1,9 +1,9 @@
 /***********************************************************************
  *            UNIVERSIDAD DE LAS FUERZAS ARMADAS ESPE
- * Module:  Talylor_Series.cpp
+ * Module:  Main.cpp
  * Author:  Muñoz Armas Francisco David & Daniela Orellana
  * Modified: martes, 2 de junio de 2020 18:35:23
- * Purpose: Implementation of the class Talylor_Series
+ * Purpose: Implementation of the main class
  ***********************************************************************/
 
 #include <iostream>
