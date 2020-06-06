@@ -1,6 +1,7 @@
 /***********************************************************************
+ *            UNIVERSIDAD DE LAS FUERZAS ARMADAS ESPE
  * Module:  Array_dinamic.h
- * Author:  USUARIO
+ * Author:  David Muñoz & Daniela Orellana
  * Modified: lunes, 1 de junio de 2020 15:30:20
  * Purpose: Declaration of the class Array_dinamic
  ***********************************************************************/
