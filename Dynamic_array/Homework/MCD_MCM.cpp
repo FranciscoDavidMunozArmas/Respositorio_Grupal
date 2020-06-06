@@ -1,6 +1,7 @@
 /***********************************************************************
+ *            UNIVERSIDAD DE LAS FUERZAS ARMADAS ESPE
  * Module:  MCD_MCM.cpp
- * Author:  USUARIO
+ * Author:  David Muñoz & Daniela Orellana
  * Modified: lunes, 1 de junio de 2020 15:32:38
  * Purpose: Implementation of the class MCD_MCM
  ***********************************************************************/
