@@ -1,3 +1,11 @@
+/***********************************************************************
+ *            UNIVERSIDAD DE LAS FUERZAS ARMADAS ESPE
+ * Module:  main.cpp
+ * Author:  David Muñoz & Daniela Orellana
+ * Modified: viernes, 5 de junio de 2020 20:21:10
+ * Purpose: Implementation of the main class
+ ***********************************************************************/
+
 #include <iostream>
 #include <stdlib.h>
 #include "Array_dinamic.cpp"
