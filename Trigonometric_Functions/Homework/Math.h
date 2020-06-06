@@ -1,4 +1,5 @@
 /***********************************************************************
+ *            UNIVERSIDAD DE LAS FUERZAS ARMADAS ESPE
  * Module:  Math.h
  * Author:  USUARIO
  * Modified: martes, 2 de junio de 2020 15:47:09
