@@ -1,6 +1,7 @@
 /***********************************************************************
+ *            UNIVERSIDAD DE LAS FUERZAS ARMADAS ESPE
  * Module:  Trigonometry.h
- * Author:  Muñoz Armas Francisco David & Daniela Orellana
+ * Author:  MuÃ±oz Armas Francisco David & Daniela Orellana
  * Modified: martes, 2 de junio de 2020 18:35:34
  * Purpose: Declaration of the class Trigonometry
  ***********************************************************************/
