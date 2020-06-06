@@ -1,8 +1,0 @@
-﻿  pch.cpp
-  Taylor_Series.cpp
-C:\Users\Dany\Desktop\MATERIAS PDF\ESTRUCTURA\Serie de Taylor\Trigonometric_Functions\Homework\Taylor_Series.cpp(54,1): fatal error C1010: final de archivo inesperado al buscar la directiva de encabezado precompilado. Compruebe si olvidó agregar '#include "pch.h"' al código fuente?
-  Taylor_UnitTest.cpp
-C:\Users\Dany\Desktop\MATERIAS PDF\ESTRUCTURA\Serie de Taylor\Trigonometry_UnitTest1\Taylor_UnitTest\Taylor_Series.h(24,7): error C2079: 'Taylor_Series::math' utiliza class 'Math' sin definir
-C:\Users\Dany\Desktop\MATERIAS PDF\ESTRUCTURA\Serie de Taylor\Trigonometry_UnitTest1\Taylor_UnitTest\Taylor_UnitTest.cpp(22,19): warning C4244: 'inicializando': conversión de 'double' a 'int'; posible pérdida de datos
-C:\Users\Dany\Desktop\MATERIAS PDF\ESTRUCTURA\Serie de Taylor\Trigonometry_UnitTest1\Taylor_UnitTest\Taylor_UnitTest.cpp(50,19): warning C4244: 'inicializando': conversión de 'double' a 'int'; posible pérdida de datos
-  Generando código...
