@@ -27,7 +27,7 @@ double Trigonometry::_sen(T base){
 	catch(T e){
 		base = -(_check_angle(base));
 	}
-	return taylor._taylor_seno(base, 11);
+	return taylor._taylor_seno(base, 11); 
 }
 
 ////////////////////////////////////////////////////////////////////////
