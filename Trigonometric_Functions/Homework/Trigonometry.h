@@ -21,7 +21,7 @@ public:
 	template<typename T>
 	double _tg(T base);
 	template<typename T>
-	double _check_angle(T base);
+	double _check_angle(T base); 
 protected:
 private:
 	Taylor_Series taylor;
