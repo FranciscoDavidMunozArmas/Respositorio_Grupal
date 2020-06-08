@@ -21,7 +21,7 @@ using namespace std;
 // Return:     double
 ////////////////////////////////////////////////////////////////////////
 
-template<typename T>
+template<typename T> 
 double Taylor_Series::_taylor_seno(T base, int index)
 {
 	if (index <= 1) {
