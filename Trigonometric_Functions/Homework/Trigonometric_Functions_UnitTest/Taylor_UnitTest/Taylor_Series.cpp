@@ -24,7 +24,7 @@ using namespace std;
 template<typename T>
 double Taylor_Series::_taylor_seno(T base, int index)
 {
-	if (index <= 1) {
+	if (index <= 1){
 		return -base;
 	}
 	else {
