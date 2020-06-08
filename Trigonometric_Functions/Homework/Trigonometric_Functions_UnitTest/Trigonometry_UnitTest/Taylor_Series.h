@@ -21,7 +21,7 @@ public:
 
 protected:
 private:
-	Math math;
+	Math math; 
 };
 
 #endif
