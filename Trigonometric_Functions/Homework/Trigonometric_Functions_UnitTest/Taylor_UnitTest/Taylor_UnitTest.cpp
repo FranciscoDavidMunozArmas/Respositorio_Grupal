@@ -24,7 +24,7 @@ namespace TaylorUnitTest
 			Assert::AreEqual(sen_expected, sen_result);
 		}
 
-		TEST_METHOD(test_double_sen_Taylor)
+		TEST_METHOD(test_double_sen_Taylor) 
 		{
 			//Assert 
 			Taylor_Series taylor;
