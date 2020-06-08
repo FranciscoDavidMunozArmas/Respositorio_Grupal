@@ -33,6 +33,13 @@ public:
     // operadores no miembros
     friend ostream& operator << (ostream &o,const Pareja &p);
     friend istream& operator >> (istream &o, Pareja &p);
+	
+    //Operadores de Abreviacion
+    Pareja& operator += (const Pareja& p);
+    Pareja& operator -= (const Pareja& p);
+    Pareja& operator *= (const Pareja& p);
+    Pareja& operator /= (const Pareja& p);
+    Pareja& operator %= (const Pareja& p);
 };
 
 // implementacion de los operadores para la clase Pareja
@@ -72,7 +79,7 @@ Pareja& Pareja::operator / (const Pareja &p)
 //....................................
 Pareja& Pareja::operator = (const Pareja &p)
 {
-    if(this!=&p){ //Comprueba que no se esté intentanod igualar un objeto a sí mismo
+    if(this!=&p){ //Comprueba que no se estÃ© intentanod igualar un objeto a sÃ­ mismo
         if (p.a != 0) this->a = p.a;
         if (p.b != 0) this->b = p.b;
     }
@@ -93,7 +100,7 @@ bool Pareja::operator == (const Pareja &p) const
     return this->a == p.a && this->b == p.b;
 }
 
-// implemetaci¢n de operadores no miembros
+// implemetaciÂ¢n de operadores no miembros
 ostream& operator << (ostream &o,const Pareja &p)
 {
     o << "(" << p.a << ", " << p.b << ")";
@@ -110,13 +117,19 @@ istream& operator >> (istream &i, Pareja &p)
 
 /*
 Universidad de las Fuerzas Armadas ESPE
-Autor: David Muñoz & Daniela Orellana
+Autor: David MuÃ±oz & Daniela Orellana
 Fecha: lunes, 8 de Junio de 2020
 NRC: 6396
 */
 //Implementacion del Operador Modulo
 //Implementacion de los Operadores de Comparacion
 //Implementacion de los Operadores de Abreviacion
+Pareja& Pareja::operator+=(const Pareja& p){
+    this->a += p.a;
+    this->b += p.b;
+    return *this;
+}
+//....................................
 
 int main(int argc, char** argv) {
     Pareja A(150,  75);
@@ -153,6 +166,14 @@ int main(int argc, char** argv) {
     cout << "A = " << A << "\n";
     cout << "B = " << B << "\n";
     cout << "C = " << C << endl;
+    cout << "........................." << endl;
+    /*Daniela Orellana*/
+
+    /*David MuÃ±oz*/
+    cout << "A = " << A << "\n";
+    cout << "C = " << C << "\n";
+    C += A;
+    cout << "C += A =" << C << endl;
     cout << "........................." << endl;
 	return 0;
 }
