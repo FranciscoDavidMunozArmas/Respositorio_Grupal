@@ -18,7 +18,6 @@ public:
 	double _taylor_seno(T base, int index);
 	template<typename T>
 	double _taylor_coseno(T base, int index);
-
 protected:
 private:
 	Math math;
