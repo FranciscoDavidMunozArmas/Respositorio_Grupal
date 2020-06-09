@@ -34,6 +34,12 @@ public:
     friend ostream& operator << (ostream &o,const Pareja &p);
     friend istream& operator >> (istream &o, Pareja &p);
 	
+    //Operadores de comparacion
+    bool operator < (const Pareja &p);
+    bool operator > (const Pareja &p);
+    bool operator <= (const Pareja &p);
+    bool operator >= (const Pareja &p);
+
     //Operadores de Abreviacion
     Pareja& operator += (const Pareja& p);
     Pareja& operator -= (const Pareja& p);
