@@ -121,18 +121,26 @@ Autor: David Muñoz & Daniela Orellana
 Fecha: lunes, 8 de Junio de 2020
 NRC: 6396
 */
+
 //Implementacion del Operador Modulo
+Pareja& Pareja::operator % (const Pareja &p)
+{
+    if (p.a != 0) this->a %= p.a;
+    if (p.b != 0) this->b %= p.b;
+    return *this;
+}
+
 //Implementacion de los Operadores de Comparacion
+bool Pareja::operator < (const Pareja &p)
+{
+    return this->a < p.a && this->b < p.b;
+}
+
+
 //Implementacion de los Operadores de Abreviacion
 Pareja& Pareja::operator+=(const Pareja& p){
     this->a += p.a;
     this->b += p.b;
-    return *this;
-}
-//....................................
-Pareja& Pareja::operator-=(const Pareja& p){
-    this->a -= p.a;
-    this->b -= p.b;
     return *this;
 }
 //....................................
@@ -174,6 +182,19 @@ int main(int argc, char** argv) {
     cout << "C = " << C << endl;
     cout << "........................." << endl;
     /*Daniela Orellana*/
+    //Primer Dia (08/06/2020)
+    cout << "A = " << A << "\n";
+    cout << "B = " << B << "\n";
+    C = A % B;
+    cout << "A % B =" << C << endl;
+    cout << "........................." << endl;
+
+    //Segundo Dia (09/06/2020)
+    cout << "A = " << A << "\n";
+    cout << "B = " << B << "\n";
+    cout << "C = " << C << endl;
+    cout << "A < B " << ( (A<B)?"  True \n": "  False  \n");
+    cout << "........................." << endl;
 
     /*David Muñoz*/
     cout << "A = " << A << "\n";
@@ -181,10 +202,5 @@ int main(int argc, char** argv) {
     C += A;
     cout << "C += A =" << C << endl;
     cout << "........................." << endl;
-    cout << "B = " << B << "\n";
-    cout << "C = " << C << "\n";
-    C -= B;
-    cout << "C -= B =" << C << endl;
-    cout << "........................." << endl;
-	return 0;
+    return 0;
 }
