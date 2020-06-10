@@ -159,7 +159,12 @@ Pareja& Pareja::operator-=(const Pareja& p){
     return *this;
 }
 //....................................
-
+Pareja& Pareja::operator*=(const Pareja& p){
+    this->a *= p.a;
+    this->b *= p.b;
+    return *this;
+}
+//....................................
 int main(int argc, char** argv) {
     Pareja A(150,  75);
     Pareja B(100, 15);
@@ -221,6 +226,11 @@ int main(int argc, char** argv) {
     cout << "C = " << C << "\n";
     C -= B;
     cout << "C -= B =" << C << endl;
+    cout << "........................." << endl;
+    cout << "A = " << A << "\n";
+    cout << "B = " << B << "\n";
+    A *= B;
+    cout << "A *= B =" << A << endl;
     cout << "........................." << endl;
 	
     return 0;
