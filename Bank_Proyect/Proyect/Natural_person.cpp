@@ -18,12 +18,8 @@
 // Return:     
 ////////////////////////////////////////////////////////////////////////
 
-Natural_person::Natural_person(std::string _id, std::string _name, std::string _address, std::string _phone)
+Natural_person::Natural_person(std::string _id, std::string _name, std::string _address, std::string _phone): Person(_id, _name, _address, _phone)
 {
-   this->_id = _id;
-   this->_name = _name;
-   this->_address = _address;
-   this->_phone = _id; 
 }
 
 ////////////////////////////////////////////////////////////////////////
