@@ -15,6 +15,7 @@
 
 Person::Person()
 {
+   //TODO: implement
 }
 
 ////////////////////////////////////////////////////////////////////////
@@ -30,7 +31,10 @@ Person::Person()
 
 Person::Person(std::string _id, std::string _name, std::string _address, std::string _phone)
 {
-   // TODO : implement
+   this->std::string_id = std::string_id;
+   this->std::string_name = std::string_name;
+   this->std::string_address = std::string_address;
+   this ->std::string _phone = std::string _phone;
 }
 
 ////////////////////////////////////////////////////////////////////////
