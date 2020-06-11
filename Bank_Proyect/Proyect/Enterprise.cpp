@@ -29,11 +29,8 @@ Enterprise::Enterprise()
 // Return:     
 ////////////////////////////////////////////////////////////////////////
 
-Enterprise::Enterprise(std::string _id, std::string _address, std::string _phone, std::string _name, Person _management)
+Enterprise::Enterprise(string _id,string _name, string _address, string _phone, Person _management): Person(_id, _name, _address, _phone)
 {
-   this->_id = _id;
-   this->_phone = _phone;
-   this->_name = _name;
    this->_management = _management;
 }
 
