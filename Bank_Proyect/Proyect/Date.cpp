@@ -29,7 +29,9 @@ Date::Date()
 
 Date::Date(int _day, int _month, int _year)
 {
-   // TODO : implement
+   this->int _day = _day;
+   this->int _month = _month;
+   this->int _year = _year;
 }
 
 ////////////////////////////////////////////////////////////////////////
@@ -112,7 +114,7 @@ void Date::set_month(int new_month)
 
 std::string Date::to_string(void)
 {
-   // TODO : implement
+   cout<<" "<<_day<<" / "<<_month<<" / "<<_year;
 }
 
 ////////////////////////////////////////////////////////////////////////
