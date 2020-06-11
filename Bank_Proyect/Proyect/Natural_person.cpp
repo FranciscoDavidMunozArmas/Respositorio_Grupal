@@ -1,7 +1,7 @@
 /***********************************************************************
  * Module:  Natural_person.cpp
  * Author:  USUARIO
- * Modified: miércoles, 3 de junio de 2020 15:35:31
+ * Modified: miÃ©rcoles, 3 de junio de 2020 15:35:31
  * Purpose: Implementation of the class Natural_person
  ***********************************************************************/
 
@@ -20,7 +20,10 @@
 
 Natural_person::Natural_person(std::string _id, std::string _name, std::string _address, std::string _phone)
 {
-   // TODO : implement
+   this->std::string _id = string _id;
+   this->std::string _name = string _name;
+   this->std::string _address = string _address;
+   this->std::string _phone = string _id;
 }
 
 ////////////////////////////////////////////////////////////////////////
