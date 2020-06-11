@@ -20,10 +20,10 @@
 
 Natural_person::Natural_person(std::string _id, std::string _name, std::string _address, std::string _phone)
 {
-   this->std::string _id = string _id;
-   this->std::string _name = string _name;
-   this->std::string _address = string _address;
-   this->std::string _phone = string _id; 
+   this->_id = _id;
+   this->_name = _name;
+   this->_address = _address;
+   this->_phone = _id; 
 }
 
 ////////////////////////////////////////////////////////////////////////
