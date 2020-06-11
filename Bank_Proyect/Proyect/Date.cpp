@@ -6,6 +6,8 @@
  ***********************************************************************/
 
 #include "Date.h"
+#include <ctime>
+#include <vector>
 
 ////////////////////////////////////////////////////////////////////////
 // Name:       Date::Date()
@@ -29,9 +31,9 @@ Date::Date()
 
 Date::Date(int _day, int _month, int _year)
 {
-   this->int _day = _day;
-   this->int _month = _month;
-   this->int _year = _year;
+   this->_day = _day;
+   this->_month = _month;
+   this->_year = _year;
 }
 
 ////////////////////////////////////////////////////////////////////////
@@ -107,14 +109,33 @@ void Date::set_month(int new_month)
 }
 
 ////////////////////////////////////////////////////////////////////////
+// Name:       Date::date()
+// Purpose:    Implementation of Date::date()
+// Return:     void
+////////////////////////////////////////////////////////////////////////
+
+void Date::date(void){
+   //PARA EL DIA 
+   _day = time->tm_mday;
+   set_day(_day);
+   //PARA EL MES
+   _month = 1+time->tm_mon;
+   set_month(_month);
+   //PARA EL AÑO
+   _year = 1900 + time->tm_year;
+   set_year(_year);
+}
+
+////////////////////////////////////////////////////////////////////////
 // Name:       Date::to_string()
 // Purpose:    Implementation of Date::to_string()
 // Return:     std::string
 ////////////////////////////////////////////////////////////////////////
 
-std::string Date::to_string(void)
+string Date::to_string(void)
 {
-   cout<<" "<<_day<<" / "<<_month<<" / "<<_year;
+   string msg = "%d",_day,"/%d",_month,"/%d",_year;
+   return msg;
 }
 
 ////////////////////////////////////////////////////////////////////////
