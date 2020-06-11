@@ -20,8 +20,6 @@ public:
 protected:
 private:
    Person _manager;
-
-
 };
 
 #endif
