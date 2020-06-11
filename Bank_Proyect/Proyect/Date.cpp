@@ -9,6 +9,8 @@
 #include <ctime>
 #include <vector>
 
+using namespace std;
+
 ////////////////////////////////////////////////////////////////////////
 // Name:       Date::Date()
 // Purpose:    Implementation of Date::Date()
