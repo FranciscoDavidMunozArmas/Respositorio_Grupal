@@ -7,7 +7,6 @@
 
 #if !defined(__Bank_Model_Person_h)
 #define __Bank_Model_Person_h
-
 class Person
 {
 public:
@@ -25,13 +24,12 @@ public:
    ~Person();
 
 protected:
+   
 private:
    std::string _name;
    std::string _id;
    std::string _address;
    std::string _phone;
-
-
 };
 
 #endif
