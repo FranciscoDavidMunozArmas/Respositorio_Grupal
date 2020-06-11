@@ -31,7 +31,10 @@ Enterprise::Enterprise()
 
 Enterprise::Enterprise(std::string _id, std::string _address, std::string _phone, std::string _name, Person _management)
 {
-   // TODO : implement
+   this->_id = _id;
+   this->_phone = _phone;
+   this->_name = _name;
+   this->_management = _management;
 }
 
 ////////////////////////////////////////////////////////////////////////
