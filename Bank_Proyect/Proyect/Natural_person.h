@@ -1,7 +1,7 @@
 /***********************************************************************
  * Module:  Natural_person.h
  * Author:  USUARIO
- * Modified: miércoles, 3 de junio de 2020 15:35:31
+ * Modified: miÃ©rcoles, 3 de junio de 2020 15:35:31
  * Purpose: Declaration of the class Natural_person
  ***********************************************************************/
 
@@ -9,7 +9,6 @@
 #define __Bank_Model_Natural_person_h
 
 #include <Person.h>
-
 class Natural_person : public Person
 {
 public:
