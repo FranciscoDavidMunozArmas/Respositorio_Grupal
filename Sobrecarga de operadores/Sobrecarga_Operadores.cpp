@@ -145,6 +145,20 @@ bool Pareja::operator < (const Pareja &p)
     return this->a < p.a && this->b < p.b;
 }
 
+bool Pareja::operator > (const Pareja &p)
+{
+    return this->a > p.a && this->b > p.b;
+}
+
+bool Pareja::operator <= (const Pareja &p)
+{
+    return this->a <= p.a && this->b <= p.b;
+}
+
+bool Pareja::operator >= (const Pareja &p)
+{
+    return this->a >= p.a && this->b >= p.b;
+}
 
 //Implementacion de los Operadores de Abreviacion
 Pareja& Pareja::operator+=(const Pareja& p){
@@ -229,6 +243,27 @@ int main(int argc, char** argv) {
     cout << "A < B " << ( (A<B)?"  True \n": "  False  \n");
     cout << "........................." << endl;
 
+    //Tercer Dia (10/06/2020)
+    cout << "A = " << A << "\n";
+    cout << "B = " << B << "\n";
+    cout << "C = " << C << endl;
+    cout << "A < B " << ( (A>B)?"  True \n": "  False  \n");
+    cout << "........................." << endl;
+    
+    //Cuarto Dia (11/06/2020)
+    cout << "A = " << A << "\n";
+    cout << "B = " << B << "\n";
+    cout << "C = " << C << endl;
+    cout << "A < B " << ( (A>=B)?"  True \n": "  False  \n");
+    cout << "........................." << endl;
+	
+    //Quinto Dia (12/06/2020)
+    cout << "A = " << A << "\n";
+    cout << "B = " << B << "\n";
+    cout << "C = " << C << endl;
+    cout << "A < B " << ( (A<=B)?"  True \n": "  False  \n");
+    cout << "........................." << endl;
+	
     /*David Muñoz*/
     cout << "A = " << A << "\n";
     cout << "C = " << C << "\n";
