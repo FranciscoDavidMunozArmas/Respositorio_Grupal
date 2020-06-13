@@ -8,26 +8,37 @@
 #if !defined(__Bank_Model_Date_h)
 #define __Bank_Model_Date_h
 
+#include <iostream>
+
+using namespace std;
+
 class Date
 {
 public:
-   Date();
-   Date(int _day, int _month, int _year);
-   int get_year(void);
-   void set_year(int new_year);
-   int get_day(void);
-   void set_day(int new_day);
-   int get_month(void);
-   void set_month(int new_month);
-   std::string to_string(void);
-   ~Date();
+
+	Date();
+	int get_year(void);
+	void set_year(int _year);
+	int get_day(void);
+	void set_day(int _day);
+	int get_month(void);
+	void set_month(int _month);
+	int get_hour(void);
+	void set_hour(int _day);
+	int get_minute(void);
+	void set_minute(int _minute);
+	int get_second(void);
+	void set_second(int _second);
+	string to_string(void);
+	~Date();
 
 protected:
 private:
-   int _day;
-   int _month;
-   int _year;
-
-
+	int _year;
+	int _month;
+	int _day;
+	int _hour;
+	int _minute;
+	int _second;
 };
 #endif

@@ -1,6 +1,6 @@
 /***********************************************************************
  * Module:  Transaction.h
- * Author:  USUARIO
+ * Author:  David Muñoz & Daniela Orellana
  * Modified: martes, 2 de junio de 2020 15:34:44
  * Purpose: Declaration of the class Transaction
  ***********************************************************************/
@@ -10,27 +10,31 @@
 
 class Date;
 
-#include <Date.h>
-#include <Person.h>
+#include "Bank_account.h"
+
+#include "Date.h"
+#include "Person.h"
+
+class Bank_account;
+class Date;
+
+using namespace std;
 
 class Transaction
 {
 public:
-   Transaction();
-   double get_amount(void);
-   void set_amount(double new_amount);
-   virtual double bank_method(double amount_1, double amount_2)=0;
-   virtual void print_transaction(Person client)=0;
+	Transaction(const double _amount): _amount(_amount){};
+	double get_amount();
+	void set_amount(const double _amount);
+	virtual double bank_method(const Bank_account& _account);
+	virtual void print_transaction(const Person& _client);
+
    ~Transaction();
 
-   Date** date;
-
 protected:
+	double _amount;
 private:
-   double _amount;
    Date _transaction_date;
-
-
 };
 
 #endif

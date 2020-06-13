@@ -6,41 +6,37 @@
  ***********************************************************************/
 
 #include "Enterprise.h"
+#include "Natural_person.h"
+#include <iostream>
+#include <sstream>
 
-////////////////////////////////////////////////////////////////////////
-// Name:       Enterprise::Enterprise()
-// Purpose:    Implementation of Enterprise::Enterprise()
-// Return:     
-////////////////////////////////////////////////////////////////////////
+using namespace std;
 
-Enterprise::Enterprise()
+Natural_person Enterprise::get_manager() {
+	return _manager;
+}
+
+void Enterprise::set_manager(const Natural_person& _manager)
 {
+	this->_manager = _manager;
 }
 
 ////////////////////////////////////////////////////////////////////////
-// Name:       Enterprise::Enterprise(std::string _id, std::string _address, std::string _phone, std::string _name, Person _management)
-// Purpose:    Implementation of Enterprise::Enterprise()
-// Parameters:
-// - _id
-// - _address
-// - _phone
-// - _name
-// - _management
-// Return:     
+// Name:       Enterprise::to_string()
+// Purpose:    Implementation of Enterprise::to_string()
+// Return:     string
 ////////////////////////////////////////////////////////////////////////
 
-Enterprise::Enterprise(string _id,string _name, string _address, string _phone, Person _management): Person(_id, _name, _address, _phone)
-{
-   this->_management = _management;
+string Enterprise::to_string() {
+	ostringstream oss;
+	oss << "Id:" << _id << "\tEmpresa:" << _name << "\n\tRepresentante legal: \n\tNombre:" << _manager.get_name();
+	return oss.str();
 }
 
 ////////////////////////////////////////////////////////////////////////
 // Name:       Enterprise::~Enterprise()
 // Purpose:    Implementation of Enterprise::~Enterprise()
-// Return:     
+// Return:
 ////////////////////////////////////////////////////////////////////////
 
-Enterprise::~Enterprise()
-{
-   // TODO : implement
-}
+Enterprise::~Enterprise(){}

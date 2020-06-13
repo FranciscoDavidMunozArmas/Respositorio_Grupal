@@ -1,43 +1,57 @@
 /***********************************************************************
  * Module:  Bank_account.cpp
- * Author:  USUARIO
+ * Author:  David Muñoz & Daniela Orellana
  * Modified: martes, 9 de junio de 2020 16:05:48
  * Purpose: Implementation of the class Bank_account
  ***********************************************************************/
 
-#include "Transaction.h"
+#include "Transaction.cpp"
 #include "Date.h"
 #include "Person.h"
 #include "Bank_account.h"
+#include "../Libraries/Array_dinamic.cpp"
+
+#include <iostream>
+
+using namespace std;
 
 ////////////////////////////////////////////////////////////////////////
-// Name:       Bank_account::Bank_account(Account_Type _account_type, Client _client)
+// Name:       Bank_account::Bank_account(Account_type _account_type, const Person& _client)
 // Purpose:    Implementation of Bank_account::Bank_account()
 // Parameters:
 // - _account_type
 // - _client
-// Return:     
+// Return:
 ////////////////////////////////////////////////////////////////////////
 
-Bank_account::Bank_account(Account_Type _account_type, Client _client)
+Bank_account::Bank_account(const Account_type _account_type, const Person& _client)
 {
-   // TODO : implement
+	Array_dynamic _ad;
+	this->_account_type = _account_type;
+	this->_client = _client;
+	this->_transaction = _ad._create_array(0, _transaction);
+	this->_account_number = "001";
+	this->_bank_balance = 0;
 }
 
 ////////////////////////////////////////////////////////////////////////
-// Name:       Bank_account::Bank_account(Client _client, double _bank_balance, std::string _account_number, Account_Type _account_type)
+// Name:       Bank_account::Bank_account(Account_type _account_type, const Person _client, const double _bank_balance);
 // Purpose:    Implementation of Bank_account::Bank_account()
 // Parameters:
 // - _client
 // - _bank_balance
 // - _account_number
 // - _account_type
-// Return:     
+// Return:
 ////////////////////////////////////////////////////////////////////////
 
-Bank_account::Bank_account(Client _client, double _bank_balance, std::string _account_number, Account_Type _account_type)
+Bank_account::Bank_account(const Account_type _account_type, const Person& _client, const double _bank_balance)
 {
-   // TODO : implement
+	this->_account_type = _account_type;
+	this->_client = _client;
+	this->_bank_balance = _bank_balance;
+	this->_account_number = "001";
+	this->_transaction = _ad._create_array(0, _transaction);
 }
 
 ////////////////////////////////////////////////////////////////////////
@@ -46,22 +60,9 @@ Bank_account::Bank_account(Client _client, double _bank_balance, std::string _ac
 // Return:     Person
 ////////////////////////////////////////////////////////////////////////
 
-Person Bank_account::get_client(void)
+Person Bank_account::get_client()
 {
    return _client;
-}
-
-////////////////////////////////////////////////////////////////////////
-// Name:       Bank_account::set_client(Person new_client)
-// Purpose:    Implementation of Bank_account::set_client()
-// Parameters:
-// - new_client
-// Return:     void
-////////////////////////////////////////////////////////////////////////
-
-void Bank_account::set_client(Person new_client)
-{
-   _client = new_client;
 }
 
 ////////////////////////////////////////////////////////////////////////
@@ -70,22 +71,9 @@ void Bank_account::set_client(Person new_client)
 // Return:     std::string
 ////////////////////////////////////////////////////////////////////////
 
-std::string Bank_account::get_account_number(void)
+std::string Bank_account::get_account_number()
 {
    return _account_number;
-}
-
-////////////////////////////////////////////////////////////////////////
-// Name:       Bank_account::set_account_number(std::string new_account_number)
-// Purpose:    Implementation of Bank_account::set_account_number()
-// Parameters:
-// - new_account_number
-// Return:     void
-////////////////////////////////////////////////////////////////////////
-
-void Bank_account::set_account_number(std::string new_account_number)
-{
-   _account_number = new_account_number;
 }
 
 ////////////////////////////////////////////////////////////////////////
@@ -94,22 +82,9 @@ void Bank_account::set_account_number(std::string new_account_number)
 // Return:     double
 ////////////////////////////////////////////////////////////////////////
 
-double Bank_account::get_bank_balance(void)
+double Bank_account::get_bank_balance()
 {
    return _bank_balance;
-}
-
-////////////////////////////////////////////////////////////////////////
-// Name:       Bank_account::set_bank_balance(double new_bank_balance)
-// Purpose:    Implementation of Bank_account::set_bank_balance()
-// Parameters:
-// - new_bank_balance
-// Return:     void
-////////////////////////////////////////////////////////////////////////
-
-void Bank_account::set_bank_balance(double new_bank_balance)
-{
-   _bank_balance = new_bank_balance;
 }
 
 ////////////////////////////////////////////////////////////////////////
@@ -118,22 +93,9 @@ void Bank_account::set_bank_balance(double new_bank_balance)
 // Return:     std::string
 ////////////////////////////////////////////////////////////////////////
 
-std::string Bank_account::get_account_type(void)
+Account_type Bank_account::get_account_type()
 {
    return _account_type;
-}
-
-////////////////////////////////////////////////////////////////////////
-// Name:       Bank_account::set_account_type(std::string new_account_type)
-// Purpose:    Implementation of Bank_account::set_account_type()
-// Parameters:
-// - new_account_type
-// Return:     void
-////////////////////////////////////////////////////////////////////////
-
-void Bank_account::set_account_type(std::string new_account_type)
-{
-   _account_type = new_account_type;
 }
 
 ////////////////////////////////////////////////////////////////////////
@@ -142,31 +104,76 @@ void Bank_account::set_account_type(std::string new_account_type)
 // Return:     Date
 ////////////////////////////////////////////////////////////////////////
 
-Date Bank_account::get_creation_date(void)
+Date Bank_account::get_creation_date()
 {
    return _creation_date;
 }
 
 ////////////////////////////////////////////////////////////////////////
-// Name:       Bank_account::set_creation_date(Date new_creation_date)
+// Name:       Bank_account::set_client(const Person _client)
+// Purpose:    Implementation of Bank_account::set_client()
+// Parameters:
+// - new_client
+// Return:     void
+////////////////////////////////////////////////////////////////////////
+
+void Bank_account::set_client(const Person _client)
+{
+	this->_client = _client;
+}
+
+////////////////////////////////////////////////////////////////////////
+// Name:       Bank_account::set_bank_balance(const double _bank_balance)
+// Purpose:    Implementation of Bank_account::set_bank_balance()
+// Parameters:
+// - new_bank_balance
+// Return:     void
+////////////////////////////////////////////////////////////////////////
+
+void Bank_account::set_bank_balance(const double _bank_balance)
+{
+	this->_bank_balance = _bank_balance;
+}
+
+////////////////////////////////////////////////////////////////////////
+// Name:       Bank_account::set_creation_date(const Date _creation_date)
 // Purpose:    Implementation of Bank_account::set_creation_date()
 // Parameters:
 // - new_creation_date
 // Return:     void
 ////////////////////////////////////////////////////////////////////////
 
-void Bank_account::set_creation_date(Date new_creation_date)
+void Bank_account::set_creation_date(const Date _creation_date)
 {
-   _creation_date = new_creation_date;
+	this->_creation_date = _creation_date;
+}
+
+////////////////////////////////////////////////////////////////////////
+// Name:       Bank_account::add_transaction(const Transaction _transaction)
+// Purpose:    Implementation of Bank_account::add_transaction()
+// Parameters:
+// - new_creation_date
+// Return:     void
+////////////////////////////////////////////////////////////////////////
+
+void Bank_account::add_transaction(const Transaction _operation)
+{
+	int _size = _ad._dynamic_size(this->_transaction);
+	_transaction = _ad._resize(this->_transaction, _size + 1);
+	*(_transaction + _size) = _operation;
+}
+
+string Bank_account::to_string() {
+	ostringstream oss;
+	oss << "Account Number:" << this->_account_number << "\n\t" << _client.to_string();
+	return oss.str();
+
 }
 
 ////////////////////////////////////////////////////////////////////////
 // Name:       Bank_account::~Bank_account()
 // Purpose:    Implementation of Bank_account::~Bank_account()
-// Return:     
+// Return:
 ////////////////////////////////////////////////////////////////////////
 
-Bank_account::~Bank_account()
-{
-   // TODO : implement
-}
+Bank_account::~Bank_account(){}

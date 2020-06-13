@@ -8,34 +8,27 @@
 #include "Date.h"
 #include <ctime>
 #include <vector>
+#include <sstream>
 
 using namespace std;
 
 ////////////////////////////////////////////////////////////////////////
 // Name:       Date::Date()
 // Purpose:    Implementation of Date::Date()
-// Return:     
+// Return:
 ////////////////////////////////////////////////////////////////////////
 
 Date::Date()
 {
-}
+	time_t t = time(NULL);
+	tm* timePtr = localtime(&t);
 
-////////////////////////////////////////////////////////////////////////
-// Name:       Date::Date(int _day, int _month, int _year)
-// Purpose:    Implementation of Date::Date()
-// Parameters:
-// - _day
-// - _month
-// - _year
-// Return:     
-////////////////////////////////////////////////////////////////////////
-
-Date::Date(int _day, int _month, int _year)
-{
-   this->_day = _day;
-   this->_month = _month;
-   this->_year = _year;
+	this->_year = timePtr->tm_year + 1900;
+	this->_month = timePtr->tm_mon + 1;
+	this->_day = timePtr->tm_mday;
+	this->_hour = timePtr->tm_hour;
+	this->_minute = timePtr->tm_min;
+	this->_second = timePtr->tm_sec;
 }
 
 ////////////////////////////////////////////////////////////////////////
@@ -46,7 +39,7 @@ Date::Date(int _day, int _month, int _year)
 
 int Date::get_year(void)
 {
-   return _year;
+	return _year;
 }
 
 ////////////////////////////////////////////////////////////////////////
@@ -57,9 +50,9 @@ int Date::get_year(void)
 // Return:     void
 ////////////////////////////////////////////////////////////////////////
 
-void Date::set_year(int new_year)
+void Date::set_year(int _year)
 {
-   _year = new_year;
+	this->_year = _year;
 }
 
 ////////////////////////////////////////////////////////////////////////
@@ -70,7 +63,7 @@ void Date::set_year(int new_year)
 
 int Date::get_day(void)
 {
-   return _day;
+	return _day;
 }
 
 ////////////////////////////////////////////////////////////////////////
@@ -81,9 +74,9 @@ int Date::get_day(void)
 // Return:     void
 ////////////////////////////////////////////////////////////////////////
 
-void Date::set_day(int new_day)
+void Date::set_day(int _day)
 {
-   _day = new_day;
+	this->_day = _day;
 }
 
 ////////////////////////////////////////////////////////////////////////
@@ -94,7 +87,7 @@ void Date::set_day(int new_day)
 
 int Date::get_month(void)
 {
-   return _month;
+	return _month;
 }
 
 ////////////////////////////////////////////////////////////////////////
@@ -105,27 +98,39 @@ int Date::get_month(void)
 // Return:     void
 ////////////////////////////////////////////////////////////////////////
 
-void Date::set_month(int new_month)
+void Date::set_month(int _month)
 {
-   _month = new_month;
+	this->_month = _month;
 }
 
-////////////////////////////////////////////////////////////////////////
-// Name:       Date::date()
-// Purpose:    Implementation of Date::date()
-// Return:     void
-////////////////////////////////////////////////////////////////////////
+int Date::get_hour()
+{
+	return _hour;
+}
 
-void Date::date(void){
-   //PARA EL DIA 
-   _day = time->tm_mday;
-   set_day(_day);
-   //PARA EL MES
-   _month = 1+time->tm_mon;
-   set_month(_month);
-   //PARA EL AÑO
-   _year = 1900 + time->tm_year;
-   set_year(_year);
+void Date::set_hour(int _hour)
+{
+	this->_hour = _hour;
+}
+
+int Date::get_minute()
+{
+	return _minute;
+}
+
+void Date::set_minute(int _minute)
+{
+	this->_minute = _minute;
+}
+
+int Date::get_second()
+{
+	return _second;
+}
+
+void Date::set_second(int _second)
+{
+	this->_second = _second;
 }
 
 ////////////////////////////////////////////////////////////////////////
@@ -136,17 +141,15 @@ void Date::date(void){
 
 string Date::to_string(void)
 {
-   string msg = "%d",_day,"/%d",_month,"/%d",_year;
-   return msg;
+	ostringstream oss;
+	oss <<_day << "/" << _month << "/" << _year;
+	return oss.str();
 }
 
 ////////////////////////////////////////////////////////////////////////
 // Name:       Date::~Date()
 // Purpose:    Implementation of Date::~Date()
-// Return:     
+// Return:
 ////////////////////////////////////////////////////////////////////////
 
-Date::~Date()
-{
-   // TODO : implement
-}
+Date::~Date(){}

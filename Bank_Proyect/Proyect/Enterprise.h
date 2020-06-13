@@ -8,18 +8,23 @@
 #if !defined(__Bank_Model_Enterprise_h)
 #define __Bank_Model_Enterprise_h
 
-#include <Person.h>
+#include <iostream>
+#include "Person.h"
+#include "Natural_person.h"
+
+using namespace std;
 
 class Enterprise : public Person
 {
 public:
-   Enterprise();
-   Enterprise::Enterprise(string _id,string _name, string _address, string _phone, Person _management);
-   ~Enterprise();
-
-protected:
+    Enterprise():Person(){};
+    Enterprise(const string _id, const string _address, const string _phone, const string _name, const Natural_person& _manager) :Person(_id, _name, _address, _phone), _manager(_manager) {}
+    Natural_person get_manager(void);
+    void set_manager(const Natural_person& _manager);
+    string to_string();
+    ~Enterprise();
 private:
-   Person _manager;
+    Natural_person _manager;
 };
 
 #endif

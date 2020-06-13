@@ -6,16 +6,20 @@
  ***********************************************************************/
 
 #include "Person.h"
+#include <sstream>
 
 ////////////////////////////////////////////////////////////////////////
 // Name:       Person::Person()
 // Purpose:    Implementation of Person::Person()
-// Return:     
+// Return:
 ////////////////////////////////////////////////////////////////////////
 
 Person::Person()
 {
-   //TODO: implement
+	this->_address = "";
+	this->_id = "";
+	this->_name = "";
+	this->_phone = "";
 }
 
 ////////////////////////////////////////////////////////////////////////
@@ -26,15 +30,15 @@ Person::Person()
 // - _name
 // - _address
 // - _phone
-// Return:     
+// Return:
 ////////////////////////////////////////////////////////////////////////
 
-Person::Person(std::string _id, std::string _name, std::string _address, std::string _phone)
+Person::Person(const string _id, const string _name, const string _address, const string _phone)
 {
-   this->_id = _id;
-   this->_name = _name;
-   this->_address = _address;
-   this ->_phone = _phone;
+	this->_address = _address;
+	this->_id = _id;
+	this->_name = _name;
+	this->_phone = _phone;
 }
 
 ////////////////////////////////////////////////////////////////////////
@@ -56,9 +60,9 @@ std::string Person::get_id(void)
 // Return:     void
 ////////////////////////////////////////////////////////////////////////
 
-void Person::set_id(std::string new_id)
+void Person::set_id(const string _id)
 {
-   _id = new_id;
+   this->_id = _id;
 }
 
 ////////////////////////////////////////////////////////////////////////
@@ -80,9 +84,9 @@ std::string Person::get_name(void)
 // Return:     void
 ////////////////////////////////////////////////////////////////////////
 
-void Person::set_name(std::string new_name)
+void Person::set_name(const string new_name)
 {
-   _name = new_name;
+   this->_name = new_name;
 }
 
 ////////////////////////////////////////////////////////////////////////
@@ -104,9 +108,9 @@ std::string Person::get_address(void)
 // Return:     void
 ////////////////////////////////////////////////////////////////////////
 
-void Person::set_address(std::string new_address)
+void Person::set_address(const string _address)
 {
-   _address = new_address;
+   this->_address = _address;
 }
 
 ////////////////////////////////////////////////////////////////////////
@@ -128,18 +132,22 @@ std::string Person::get_phone(void)
 // Return:     void
 ////////////////////////////////////////////////////////////////////////
 
-void Person::set_phone(std::string new_phone)
+void Person::set_phone(const string _phone)
 {
-   _phone = new_phone;
+   this->_phone = _phone;
+}
+
+string Person::to_string()
+{
+	ostringstream oss;
+	oss << "Id:" << _id << "\tNombre:" << this->_name;
+	return oss.str();
 }
 
 ////////////////////////////////////////////////////////////////////////
 // Name:       Person::~Person()
 // Purpose:    Implementation of Person::~Person()
-// Return:     
+// Return:
 ////////////////////////////////////////////////////////////////////////
 
-Person::~Person()
-{
-   // TODO : implement
-}
+Person::~Person(){}
