@@ -18,17 +18,19 @@ public:
 
 	Date();
 	int get_year(void);
-	void set_year(int _year);
 	int get_day(void);
-	void set_day(int _day);
 	int get_month(void);
-	void set_month(int _month);
 	int get_hour(void);
-	void set_hour(int _day);
 	int get_minute(void);
-	void set_minute(int _minute);
 	int get_second(void);
+
+	void set_year(int _year);
+	void set_day(int _day);
+	void set_month(int _month);
+	void set_hour(int _day);
+	void set_minute(int _minute);
 	void set_second(int _second);
+
 	string to_string(void);
 	~Date();
 

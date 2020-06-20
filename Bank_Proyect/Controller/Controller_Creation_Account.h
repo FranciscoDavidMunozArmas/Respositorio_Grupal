@@ -9,20 +9,18 @@
 #define __Controller_Creation_Account
 
 #include <iostream>
-
-#include "../Libraries/Menu.h"
+#include "Controller_Main_Option.h"
 
 using namespace std;
 
-class Controller_Creation_Account
+class Controller_Creation_Account : public Controller_Main_Option
 {
 public:
-    Controller_Creation_Account();
-    void init();
+    Controller_Creation_Account() : Controller_Main_Option() {};
 private:
-    Menu menu;
-    void _set_account();
-    int _account_option();
+    void _method();
+    void _options();
+    int _set_menu();
 protected:
 };
 

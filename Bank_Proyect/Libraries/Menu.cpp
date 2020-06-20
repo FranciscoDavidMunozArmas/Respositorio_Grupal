@@ -22,9 +22,12 @@
 #define DOWN 80
 #define ENTER 13
 
+#pragma once
+
 using namespace std;
 
-int Menu::options(char** option, int index) {
+template<typename T>
+int Menu::options(T* option, int index) {
     int selection = 1;
     int key;
     bool flag = true;

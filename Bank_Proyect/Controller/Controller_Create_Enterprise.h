@@ -5,22 +5,28 @@
  * Purpose: Declaration of the class Menu
  ***********************************************************************/
 
-#if !defined(__Controller)
-#define __Controller
+#if !defined(__Controller_Create_Enterprise)
+#define __Controller_Create_Enterprise
 
 #include <iostream>
 
-#include "Controller_Parent.h"
+#include "Controller_Client.h"
+#include "../Proyect/Person.h"
+
+class Person;
 
 using namespace std;
 
-class Controller: public Controller_Parent
+class Controller_Create_Enterprise : public Controller_Client
 {
 public:
-    Controller() : Controller_Parent() {};
+    Controller_Create_Enterprise(): Controller_Client() {};
 private:
+    Person _set_data();
+    char* _set_person();
     void _method();
-    void _selection_menu(bool* flag);
+    void _account_options();
+    int _account_type_option();
 protected:
 };
 

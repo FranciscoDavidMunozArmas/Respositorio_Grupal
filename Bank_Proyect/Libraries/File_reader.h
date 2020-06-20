@@ -21,13 +21,17 @@ public:
    template<typename T>
    void _write_in_file(FILE* file, char* file_name, T* data);
    template<typename T>
-   void _read_file(FILE* file, char* file_name, T* data);
+   void _write_in_file(char* file_name, T* data);
+   template<typename T>
+   T* _read_file(FILE* file, char* file_name, T* data);
+   template<typename T>
+   T* _read_file(char* file_name, T* data);
    template<typename T>
    void _look_by_key(FILE* file, char* file_name, string key, T* data);
    template<typename T>
    void _delete(FILE* file, char* file_name, string key);
    template<typename T>
-   void _update(FILE* file, char* file_name, string key, T data);
+   void _update(FILE* file, char* file_name, T* _data_update);
 
    void _delete_all(char* file_name);
 protected:

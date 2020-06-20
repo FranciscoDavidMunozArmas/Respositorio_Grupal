@@ -5,46 +5,42 @@
  * Purpose: Implementation of the class Array
  ***********************************************************************/
 
-#include "Controller_Creation_Account.h"
-
 #include <iostream>
 #include <stdlib.h>
 #include <stdio.h>
 
-#include "Controller_Create_Natural_Person.cpp"
-#include "Controller_Create_Enterprise.cpp"
-#include "Controller_Parent.cpp"
+#include "Controller_Record.h"
+#include "Controller_All_Record.cpp"
+#include "Controller_Look_By_Record.cpp"
 
 using namespace std;
 
-void Controller_Creation_Account::_method() {
+void Controller_Record::_method() {
 	_options();
 }
 
-void Controller_Creation_Account::_options() {
+void Controller_Record::_options() {
 	switch (_set_menu()) {
 	case 1:
 	    {
-	        Controller_Create_Natural_Person _ccnp;
-            _ccnp.init();
-		}
+	        Controller_All_Record _car;
+            _car.init();
+	    }
 		break;
 	case 2:
 	    {
-	        Controller_Create_Enterprise _cce;
-            _cce.init();
+			Controller_Look_By_Record _clbr;
+			_clbr.init();
 	    }
 		break;
 	}
-
-	system("pause");
 }
 
-int Controller_Creation_Account::_set_menu() {
 
+int Controller_Record::_set_menu() {
 	char** option = (char**)calloc(2, sizeof(char*));
 
-	*(option + 0) = "PERSONA NATURAL";
-	*(option + 1) = "PERSONA JURIDICA";
+	*(option + 0) = "MOSTRAR TODAS LAS CUENTAS";
+	*(option + 1) = "BUSCAR";
 	return menu.options(option, 2);
 }

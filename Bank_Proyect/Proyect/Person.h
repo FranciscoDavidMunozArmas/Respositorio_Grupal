@@ -16,23 +16,26 @@ class Person
 {
 public:
 	Person();
-	Person(const string _id,const string _name,const string _address,const string _phone);
-	string get_id(void);
-	void set_id(const string _id);
-	string get_name(void);
-	void set_name(const string _name);
-	string get_address(void);
-	void set_address(const string _address);
-	string get_phone(void);
-	void set_phone(const string _phone);
-	virtual string to_string(void);
+	Person(const char _id[13], const char _name[10], const char _address[10], const char _phone[10]);
+	char* get_id(void);
+	char* get_name(void);
+	char* get_address(void);
+	char* get_phone(void);
+
+	void set_id(char* _id);
+	void set_name(char* _name);
+	void set_address(char* _address);
+	void set_phone(char* _phone);
+
+	friend ostream& operator << (ostream& o, const Person& p);
+
 	~Person();
 
 protected:
-	string _name;
-	string _id;
-	string _address;
-	string _phone;
+	char _name[10];
+	char _id[13];
+	char _address[10];
+	char _phone[10];
 private:
 };
 

@@ -18,7 +18,7 @@ using namespace std;
 class Natural_person : public Person
 {
 public:
-	Natural_person(const string _id, const string _name, const string _address, const string _phone) :Person(_id, _name, _address, _phone) {};
+	Natural_person(const char _id[13], const char _name[10], const char _address[10], const char _phone[10]) :Person(_id, _name, _address, _phone) {};
 	Natural_person() :Person() {};
 	~Natural_person();
 

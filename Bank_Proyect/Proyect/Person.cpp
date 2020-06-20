@@ -7,6 +7,7 @@
 
 #include "Person.h"
 #include <sstream>
+#include <string>
 
 ////////////////////////////////////////////////////////////////////////
 // Name:       Person::Person()
@@ -16,10 +17,6 @@
 
 Person::Person()
 {
-	this->_address = "";
-	this->_id = "";
-	this->_name = "";
-	this->_phone = "";
 }
 
 ////////////////////////////////////////////////////////////////////////
@@ -33,12 +30,12 @@ Person::Person()
 // Return:
 ////////////////////////////////////////////////////////////////////////
 
-Person::Person(const string _id, const string _name, const string _address, const string _phone)
+Person::Person(const char _id[13], const char _name[10], const char _address[10], const char _phone[10])
 {
-	this->_address = _address;
-	this->_id = _id;
-	this->_name = _name;
-	this->_phone = _phone;
+	strcpy(this->_address, _address);
+	strcpy(this->_id, _id);
+	strcpy(this->_name, _name);
+	strcpy(this->_phone, _phone);
 }
 
 ////////////////////////////////////////////////////////////////////////
@@ -47,9 +44,9 @@ Person::Person(const string _id, const string _name, const string _address, cons
 // Return:     std::string
 ////////////////////////////////////////////////////////////////////////
 
-std::string Person::get_id(void)
+char* Person::get_id()
 {
-   return _id;
+	return _id;
 }
 
 ////////////////////////////////////////////////////////////////////////
@@ -60,9 +57,9 @@ std::string Person::get_id(void)
 // Return:     void
 ////////////////////////////////////////////////////////////////////////
 
-void Person::set_id(const string _id)
+void Person::set_id(char* _id)
 {
-   this->_id = _id;
+	strcpy(this->_id, _id);
 }
 
 ////////////////////////////////////////////////////////////////////////
@@ -71,7 +68,7 @@ void Person::set_id(const string _id)
 // Return:     std::string
 ////////////////////////////////////////////////////////////////////////
 
-std::string Person::get_name(void)
+char* Person::get_name()
 {
    return _name;
 }
@@ -84,9 +81,9 @@ std::string Person::get_name(void)
 // Return:     void
 ////////////////////////////////////////////////////////////////////////
 
-void Person::set_name(const string new_name)
+void Person::set_name(char* _name)
 {
-   this->_name = new_name;
+	strcpy(this->_name, _name);
 }
 
 ////////////////////////////////////////////////////////////////////////
@@ -95,7 +92,7 @@ void Person::set_name(const string new_name)
 // Return:     std::string
 ////////////////////////////////////////////////////////////////////////
 
-std::string Person::get_address(void)
+char* Person::get_address()
 {
    return _address;
 }
@@ -108,9 +105,9 @@ std::string Person::get_address(void)
 // Return:     void
 ////////////////////////////////////////////////////////////////////////
 
-void Person::set_address(const string _address)
+void Person::set_address(char* _address)
 {
-   this->_address = _address;
+	strcpy(this->_address, _address);
 }
 
 ////////////////////////////////////////////////////////////////////////
@@ -119,7 +116,7 @@ void Person::set_address(const string _address)
 // Return:     std::string
 ////////////////////////////////////////////////////////////////////////
 
-std::string Person::get_phone(void)
+char* Person::get_phone()
 {
    return _phone;
 }
@@ -132,16 +129,14 @@ std::string Person::get_phone(void)
 // Return:     void
 ////////////////////////////////////////////////////////////////////////
 
-void Person::set_phone(const string _phone)
+void Person::set_phone(char* _phone)
 {
-   this->_phone = _phone;
+	strcpy(this->_phone, _phone);
 }
 
-string Person::to_string()
-{
-	ostringstream oss;
-	oss << "Id:" << _id << "\tNombre:" << this->_name;
-	return oss.str();
+ostream& operator << (ostream& o, const Person& p) {
+	o << p._name << "\tID: " << p._id;
+	return o;
 }
 
 ////////////////////////////////////////////////////////////////////////

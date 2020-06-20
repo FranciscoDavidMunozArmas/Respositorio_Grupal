@@ -16,6 +16,8 @@
 #include <ctype.h>
 #include <mmsystem.h>
 
+#pragma once
+
 using namespace std;
 
 void Screen::gotoxy(int x, int y)

@@ -142,7 +142,7 @@ void Date::set_second(int _second)
 string Date::to_string(void)
 {
 	ostringstream oss;
-	oss <<_day << "/" << _month << "/" << _year;
+	oss <<_day << "/" << _month << "/" << _year << "\t\t" << _hour << ":" << _minute << ":" << _second;
 	return oss.str();
 }
 

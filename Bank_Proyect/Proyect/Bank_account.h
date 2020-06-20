@@ -30,12 +30,12 @@ enum class Account_type {
 class Bank_account
 {
 public:
-
+	Bank_account() {};
 	Bank_account(const Account_type _account_type, const Person& _client);
 	Bank_account(const Account_type _account_type, const Person& _client, const double _bank_balance);
 
 	Person get_client();
-	string get_account_number();
+	char* get_account_number();
 	double get_bank_balance();
 	Account_type get_account_type();
 	Date get_creation_date();
@@ -43,20 +43,24 @@ public:
 	void set_client(const Person _client);
 	void set_bank_balance(const double _bank_balance);
 	void set_creation_date(const Date _creation_date);
+
 	void add_transaction(const Transaction _operation);
-	string to_string();
+	void print_account();
+
+	friend ostream& operator << (ostream& o, const Bank_account& p);
 
    ~Bank_account();
 
 protected:
 private:
    Person _client;
-   string _account_number;
+   char _account_number[14];
    double _bank_balance;
    Account_type _account_type;
    Date _creation_date;
    Transaction* _transaction;
    Array_dynamic _ad;
+   string _create_key();
 };
 
 #endif

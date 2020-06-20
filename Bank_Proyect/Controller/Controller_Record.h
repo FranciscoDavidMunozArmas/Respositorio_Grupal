@@ -5,22 +5,24 @@
  * Purpose: Declaration of the class Menu
  ***********************************************************************/
 
-#if !defined(__Controller)
-#define __Controller
+#if !defined(__Controller_Record)
+#define __Controller_Record
 
 #include <iostream>
+#include "Controller_Main_Option.h"
 
-#include "Controller_Parent.h"
+#include "../Libraries/Menu.h"
 
 using namespace std;
 
-class Controller: public Controller_Parent
+class Controller_Record: public Controller_Main_Option
 {
 public:
-    Controller() : Controller_Parent() {};
+    Controller_Record() :Controller_Main_Option() {};
 private:
     void _method();
-    void _selection_menu(bool* flag);
+    void _options();
+    int _set_menu();
 protected:
 };
 

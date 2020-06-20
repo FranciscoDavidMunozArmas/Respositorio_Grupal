@@ -9,6 +9,8 @@
 #include "Transaction.h"
 #include "Bank_account.h"
 
+#pragma once
+
 ////////////////////////////////////////////////////////////////////////
 // Name:       Transaction::get_amount()
 // Purpose:    Implementation of Transaction::get_amount()

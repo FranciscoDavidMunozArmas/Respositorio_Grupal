@@ -15,7 +15,8 @@ using namespace std;
 
 class Menu {
 public:
-    int options(char** option, int index);
+    template<typename T>
+    int options(T* option, int index);
 private:
     Screen screen;
 protected:

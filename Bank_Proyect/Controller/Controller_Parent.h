@@ -5,23 +5,28 @@
  * Purpose: Declaration of the class Menu
  ***********************************************************************/
 
-#if !defined(__Controller)
-#define __Controller
+#if !defined(__Controller_Parent)
+#define __Controller_Parent
 
 #include <iostream>
-
-#include "Controller_Parent.h"
+#include "../Libraries/Menu.h"
+#include "../Libraries/Screen.h"
 
 using namespace std;
 
-class Controller: public Controller_Parent
+class Menu;
+class Screen;
+
+class Controller_Parent
 {
 public:
-    Controller() : Controller_Parent() {};
+    Controller_Parent();
+    void init();
 private:
-    void _method();
-    void _selection_menu(bool* flag);
 protected:
+    Menu menu;
+    Screen screen;
+    virtual void _method() = 0;
 };
 
 #endif

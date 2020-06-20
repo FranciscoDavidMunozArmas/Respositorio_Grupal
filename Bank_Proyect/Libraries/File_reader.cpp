@@ -11,6 +11,9 @@
 #include <string>
 #include <iostream>
 #include <fstream>
+#include <malloc.h>
+
+#pragma once
 
 using namespace std;
 
@@ -29,9 +32,9 @@ void File_reader::_check_file(FILE* file, char* file_name)
 	}
 	catch (char* file_name) {
 		fclose(file);
-		cout << "Error: No se puede abrir el archivo: " << file_name << endl;
+		//cout << "Error: No se puede abrir el archivo: " << file_name << endl;
 		file = fopen(file_name, "wb");
-		cout << "Archivo creado" << endl;
+		//cout << "Archivo creado" << endl;
 	}
 	fclose(file);
 }
@@ -58,7 +61,7 @@ void File_reader::_write_in_file(FILE* file, char* file_name, T* data)
 ////////////////////////////////////////////////////////////////////////
 
 template<typename T>
-void File_reader::_read_file(FILE* file, char* file_name, T* data)
+T* File_reader::_read_file(FILE* file, char* file_name, T* data)
 {
 	T item;
 	int index;
@@ -66,19 +69,18 @@ void File_reader::_read_file(FILE* file, char* file_name, T* data)
 	file = fopen(file_name, "rb");
 
 	fseek(file, 0, SEEK_END);
-	index = ftell(file) / sizeof(T);;
-	cout << index << endl;
+	index = ftell(file) / sizeof(T);
 
-	//*data = (T*)malloc(index*sizeof(T));
+	data = (T*)malloc(index*sizeof(T));
 
 	fseek(file, 0, SEEK_SET);
-	/*for (int i = 0; i < index; i++) {
-		fread(&item, sizeof(T), 1, file);
-		*(data + i) = item;
-	}*/
-	fread(data, sizeof(T), 1, file);
+	for (int i = 0; i < index; i++) {
+		fread((data + i), sizeof(T), 1, file);
+	}
 
 	fclose(file);
+
+	return data;
 }
 
 template<typename T>
@@ -92,8 +94,26 @@ void File_reader::_delete(FILE* file, char* file_name, string key)
 }
 
 template<typename T>
-void File_reader::_update(FILE* file, char* file_name, string key, T data) {
+void File_reader::_update(FILE* file, char* file_name, T* _data_update) {
+	T* _auxiliar;
 
+	_auxiliar = _read_file(file, file_name, _auxiliar);
+	file = fopen(file_name, "rb+");
+
+	fseek(file, 0, SEEK_END);
+	index = ftell(file) / sizeof(T);
+
+	fseek(file, 0, SEEK_SET);
+	for (int i = 0; i < index; i++) {
+		if (*(_data_update) == *(_auxiliar + i)) {
+			fseek(file, ftell(file) - sizeof(_data_update));
+			fwrite((_data_update), sizeof(_data_update), 1, file);
+			break;
+		}
+	}
+
+	fclose(file);
+	free(_auxiliar);
 }
 
 void File_reader::_delete_all(char* file_name) {
