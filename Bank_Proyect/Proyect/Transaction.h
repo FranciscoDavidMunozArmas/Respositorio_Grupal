@@ -23,16 +23,17 @@ using namespace std;
 class Transaction
 {
 public:
-	Transaction(const double _amount): _amount(_amount){};
+	Transaction(const bool _type): _type(_type){};
 	double get_amount();
 	void set_amount(const double _amount);
+	void print_transaction();
 	virtual double bank_method(const Bank_account& _account);
-	virtual void print_transaction(const Person& _client);
 
    ~Transaction();
 
 protected:
 	double _amount;
+	bool _type;
 private:
    Date _transaction_date;
 };

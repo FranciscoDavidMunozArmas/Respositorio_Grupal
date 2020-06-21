@@ -44,10 +44,11 @@ public:
 	void set_bank_balance(const double _bank_balance);
 	void set_creation_date(const Date _creation_date);
 
-	void add_transaction(const Transaction _operation);
+	void add_transaction(Transaction _operation);
 	void print_account();
 
 	friend ostream& operator << (ostream& o, const Bank_account& p);
+	bool operator == (const Bank_account& p);
 
    ~Bank_account();
 
@@ -58,9 +59,10 @@ private:
    double _bank_balance;
    Account_type _account_type;
    Date _creation_date;
-   Transaction* _transaction;
    Array_dynamic _ad;
+
    string _create_key();
+   void print_transactions();
 };
 
 #endif

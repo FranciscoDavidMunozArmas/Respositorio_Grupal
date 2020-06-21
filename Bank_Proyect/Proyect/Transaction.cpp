@@ -9,6 +9,8 @@
 #include "Transaction.h"
 #include "Bank_account.h"
 
+#include <sstream>
+
 #pragma once
 
 ////////////////////////////////////////////////////////////////////////
@@ -41,9 +43,15 @@ double Transaction::bank_method(const Bank_account& _account)
 	return 0;
 }
 
-void Transaction::print_transaction(const Person& _client)
-{
-	cout << "Transaccion" << endl;
+void Transaction::print_transaction() {
+	if (_type) {
+		cout << "Deposito: $";
+	}
+	else {
+		cout << "Retiro: $";
+	}
+
+	cout << _amount << "\t\t" << _transaction_date.to_string() << endl;
 }
 
 ////////////////////////////////////////////////////////////////////////

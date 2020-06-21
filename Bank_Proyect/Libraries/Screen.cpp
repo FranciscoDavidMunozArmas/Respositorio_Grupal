@@ -37,3 +37,12 @@ void Screen::hide_cursor()
     info.bVisible = false;
     SetConsoleCursorInfo(Cursor, &info);
 }
+
+void Screen::color_text(int color) {
+    HANDLE ColorText = GetStdHandle(STD_OUTPUT_HANDLE);
+    SetConsoleTextAttribute(ColorText, color);
+}
+
+//void Screen::color_background() {
+//
+//}

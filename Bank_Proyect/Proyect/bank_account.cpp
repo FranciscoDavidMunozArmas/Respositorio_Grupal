@@ -9,10 +9,15 @@
 #include "Date.h"
 #include "Person.h"
 #include "Bank_account.h"
+
 #include "../Libraries/Array_dinamic.cpp"
+#include "../Libraries/File_reader.cpp"
 
 #include <iostream>
 #include <sstream>
+#include <string>
+#include <stdlib.h>
+#include <stdio.h>
 
 #pragma once
 
@@ -32,7 +37,6 @@ Bank_account::Bank_account(const Account_type _account_type, const Person& _clie
 	Array_dynamic _ad;
 	this->_account_type = _account_type;
 	this->_client = _client;
-	this->_transaction = _ad._create_array(0, _transaction);
 	strcpy(_account_number, _create_key().c_str());
 	this->_bank_balance = 0;
 }
@@ -54,7 +58,6 @@ Bank_account::Bank_account(const Account_type _account_type, const Person& _clie
 	this->_client = _client;
 	this->_bank_balance = _bank_balance;
 	strcpy(_account_number, _create_key().c_str());
-	this->_transaction = _ad._create_array(0, _transaction);
 }
 
 ////////////////////////////////////////////////////////////////////////
@@ -159,16 +162,25 @@ void Bank_account::set_creation_date(const Date _creation_date)
 // Return:     void
 ////////////////////////////////////////////////////////////////////////
 
-void Bank_account::add_transaction(const Transaction _operation)
+void Bank_account::add_transaction(Transaction _operation)
 {
-	int _size = _ad._dynamic_size(this->_transaction);
-	_transaction = _ad._resize(this->_transaction, _size + 1);
-	*(_transaction + _size) = _operation;
+	FILE* file;
+	File_reader _fr;
+	ostringstream o;
+	o << "../File/" << _account_number << ".txt";
+	char* _file_path = (char*)malloc(o.str().size() * sizeof(char));
+	strcpy(_file_path, o.str().c_str());
+	_fr._write_in_file(file, _file_path, &_operation);
+
 }
 
 ostream& operator << (ostream& o, const Bank_account& p) {
 	o << "Cuenta: " << p._account_number << "\t\tPropietario: " << p._client;
 	return o;
+}
+
+bool Bank_account::operator == (const Bank_account& p) {
+	return (strcmp(this->_account_number, p._account_number) == 0);
 }
 
 void Bank_account::print_account() {
@@ -186,10 +198,11 @@ void Bank_account::print_account() {
 		break;
 	}
 	cout << "\t" << "\tSALDO: $" << _bank_balance << endl << endl;
+
+	print_transactions();
 }
 
 string Bank_account::_create_key() {
-	char* key;
 	ostringstream oss;
 	oss << _creation_date.get_year();
 	if (_creation_date.get_month() < 10) {
@@ -228,6 +241,25 @@ string Bank_account::_create_key() {
 	}
 
 	return oss.str();
+}
+
+void Bank_account::print_transactions() {
+	FILE* file;
+	File_reader _fr;
+	Transaction* _transaction;
+
+	ostringstream o;
+	o << "../File/" << _account_number << ".txt";
+	char* _file_path = (char*)malloc(o.str().size()*sizeof(char));
+	strcpy(_file_path, o.str().c_str());
+
+	_transaction = _fr._read_file(file, _file_path, _transaction);
+
+	if (_ad._dynamic_size(_transaction) != 0) {
+		for (int i = 0; i < _ad._dynamic_size(_transaction); i++) {
+			(_transaction + i)->print_transaction();
+		}
+	}
 }
 
 ////////////////////////////////////////////////////////////////////////

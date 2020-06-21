@@ -17,6 +17,8 @@ class Menu {
 public:
     template<typename T>
     int options(T* option, int index);
+    template<typename T>
+    int options(char* message ,T* option, int index);
 private:
     Screen screen;
 protected:

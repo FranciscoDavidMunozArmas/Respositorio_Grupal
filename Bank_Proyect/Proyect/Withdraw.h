@@ -8,15 +8,14 @@
 #if !defined(__Bank_Model_Withdraw_h)
 #define __Bank_Model_Withdraw_h
 
-#include <Transaction.h>
-#include <Bank_account.h>
+#include "Transaction.h"
+#include "Bank_account.h"
 
 class Withdraw : public Transaction
 {
 public:
-	Withdraw(const double _amount);
-	double bank_method(const Bank_account& _account);
-	void print_transaction(const Bank_account& _account);
+	Withdraw() : Transaction(false){};
+	double bank_method(Bank_account* _account);
 protected:
 private:
 
