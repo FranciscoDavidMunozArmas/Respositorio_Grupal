@@ -12,6 +12,8 @@
 #include "Controller.h"
 #include "Controller_Creation_Account.cpp"
 #include "Controller_Record.cpp"
+#include "Controller_Delete_Account.cpp"
+#include "Controller_Operation.cpp"
 
 #include "../Libraries/Menu.cpp"
 #include "../Libraries/Screen.h"
@@ -28,17 +30,9 @@ void Controller::_method() {
 
 void Controller::_selection_menu(bool* flag)
 {
-	char** option = (char**)calloc(5, sizeof(char*));
 
-	*(option + 0) = "Crear cuenta";
-	*(option + 1) = "Registros";
-	*(option + 2) = "Operacion Bancaria";
-	*(option + 3) = "Informacion";
-	*(option + 4) = "Salir";
-
-	switch (menu.options(option, 5)) {
+	switch (_set_menu()) {
 	case 1: {
-		system("cls");
 		Controller_Creation_Account _cca;
 		_cca.init();
 	}break;
@@ -47,11 +41,30 @@ void Controller::_selection_menu(bool* flag)
 		_cr.init();
 	}break;
 	case 3: {
+		//Controller_Operation _co;
+		//_co.init();
 	}break;
 	case 4: {
 	}break;
-	case 5: {
+	case 5:{
+		Controller_Delete_Account _cda;
+		_cda.init();
+	}break;
+	case 6: {
 		*flag = false;
 	}break;
 	}
+}
+
+int Controller::_set_menu() {
+	char** option = (char**)malloc(6 * sizeof(char*));
+
+	*(option + 0) = "CREAR CUENTA";
+	*(option + 1) = "REGISTROS";
+	*(option + 2) = "OPERACION BANCARIA";
+	*(option + 3) = "INFORMACION";
+	*(option + 4) = "BORRAR CUENTA";
+	*(option + 5) = "SALIR";
+
+	return menu.options(option, 6);
 }

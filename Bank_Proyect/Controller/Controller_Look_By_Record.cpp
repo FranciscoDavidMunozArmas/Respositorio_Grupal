@@ -17,6 +17,10 @@
 #include "../Libraries/File_reader.cpp"
 #include "../Libraries/Input.h"
 
+#include "../Libraries/Look_by.cpp"
+
+#pragma once
+
 using namespace std;
 
 void Controller_Look_By_Record::_method() {
@@ -31,6 +35,8 @@ void Controller_Look_By_Record::_show_record()
 	Input _input;
 	_ba =_fr._read_file(file, _path_account, _ba);
 
+
+	Look_by _lb;
 
 	if (_ad._dynamic_size(_ba) == 0) {
 		cout << "No hay cuentas disponibles" << endl;
@@ -48,14 +54,11 @@ void Controller_Look_By_Record::_show_record()
 		_key = (char*)malloc(_aux.size() * sizeof(char));
 		strcpy(_key, _aux.c_str());
 		int _index_1 = _find_by_account(_key, _ba);
-		system("cls");
-		if (_index_1 == -1) {
-			cout << "NO EXISTE LA CUENTA" << endl;
-			system("pause");
-		}
-		else {
-			_show_information(*(_ba + _index_1));
-		}
+
+		//int _index_1 = _find_by_name(_key, _ba);
+
+		_show_information(_ba, _index_1);
+		free(_key);
 	}
 	break;
 	case 2:
@@ -66,14 +69,10 @@ void Controller_Look_By_Record::_show_record()
 		_name = (char*)malloc(_aux.size()*sizeof(char));
 		strcpy(_name, _aux.c_str());
 		int _index_2 = _find_by_name(_name, _ba);
-		system("cls");
-		if (_index_2 == -1) {
-			cout << "NO EXISTE EL USUARIO" << endl;
-			system("pause");
-		}
-		else {
-			_show_information(*(_ba + _index_2));
-		}
+
+		//int _index_2 = _lb.look_by_key(_name, _get_name_record(_ba));
+
+		_show_information(_ba, _index_2);
 		free(_name);
 	}
 	break;
@@ -82,9 +81,14 @@ void Controller_Look_By_Record::_show_record()
 	free(_ba);
 }
 
-void Controller_Look_By_Record::_show_information(Bank_account _ba) {
+void Controller_Look_By_Record::_show_information(Bank_account* _ba, int index) {
 	system("cls");
-	_ba.print_account();
+	if (index == -1) {
+		cout << "No hay registro" << endl;
+	}
+	else {
+		(_ba + index)->print_account();
+	}
 	system("pause");
 }
 
@@ -117,3 +121,24 @@ int Controller_Look_By_Record::_find_by_name(char* _name, Bank_account* _ba) {
 	return -1;
 
 }
+
+/*
+char** Controller_Look_By_Record::_get_name_record(Bank_account* _ba) {
+	Array_dynamic _ad;
+	char** _aux = (char**)malloc(_ad._dynamic_size(_ba)*sizeof(char*));
+	for (int i = 0; i < _ad._dynamic_size(_ba); i++) {
+		strcpy(*(_aux + i), (_ba + i)->get_client().get_name());
+	}
+	return _aux;
+}
+
+char** Controller_Look_By_Record::_get_account_number_record(Bank_account* _ba) {
+	Array_dynamic _ad;
+	char** _aux = (char**)malloc(_ad._dynamic_size(_ba)*sizeof(char*));
+	for (int i = 0; i < _ad._dynamic_size(_ba); i++) {
+		strcpy(*(_aux + i), (_ba + i)->get_account_number());
+	}
+	return _aux;
+}
+
+*/

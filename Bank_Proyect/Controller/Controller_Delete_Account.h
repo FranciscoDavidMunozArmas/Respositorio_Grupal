@@ -5,23 +5,30 @@
  * Purpose: Declaration of the class Menu
  ***********************************************************************/
 
-#if !defined(__Controller)
-#define __Controller
+#if !defined(__Controller_Delete_Account)
+#define __Controller_Delete_Account
 
 #include <iostream>
+#include <stdio.h>
+#include <stdlib.h>
 
-#include "Controller_Parent.h"
+#include "../Proyect/Bank_account.h"
+#include "Controller_Entity.h"
 
 using namespace std;
 
-class Controller: public Controller_Parent
+class Menu;
+class File_reader;
+
+class Controller_Delete_Account : public Controller_Entity
 {
 public:
-    Controller() : Controller_Parent() {};
+    Controller_Delete_Account() : Controller_Entity() {};
 private:
     void _method();
-    void _selection_menu(bool* flag);
+    void _delete_record();
     int _set_menu();
+    char* _get_account_number();
 protected:
 };
 
