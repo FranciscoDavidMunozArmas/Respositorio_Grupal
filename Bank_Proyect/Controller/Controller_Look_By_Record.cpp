@@ -53,7 +53,7 @@ void Controller_Look_By_Record::_show_record()
 		string _aux = _input.input_int_number("NUMERO DE CUENTA: ").c_str();
 		_key = (char*)malloc(_aux.size() * sizeof(char));
 		strcpy(_key, _aux.c_str());
-		int _index_1 = _find_by_account(_key, _ba);
+		int _index_1 = _find_by_account(_key, _ba, _ad._dynamic_size(_ba)-1);
 
 		//int _index_1 = _find_by_name(_key, _ba);
 
@@ -68,7 +68,7 @@ void Controller_Look_By_Record::_show_record()
 		string _aux = _input.input("NOMBRE DEL PROPIETARIO: ").c_str();
 		_name = (char*)malloc(_aux.size()*sizeof(char));
 		strcpy(_name, _aux.c_str());
-		int _index_2 = _find_by_name(_name, _ba);
+		int _index_2 = _find_by_name(_name, _ba, _ad._dynamic_size(_ba) - 1);
 
 		//int _index_2 = _lb.look_by_key(_name, _get_name_record(_ba));
 
@@ -100,26 +100,28 @@ int Controller_Look_By_Record::_set_menu() {
 	return menu.options(option, 2);
 }
 
-int Controller_Look_By_Record::_find_by_account(char* _key, Bank_account* _ba) {
-	Array_dynamic _ad;
-	for (int i = 0; i < _ad._dynamic_size(_ba); i++) {
-		if (strcmp(_key,(_ba + i)->get_account_number()) == 0) {
-			return i;
-		}
+int Controller_Look_By_Record::_find_by_account(char* _key, Bank_account* _ba, int _index) {
+	if (_index <= -1) {
+		return -1;
 	}
-	return -1;
-
+	else if (strcmp(_key, (_ba + _index)->get_account_number()) == 0) {
+		return _index;
+	}
+	else {
+		_find_by_account(_key, _ba, _index - 1);
+	}
 }
 
-int Controller_Look_By_Record::_find_by_name(char* _name, Bank_account* _ba) {
-	Array_dynamic _ad;
-	for (int i = 0; i < _ad._dynamic_size(_ba); i++) {
-		if (strcmp(_name, (_ba + i)->get_client().get_name()) == 0) {
-			return i;
-		}
+int Controller_Look_By_Record::_find_by_name(char* _name, Bank_account* _ba, int _index) {
+	if (_index <= -1) {
+		return -1;
 	}
-	return -1;
-
+	else if (strcmp(_name, (_ba + _index)->get_client().get_name()) == 0) {
+		return _index;
+	}
+	else {
+		_find_by_name(_name, _ba, _index - 1);
+	}
 }
 
 /*

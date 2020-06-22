@@ -35,6 +35,7 @@ void Controller_Withdraw::_operation() {
 		_wd.set_amount(_amount);
 		_wd.bank_method((_ba + _index));
 		(_ba + _index)->add_transaction(_wd);
+
 		_fr._update(file, _path_account, (_ba + _index));
 
 		system("cls");

@@ -12,7 +12,8 @@ using namespace std;
 
 class Look_by{
 public:
-	int look_by_key(char* _key, char**_key_array);
+	//int look_by_key(char* _key, char**_key_array);
+	int look_by_key(char* _key, char** _key_array, int _index);
 };
 
 #endif

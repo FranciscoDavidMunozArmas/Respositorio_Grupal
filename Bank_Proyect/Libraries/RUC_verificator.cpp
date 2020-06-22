@@ -33,7 +33,7 @@ bool RUC_verificator::RUC_verify(char* RUC) {
         return false;
     }
 
-    switch (to_int(RUC[2])) {
+    switch (to_int(*(RUC + 2))) {
     case 6:
         if (!check_for_6(RUC, 3, 2, 7, 6, 5, 4, 3, 2)) {
             return false;
@@ -45,14 +45,14 @@ bool RUC_verificator::RUC_verify(char* RUC) {
         }
         break;
     default:
-        if (!is_between(-1, to_int(RUC[2]), 6)) {
+        if (!is_between(-1, to_int(*(RUC + 2)), 6)) {
             return false;
         }
         string ID;
         for (int i = 0; i < 10; i++) {
-            ID += RUC[i];
+            ID += *(RUC + i);
         }
-        if (!check_last_digit(ID)) {
+        if (!check_last_digit((char*)ID.c_str())) {
             return false;
         }
         break;

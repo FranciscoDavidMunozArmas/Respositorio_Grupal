@@ -35,8 +35,7 @@ void Controller_Deposit::_operation() {
 		_d.set_amount(_amount);
 		_d.bank_method((_ba + _index));
 		(_ba + _index)->add_transaction(_d);
-		
-		cout << "" << endl;
+
 		_fr._update(file,_path_account, (_ba + _index));
 
 		system("cls");

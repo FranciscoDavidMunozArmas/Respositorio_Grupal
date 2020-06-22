@@ -18,6 +18,7 @@
 #include "../Libraries/RUC_verificator.cpp"
 #include "../Libraries/ID_verificator.cpp"
 #include "../Libraries/To_number.cpp"
+#include "../Libraries/Phone_verificator.cpp"
 
 #pragma once
 
@@ -85,11 +86,12 @@ char* Controller_Client::set_id(int i) {
 }
 
 char* Controller_Client::set_phone() {
+	Phone_verificator _p;
 	string _phone;
 	do {
 		system("cls");
 		_phone = input.input("TELEFONO: ");
-	} while (_phone.size() != 10);
+	} while (!_p.Phone_verify((char*)_phone.c_str()));
 	char* _aux = (char*)malloc(_phone.size()*sizeof(char));
 	strcpy(_aux, _phone.c_str());
 	return _aux;

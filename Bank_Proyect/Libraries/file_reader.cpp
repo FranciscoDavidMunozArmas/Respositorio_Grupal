@@ -126,7 +126,6 @@ void File_reader::_update(FILE* file, char* file_name, T* _data_update) {
 	}
 
 	free(_auxiliar_array);
-	fclose(file);
 }
 
 void File_reader::_delete_all(char* file_name) {

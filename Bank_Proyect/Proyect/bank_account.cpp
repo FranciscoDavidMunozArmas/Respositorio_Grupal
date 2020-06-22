@@ -226,7 +226,7 @@ string Bank_account::_create_key() {
 		oss << _creation_date.get_hour();
 	}
 
-	if (_creation_date.get_hour() < 10) {
+	if (_creation_date.get_minute() < 10) {
 		oss << "0" << _creation_date.get_minute();
 	}
 	else {

@@ -13,6 +13,8 @@
 #include <string>
 #include <ctype.h>
 
+#pragma once
+
 using namespace std;
 
 ////////////////////////////////////////////////////////////////////////
@@ -22,21 +24,24 @@ using namespace std;
 // - ID
 // Return:     bool
 ////////////////////////////////////////////////////////////////////////
-bool ID_verificator::ID_verify(string ID){
+bool ID_verificator::ID_verify(char* ID){
 	if (!is_int_number(ID)) {
 		return false;
 	}
 
-	if(ID.length() != 10){
+	string _aux_ID = ID;
+	if(_aux_ID.length() != 10){
         return false;
 	}
 
-	char province[2] = { ID[0], ID[1] };
+	char* province = (char*)calloc(2, sizeof(char));
+	*(province + 0) = *(ID + 0);
+	*(province + 0) = *(ID + 1);
 	if (!is_between(0, to_int(province), 24)) {
 		return false;
 	}
 
-	if (!is_between(-1, to_int(ID[2]), 6)) {
+	if (!is_between(-1, to_int(*(ID + 2)), 6)) {
 		return false;
 	}
 
@@ -81,14 +86,15 @@ int ID_verificator::next_ten(int number) {
 // - number
 // Return:     bool
 ////////////////////////////////////////////////////////////////////////
-bool ID_verificator::check_last_digit(string ID) {
+bool ID_verificator::check_last_digit(char* ID) {
 	int check_number = 0;
-	for (int i = 0; i < ID.length() - 1; i++) {
+	string _aux_ID = ID;
+	for (int i = 0; i < _aux_ID.length() - 1; i++) {
 		if (i % 2) {
-			check_number += to_int(ID[i]);
+			check_number += to_int(*(ID + i));
 		}
 		else {
-			int number = to_int(ID[i]) * 2;
+			int number = to_int(*(ID + i)) * 2;
 			if (number >= 10) {
 				check_number += number - 9;
 			}
@@ -98,7 +104,7 @@ bool ID_verificator::check_last_digit(string ID) {
 		}
 	}
 
-	if ((next_ten(check_number) - check_number) != to_int(ID[9])) {
+	if ((next_ten(check_number) - check_number) != to_int(*(ID + 9))) {
 		return false;
 	}
 

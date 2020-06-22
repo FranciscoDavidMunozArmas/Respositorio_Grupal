@@ -37,7 +37,7 @@ void Controller_Delete_Account::_delete_record()
 	_ba =_fr._read_file(file, _path_account, _ba);
 
 	char* _key = _get_account_number();
-	int _index = _clbr._find_by_account(_key, _ba);
+	int _index = _clbr._find_by_account(_key, _ba, _ad._dynamic_size(_ba) - 1);
 
 	try {
 		if (_index == -1) {

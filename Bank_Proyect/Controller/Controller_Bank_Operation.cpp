@@ -10,6 +10,7 @@
 #include "Controller_Look_By_Record.cpp"
 #include "../Libraries/File_reader.h"
 #include "../Libraries/Input.h"
+#include "../Libraries/Array_dinamic.h"
 #include "../Proyect/Bank_account.h"
 
 #include "../Libraries/To_number.h"
@@ -27,6 +28,7 @@ void Controller_Bank_Operation::_method() {
 }
 
 int Controller_Bank_Operation::_get_account(Bank_account* _ba) {
+	Array_dynamic _ad;
 	Controller_Look_By_Record _clbr;
 	Input _input;
 
@@ -35,7 +37,7 @@ int Controller_Bank_Operation::_get_account(Bank_account* _ba) {
 	string _aux = _input.input_int_number("NUMERO DE CUENTA: ").c_str();
 	_key = (char*)malloc(_aux.size() * sizeof(char));
 	strcpy(_key, _aux.c_str());
-	int _index = _clbr._find_by_account(_key, _ba);
+	int _index = _clbr._find_by_account(_key, _ba, _ad._dynamic_size(_ba) - 1);
 
 	return _index;
 }

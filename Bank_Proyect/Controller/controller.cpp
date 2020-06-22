@@ -41,8 +41,8 @@ void Controller::_selection_menu(bool* flag)
 		_cr.init();
 	}break;
 	case 3: {
-		//Controller_Operation _co;
-		//_co.init();
+		Controller_Operation _co;
+		_co.init();
 	}break;
 	case 4: {
 	}break;
