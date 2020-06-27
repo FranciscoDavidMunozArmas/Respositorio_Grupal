@@ -1,5 +1,13 @@
-#include <iostream>
+  
+/***********************************************************************
+ *            UNIVERSIDAD DE LAS FUERZAS ARMADAS ESPE
+ * Module:  Main.cpp
+ * Author:  Muñoz Armas Francisco David & Daniela Orellana
+ * Modified: viernes, 26 de junio de 2020 21:12:05
+ * Purpose: Implementation of the main class
+ ***********************************************************************/
 
+#include <iostream>
 #include "O(1).cpp"
 #include "O(log_n).cpp"
 #include "O(n).cpp"
