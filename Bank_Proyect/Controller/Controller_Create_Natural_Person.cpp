@@ -1,10 +1,11 @@
-/***********************************************************************
- * Module:  Array.cpp
- * Author:  USUARIO
- * Modified: jueves, 28 de mayo de 2020 19:07:11
- * Purpose: Implementation of the class Array
- ***********************************************************************/
 
+/*
+ * Universidad la Fuerzas Armadas ESPE
+ *
+ * @autor David Munoz & Daniela Orellana
+ * @date Jueves, 28 de mayo de 2020 19:07:11
+ * @function Implementation of _Create_Natural_Person
+*/
 #include "Controller_Create_Natural_Person.h"
 
 #include <iostream>
@@ -18,10 +19,18 @@
 
 using namespace std;
 
+/**
+ * @brief _method
+ * @param
+*/
 void Controller_Create_Natural_Person::_method() {
 	_account_options();
 }
 
+/**
+ * @brief _account_options
+ * @param
+*/
 void Controller_Create_Natural_Person::_account_options() {
 	switch (_account_type_option()) {
 	case 1:
@@ -43,6 +52,10 @@ void Controller_Create_Natural_Person::_account_options() {
 	}
 }
 
+/**
+ * @brief _account_type_option
+ * @param 
+*/
 int Controller_Create_Natural_Person::_account_type_option() {
 	char** option = (char**)calloc(2, sizeof(char*));
 
@@ -51,6 +64,10 @@ int Controller_Create_Natural_Person::_account_type_option() {
 	return menu.options(option, 2);
 }
 
+/**
+ * @brief _set_data
+ * @param 
+*/
 Person Controller_Create_Natural_Person::_set_data() {
 	char* _name;
 	char* _id;
