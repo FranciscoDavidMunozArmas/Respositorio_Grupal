@@ -1,9 +1,11 @@
-/***********************************************************************
- * Module:  Menu.h
- * Author:  USUARIO
- * Modified: jueves, 28 de mayo de 2020 19:07:11
- * Purpose: Declaration of the class Menu
- ***********************************************************************/
+  
+/*
+ * Universidad la Fuerzas Armadas ESPE
+ *
+ * @autor David Munoz & Daniela Orellana
+ * @date jueves, 28 de mayo de 2020 19:07:11
+ * @function Implementation of the class Controller_Bank_Operation
+*/
 
 #if !defined(__Controller_Bank_Operation)
 #define __Controller_Bank_Operation
