@@ -1,10 +1,11 @@
-/***********************************************************************
- * Module:  Array.cpp
- * Author:  USUARIO
- * Modified: jueves, 28 de mayo de 2020 19:07:11
- * Purpose: Implementation of the class Array
- ***********************************************************************/
 
+/*
+ * Universidad la Fuerzas Armadas ESPE
+ *
+ * @autor David Munoz & Daniela Orellana
+ * @date Jueves, 28 de mayo de 2020 19:07:11
+ * @function Implementation of Controller_Client
+*/
 #include <iostream>
 #include <stdlib.h>
 #include <stdio.h>
@@ -24,6 +25,10 @@
 
 using namespace std;
 
+/**
+ * @brief _set_balance
+ * @param _type 
+*/
 double Controller_Client::_set_balance(Account_type _type) {
 	double _balance;
 
@@ -46,6 +51,11 @@ double Controller_Client::_set_balance(Account_type _type) {
 	return _balance;
 }
 
+/**
+ * @brief set_name
+ * @param _phrase 
+*/
+
 char* Controller_Client::set_name(char* _phrase) {
 	string _name;
 	do {
@@ -57,6 +67,10 @@ char* Controller_Client::set_name(char* _phrase) {
 	return _aux;
 }
 
+/**
+ * @brief set_id
+ * @param i 
+*/
 char* Controller_Client::set_id(int i) {
 	string _id_;
 	char* _aux;
@@ -85,6 +99,10 @@ char* Controller_Client::set_id(int i) {
 	return _aux;
 }
 
+/**
+ * @brief set_phone
+ * @param 
+*/
 char* Controller_Client::set_phone() {
 	Phone_verificator _p;
 	string _phone;
@@ -97,6 +115,10 @@ char* Controller_Client::set_phone() {
 	return _aux;
 }
 
+/**
+ * @brief set_address
+ * @param 
+*/
 char* Controller_Client::set_address() {
 	string _address;
 	do {
