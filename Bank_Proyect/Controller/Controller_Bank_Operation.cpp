@@ -1,9 +1,11 @@
-/***********************************************************************
- * Module:  Array.cpp
- * Author:  USUARIO
- * Modified: jueves, 28 de mayo de 2020 19:07:11
- * Purpose: Implementation of the class Array
- ***********************************************************************/
+
+/*
+ * Universidad la Fuerzas Armadas ESPE
+ *
+ * @autor David Munoz & Daniela Orellana
+ * @date Jueves, 28 de mayo de 2020 19:07:14
+ * @function Implementation of Controller_Bank_Operation
+*/
 
 #include "Controller_Bank_Operation.h"
 
@@ -23,10 +25,18 @@
 
 using namespace std;
 
+/**
+ * @brief _method
+ * @param  
+*/
 void Controller_Bank_Operation::_method() {
 	_operation();
 }
 
+/**
+ * @brief _get_account
+ * @param _ba 
+*/
 int Controller_Bank_Operation::_get_account(Bank_account* _ba) {
 	Array_dynamic _ad;
 	Controller_Look_By_Record _clbr;
