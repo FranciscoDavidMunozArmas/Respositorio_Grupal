@@ -1,9 +1,11 @@
-/***********************************************************************
- * Module:  Array.cpp
- * Author:  USUARIO
- * Modified: jueves, 28 de mayo de 2020 19:07:11
- * Purpose: Implementation of the class Array
- ***********************************************************************/
+
+/*
+ * Universidad la Fuerzas Armadas ESPE
+ *
+ * @autor David Munoz & Daniela Orellana
+ * @date Jueves, 28 de mayo de 2020 19:07:11
+ * @function Implementation of Controller_All_Record
+*/
 
 #include <iostream>
 #include <stdlib.h>
