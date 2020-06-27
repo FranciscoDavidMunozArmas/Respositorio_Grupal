@@ -19,6 +19,10 @@ using namespace std;
 
 Controller::Controller() {}
 
+/**
+ * @brief init
+ * @param  
+*/
 void Controller::init()
 {
 	screen.hide_cursor();
@@ -28,6 +32,10 @@ void Controller::init()
 	} while (flag);
 }
 
+/**
+ * @brief _selection_menu
+ * @param flag
+*/
 void Controller::_selection_menu(bool* flag)
 {
 	char** option = (char**)calloc(3, sizeof(char*));
