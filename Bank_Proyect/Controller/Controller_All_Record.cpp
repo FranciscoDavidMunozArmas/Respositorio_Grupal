@@ -17,11 +17,17 @@
 #include "../Libraries/File_reader.cpp"
 
 using namespace std;
-
+/**
+ * @brief _method
+ * @param 
+*/
 void Controller_All_Record::_method() {
 	_show_records();
 }
-
+/**
+ * @brief _show_records
+ * @param  
+*/
 void Controller_All_Record::_show_records()
 {
 	system("cls");
@@ -48,6 +54,10 @@ void Controller_All_Record::_show_records()
 	free(_ba);
 }
 
+/**
+ * @brief _show_information
+ * @param _ba
+*/
 void Controller_All_Record::_show_information(Bank_account _ba) {
 	system("cls");
 	_ba.print_account();
