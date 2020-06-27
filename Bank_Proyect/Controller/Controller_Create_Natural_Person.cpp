@@ -4,7 +4,7 @@
  *
  * @autor David Munoz & Daniela Orellana
  * @date Jueves, 28 de mayo de 2020 19:07:11
- * @function Implementation of _Create_Natural_Person
+ * @function Implementation of Controller_Create_Natural_Person
 */
 #include "Controller_Create_Natural_Person.h"
 
