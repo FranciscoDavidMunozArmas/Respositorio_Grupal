@@ -1,10 +1,10 @@
-/***********************************************************************
- * Module:  Transaction.h
- * Author:  David Muñoz & Daniela Orellana
- * Modified: martes, 2 de junio de 2020 15:34:44
- * Purpose: Declaration of the class Transaction
- ***********************************************************************/
-
+/*
+ * Universidad la Fuerzas Armadas ESPE
+ *
+ * @autor David Munoz & Daniela Orellana
+ * @date Martes, 2 de Junio de 2020
+ * @function Declaration of the class Transaction
+*/
 #if !defined(__Bank_Model_Transaction_h)
 #define __Bank_Model_Transaction_h
 
