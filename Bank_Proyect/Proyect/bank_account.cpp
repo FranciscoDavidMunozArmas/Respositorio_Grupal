@@ -1,12 +1,12 @@
-/*
- * Universidad la Fuerzas Armadas ESPE
- *
- * @autor David Munoz & Daniela Orellana
- * @date Martes, 9 de Junio de 2020 10:07:14
- * @function Implementation of bank_account
-*/
+/***********************************************************************
+ * Module:  Bank_account.cpp
+ * Author:  David Muñoz & Daniela Orellana
+ * Modified: martes, 9 de junio de 2020 16:05:48
+ * Purpose: Implementation of the class Bank_account
+ ***********************************************************************/
+
 #include "Transaction.cpp"
-#include "Date.h"
+#include "../Libraries/Date.h"
 #include "Person.h"
 #include "Bank_account.h"
 
@@ -25,7 +25,9 @@ using namespace std;
 
 /**
  * @brief Bank_account
- * @param _account_type, _client
+ * @param _account_type 
+ * @param _client 
+ * @return 
 */
 Bank_account::Bank_account(const Account_type _account_type, const Person& _client)
 {
@@ -37,8 +39,11 @@ Bank_account::Bank_account(const Account_type _account_type, const Person& _clie
 }
 
 /**
- * @brief Banck_account
- * @param _account_type, _client, _bank_balance
+ * @brief Bank_account
+ * @param _account_type 
+ * @param _client 
+ * @param _bank_balance 
+ * @return 
 */
 Bank_account::Bank_account(const Account_type _account_type, const Person& _client, const double _bank_balance)
 {
@@ -50,15 +55,16 @@ Bank_account::Bank_account(const Account_type _account_type, const Person& _clie
 
 /**
  * @brief get_client
- * @param  
+ * @return Person
 */
 Person Bank_account::get_client()
 {
    return _client;
 }
+
 /**
  * @brief get_account_number
- * @param  
+ * @return char*
 */
 char* Bank_account::get_account_number()
 {
@@ -67,7 +73,7 @@ char* Bank_account::get_account_number()
 
 /**
  * @brief get_bank_balance
- * @param  
+ * @return double
 */
 double Bank_account::get_bank_balance()
 {
@@ -76,7 +82,7 @@ double Bank_account::get_bank_balance()
 
 /**
  * @brief get_account_type
- * @param  
+ * @return Account_type
 */
 Account_type Bank_account::get_account_type()
 {
@@ -85,7 +91,7 @@ Account_type Bank_account::get_account_type()
 
 /**
  * @brief get_creation_date
- * @param  
+ * @return Date
 */
 Date Bank_account::get_creation_date()
 {
@@ -94,7 +100,7 @@ Date Bank_account::get_creation_date()
 
 /**
  * @brief set_client
- * @param _client
+ * @param _client 
 */
 void Bank_account::set_client(const Person _client)
 {
@@ -102,8 +108,8 @@ void Bank_account::set_client(const Person _client)
 }
 
 /**
- * @brief set_bank_balanc
- * @param _bank_balance
+ * @brief set_bank_balance
+ * @param _bank_balance 
 */
 void Bank_account::set_bank_balance(const double _bank_balance)
 {
@@ -112,7 +118,7 @@ void Bank_account::set_bank_balance(const double _bank_balance)
 
 /**
  * @brief set_creation_date
- * @param _creation_date
+ * @param _creation_date 
 */
 void Bank_account::set_creation_date(const Date _creation_date)
 {
@@ -121,7 +127,7 @@ void Bank_account::set_creation_date(const Date _creation_date)
 
 /**
  * @brief add_transaction
- * @param _operation
+ * @param _operation 
 */
 void Bank_account::add_transaction(Transaction _operation)
 {
@@ -135,14 +141,21 @@ void Bank_account::add_transaction(Transaction _operation)
 
 }
 
+/**
+ * @brief <<
+ * @param o 
+ * @param p 
+ * @return ostream&
+*/
 ostream& operator << (ostream& o, const Bank_account& p) {
 	o << "Cuenta: " << p._account_number << "\t\tPropietario: " << p._client;
 	return o;
 }
 
 /**
- * @brief operator
- * @param p
+ * @brief ==
+ * @param p 
+ * @return bool
 */
 bool Bank_account::operator == (const Bank_account& p) {
 	return (strcmp(this->_account_number, p._account_number) == 0);
@@ -150,7 +163,6 @@ bool Bank_account::operator == (const Bank_account& p) {
 
 /**
  * @brief print_account
- * @param  
 */
 void Bank_account::print_account() {
 	cout << "NUMERO DE CUENTA: " << _account_number << endl;
@@ -173,7 +185,7 @@ void Bank_account::print_account() {
 
 /**
  * @brief _create_key
- * @param  
+ * @return string
 */
 string Bank_account::_create_key() {
 	ostringstream oss;
@@ -218,7 +230,6 @@ string Bank_account::_create_key() {
 
 /**
  * @brief print_transactions
- * @param  
 */
 void Bank_account::print_transactions() {
 	FILE* file;
@@ -239,8 +250,58 @@ void Bank_account::print_transactions() {
 	}
 }
 
+string Bank_account::_get_account() {
+	ostringstream oss;
+	oss << "NUMERO DE CUENTA: " << _account_number << endl;
+	oss << "PROPIETARIO: " << _client.get_name() << endl;
+	oss << "FECHA DE CREACION: " << _creation_date.to_string() << endl;
+	oss << "TIPO DE CUENTA: ";
+	switch (_account_type)
+	{
+	case Account_type::_CHECKING_ACCOUNT:
+		oss << "CORRIENTE" << endl;
+		break;
+	case Account_type::_SAVING_ACCOUNT:
+		oss << "AHORRO" << endl;
+		break;
+	}
+	oss << "\t" << "\tSALDO: $" << _bank_balance << endl << endl;
+
+	return oss.str();
+}
+
+string Bank_account::_get_account_all_data() {
+	ostringstream oss;
+	oss << _get_account() << endl << endl;
+	oss << _all_transactions() << endl;
+
+	return oss.str();
+}
+
+string Bank_account::_all_transactions() {
+	FILE* file;
+	File_reader _fr;
+	Transaction* _transaction;
+	ostringstream oss;
+
+	ostringstream o;
+	o << "../File/" << _account_number << ".txt";
+	char* _file_path = (char*)malloc(o.str().size() * sizeof(char));
+	strcpy(_file_path, o.str().c_str());
+
+	_transaction = _fr._read_file(file, _file_path, _transaction);
+
+	if (_ad._dynamic_size(_transaction) != 0) {
+		for (int i = 0; i < _ad._dynamic_size(_transaction); i++) {
+			oss << (_transaction + i)->_get_transaction() << endl;;
+		}
+	}
+
+	return oss.str();
+}
+
 /**
- * @brief Bank_account
- * @param  
+ * @brief ~Bank_account
+ * @return 
 */
 Bank_account::~Bank_account(){}

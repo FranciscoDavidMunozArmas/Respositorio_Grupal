@@ -1,10 +1,10 @@
-/*
- * Universidad la Fuerzas Armadas ESPE
- *
- * @autor David Munoz & Daniela Orellana
- * @date Miercoles, 3 de Junio de 2020
- * @function Declaration of the class Natural_person
-*/
+/***********************************************************************
+ * Module:  Natural_person.h
+ * Author:  USUARIO
+ * Modified: miércoles, 3 de junio de 2020 15:35:31
+ * Purpose: Declaration of the class Natural_person
+ ***********************************************************************/
+
 #if !defined(__Bank_Model_Natural_person_h)
 #define __Bank_Model_Natural_person_h
 

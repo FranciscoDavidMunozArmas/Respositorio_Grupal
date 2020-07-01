@@ -1,10 +1,10 @@
-/*
- * Universidad la Fuerzas Armadas ESPE
- *
- * @autor David Munoz & Daniela Orellana
- * @date Jueves, 4 de Junio de 2020 10:07:14
- * @function Implementation of Controller
-*/
+/***********************************************************************
+ * Module:  Enterprise.cpp
+ * Author:  USUARIO
+ * Modified: jueves, 4 de junio de 2020 20:33:40
+ * Purpose: Implementation of the class Enterprise
+ ***********************************************************************/
+
 #include "Enterprise.h"
 #include "Person.h"
 #include <iostream>
@@ -14,7 +14,7 @@ using namespace std;
 
 /**
  * @brief get_manager
- * @param  
+ * @return char*
 */
 char* Enterprise::get_manager() {
 	return _manager;
@@ -22,7 +22,7 @@ char* Enterprise::get_manager() {
 
 /**
  * @brief set_manager
- * @param _manager
+ * @param _manager 
 */
 void Enterprise::set_manager(char* _manager)
 {
@@ -30,7 +30,7 @@ void Enterprise::set_manager(char* _manager)
 }
 
 /**
- * @brief Enterprise
- * @param  
+ * @brief ~Enterprise()
+ * @return 
 */
 Enterprise::~Enterprise(){}

@@ -1,10 +1,11 @@
-/*
- * Universidad la Fuerzas Armadas ESPE
- *
- * @autor David Munoz & Daniela Orellana
- * @date Lunes, 1 de Junio de 2020 10:07:14
- * @function Implementation of Controller
-*/
+
+/***********************************************************************
+ * Module:  Withdraw.h
+ * Author:  David Muñoz & Daniela Orellana
+ * Modified: lunes, 1 de junio de 2020 14:34:17
+ * Purpose: Declaration of the class Withdraw
+ ***********************************************************************/
+
 #include "Withdraw.h"
 #include "Bank_account.h"
 
@@ -14,7 +15,8 @@ using namespace std;
 
 /**
  * @brief bank_method
- * @param _account
+ * @param _account 
+ * @return double
 */
 double Withdraw::bank_method(Bank_account* _account)
 {

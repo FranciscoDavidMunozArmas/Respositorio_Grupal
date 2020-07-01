@@ -1,10 +1,10 @@
-/*
- * Universidad la Fuerzas Armadas ESPE
- *
- * @autor David Munoz & Daniela Orellana
- * @date Martes, 9 de Junio de 2020
- * @function Declaration of the class Banck_account
-*/
+/***********************************************************************
+ * Module:  Bank_account.h
+ * Author:  David Muñoz & Daniela Orellana
+ * Modified: martes, 9 de junio de 2020 16:05:48
+ * Purpose: Declaration of the class Bank_account
+ ***********************************************************************/
+
 #if !defined(__Bank_Model_Bank_account_h)
 #define __Bank_Model_Bank_account_h
 
@@ -13,8 +13,8 @@ class Date;
 class Person;
 
 #include "Person.h"
-#include "Date.h"
-#include "Date.cpp"
+#include "../Libraries/Date.h"
+#include "../Libraries/Date.cpp"
 #include "Transaction.h"
 #include "../Libraries/Array_dinamic.h"
 
@@ -48,6 +48,10 @@ public:
 	void print_account();
 
 	friend ostream& operator << (ostream& o, const Bank_account& p);
+
+	string _get_account();
+	string _get_account_all_data();
+
 	bool operator == (const Bank_account& p);
 
    ~Bank_account();
@@ -63,6 +67,7 @@ private:
 
    string _create_key();
    void print_transactions();
+   string _all_transactions();
 };
 
 #endif

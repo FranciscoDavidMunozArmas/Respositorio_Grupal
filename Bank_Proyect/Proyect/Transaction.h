@@ -1,18 +1,20 @@
-/*
- * Universidad la Fuerzas Armadas ESPE
- *
- * @autor David Munoz & Daniela Orellana
- * @date Martes, 2 de Junio de 2020
- * @function Declaration of the class Transaction
-*/
+/***********************************************************************
+ * Module:  Transaction.h
+ * Author:  David Muñoz & Daniela Orellana
+ * Modified: martes, 2 de junio de 2020 15:34:44
+ * Purpose: Declaration of the class Transaction
+ ***********************************************************************/
+
 #if !defined(__Bank_Model_Transaction_h)
 #define __Bank_Model_Transaction_h
 
 class Date;
 
+#include <string>
+
 #include "Bank_account.h"
 
-#include "Date.h"
+#include "../Libraries/Date.h"
 #include "Person.h"
 
 class Bank_account;
@@ -27,6 +29,7 @@ public:
 	double get_amount();
 	void set_amount(const double _amount);
 	void print_transaction();
+	string _get_transaction();
 	virtual double bank_method(const Bank_account& _account);
 
    ~Transaction();

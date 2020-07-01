@@ -1,11 +1,11 @@
-/*
- * Universidad la Fuerzas Armadas ESPE
- *
- * @autor David Munoz & Daniela Orellana
- * @date Martes, 2 de Junio de 2020 10:07:14
- * @function Implementation of Transaction
-*/
-#include "Date.h"
+/***********************************************************************
+ * Module:  Transaction.cpp
+ * Author:  David Muñoz & Daniela Orellana
+ * Modified: martes, 2 de junio de 2020 15:34:44
+ * Purpose: Implementation of the class Transaction
+ ***********************************************************************/
+
+#include "../Libraries/Date.h"
 #include "Transaction.h"
 #include "Bank_account.h"
 
@@ -15,7 +15,7 @@
 
 /**
  * @brief get_amount
- * @param  
+ * @return double
 */
 double Transaction::get_amount()
 {
@@ -24,7 +24,7 @@ double Transaction::get_amount()
 
 /**
  * @brief set_amount
- * @param _amount
+ * @param _amount 
 */
 void Transaction::set_amount(const double _amount)
 {
@@ -33,7 +33,8 @@ void Transaction::set_amount(const double _amount)
 
 /**
  * @brief bank_method
- * @param _account
+ * @param _account 
+ * @return double
 */
 double Transaction::bank_method(const Bank_account& _account)
 {
@@ -42,7 +43,6 @@ double Transaction::bank_method(const Bank_account& _account)
 
 /**
  * @brief print_transaction
- * @param  
 */
 void Transaction::print_transaction() {
 	if (_type) {
@@ -55,11 +55,21 @@ void Transaction::print_transaction() {
 	cout << _amount << "\t\t" << _transaction_date.to_string() << endl;
 }
 
-/**
- * @brief Transaction
- * @param  
-*/
-Transaction::~Transaction()
-{
-   // TODO : implement
+string Transaction::_get_transaction() {
+	ostringstream oss;
+	if (_type) {
+		oss << "Deposito: $";
+	}
+	else {
+		oss << "Retiro: $";
+	}
+
+	oss << _amount << "\t\t" << _transaction_date.to_string() << endl;
+	return oss.str();
 }
+
+/**
+ * @brief ~Transaction
+ * @return 
+*/
+Transaction::~Transaction() {}

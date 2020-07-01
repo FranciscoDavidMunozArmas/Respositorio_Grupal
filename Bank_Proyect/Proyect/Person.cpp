@@ -1,24 +1,27 @@
-/*
- * Universidad la Fuerzas Armadas ESPE
- *
- * @autor David Munoz & Daniela Orellana
- * @date Jueves, 4 de Junio de 2020 10:07:14
- * @function Implementation of Person
-*/
+/***********************************************************************
+ * Module:  Person.cpp
+ * Author:  USUARIO
+ * Modified: jueves, 4 de junio de 2020 20:30:21
+ * Purpose: Implementation of the class Person
+ ***********************************************************************/
+
 #include "Person.h"
 #include <sstream>
 #include <string>
-/**
- * @brief Person
- * @param  
-*/
-Person::Person()
-{
-}
 
 /**
  * @brief Person
- * @param _id, _name, _address, _phone
+ * @return 
+*/
+Person::Person() {}
+
+/**
+ * @brief Person
+ * @param _id 
+ * @param _name 
+ * @param _address 
+ * @param _phone 
+ * @return 
 */
 Person::Person(const char _id[13], const char _name[10], const char _address[10], const char _phone[10])
 {
@@ -30,7 +33,7 @@ Person::Person(const char _id[13], const char _name[10], const char _address[10]
 
 /**
  * @brief get_id
- * @param  
+ * @return char*
 */
 char* Person::get_id()
 {
@@ -39,7 +42,7 @@ char* Person::get_id()
 
 /**
  * @brief set_id
- * @param _id
+ * @param _id 
 */
 void Person::set_id(char* _id)
 {
@@ -48,7 +51,7 @@ void Person::set_id(char* _id)
 
 /**
  * @brief get_name
- * @param  
+ * @return char*
 */
 char* Person::get_name()
 {
@@ -57,7 +60,7 @@ char* Person::get_name()
 
 /**
  * @brief set_name
- * @param _name
+ * @param _name 
 */
 void Person::set_name(char* _name)
 {
@@ -66,7 +69,7 @@ void Person::set_name(char* _name)
 
 /**
  * @brief get_address
- * @param  
+ * @return char*
 */
 char* Person::get_address()
 {
@@ -75,7 +78,7 @@ char* Person::get_address()
 
 /**
  * @brief set_address
- * @param _address
+ * @param _address 
 */
 void Person::set_address(char* _address)
 {
@@ -84,7 +87,7 @@ void Person::set_address(char* _address)
 
 /**
  * @brief get_phone
- * @param  
+ * @return char*
 */
 char* Person::get_phone()
 {
@@ -93,7 +96,7 @@ char* Person::get_phone()
 
 /**
  * @brief set_phone
- * @param _phone
+ * @param _phone 
 */
 void Person::set_phone(char* _phone)
 {
@@ -101,8 +104,10 @@ void Person::set_phone(char* _phone)
 }
 
 /**
- * @brief ostream
- * @param o, p
+ * @brief <<
+ * @param o 
+ * @param p 
+ * @return ostream&
 */
 ostream& operator << (ostream& o, const Person& p) {
 	o << p._name << "\tID: " << p._id;
@@ -110,7 +115,7 @@ ostream& operator << (ostream& o, const Person& p) {
 }
 
 /**
- * @brief Person
- * @param  
+ * @brief ~Person
+ * @return 
 */
 Person::~Person(){}
