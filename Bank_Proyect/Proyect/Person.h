@@ -1,10 +1,10 @@
-/***********************************************************************
- * Module:  Person.h
- * Author:  USUARIO
- * Modified: jueves, 4 de junio de 2020 20:30:21
- * Purpose: Declaration of the class Person
- ***********************************************************************/
-
+/*
+ * Universidad la Fuerzas Armadas ESPE
+ *
+ * @autor David Munoz & Daniela Orellana
+ * @date Jueves, 4 de Junio de 2020
+ * @function Declaration of the class Person
+*/
 #if !defined(__Bank_Model_Person_h)
 #define __Bank_Model_Person_h
 
