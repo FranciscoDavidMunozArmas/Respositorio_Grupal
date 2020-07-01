@@ -1,10 +1,10 @@
-/***********************************************************************
- * Module:  Date.cpp
- * Author:  USUARIO
- * Modified: martes, 2 de junio de 2020 15:36:25
- * Purpose: Implementation of the class Date
- ***********************************************************************/
-
+/*
+ * Universidad la Fuerzas Armadas ESPE
+ *
+ * @autor David Munoz & Daniela Orellana
+ * @date Martes, 2 de Junio de 2020 10:07:14
+ * @function Implementation of Controller
+*/
 #include "Date.h"
 #include <ctime>
 #include <vector>
@@ -12,12 +12,10 @@
 
 using namespace std;
 
-////////////////////////////////////////////////////////////////////////
-// Name:       Date::Date()
-// Purpose:    Implementation of Date::Date()
-// Return:
-////////////////////////////////////////////////////////////////////////
-
+/**
+ * @brief Date
+ * @param  
+*/
 Date::Date()
 {
 	time_t t = time(NULL);
@@ -31,125 +29,126 @@ Date::Date()
 	this->_second = timePtr->tm_sec;
 }
 
-////////////////////////////////////////////////////////////////////////
-// Name:       Date::get_year()
-// Purpose:    Implementation of Date::get_year()
-// Return:     int
-////////////////////////////////////////////////////////////////////////
-
+/**
+ * @brief get_year
+ * @param  void
+*/
 int Date::get_year(void)
 {
 	return _year;
 }
 
-////////////////////////////////////////////////////////////////////////
-// Name:       Date::set_year(int new_year)
-// Purpose:    Implementation of Date::set_year()
-// Parameters:
-// - new_year
-// Return:     void
-////////////////////////////////////////////////////////////////////////
-
+/**
+ * @brief set_year
+ * @param _year
+*/
 void Date::set_year(int _year)
 {
 	this->_year = _year;
 }
 
-////////////////////////////////////////////////////////////////////////
-// Name:       Date::get_day()
-// Purpose:    Implementation of Date::get_day()
-// Return:     int
-////////////////////////////////////////////////////////////////////////
-
+/**
+ * @brief get_day
+ * @param void
+*/
 int Date::get_day(void)
 {
 	return _day;
 }
 
-////////////////////////////////////////////////////////////////////////
-// Name:       Date::set_day(int new_day)
-// Purpose:    Implementation of Date::set_day()
-// Parameters:
-// - new_day
-// Return:     void
-////////////////////////////////////////////////////////////////////////
-
+/**
+ * @brief set_day
+ * @param _day
+*/
 void Date::set_day(int _day)
 {
 	this->_day = _day;
 }
 
-////////////////////////////////////////////////////////////////////////
-// Name:       Date::get_month()
-// Purpose:    Implementation of Date::get_month()
-// Return:     int
-////////////////////////////////////////////////////////////////////////
-
+/**
+ * @brief get_month
+ * @param void
+*/
 int Date::get_month(void)
 {
 	return _month;
 }
 
-////////////////////////////////////////////////////////////////////////
-// Name:       Date::set_month(int new_month)
-// Purpose:    Implementation of Date::set_month()
-// Parameters:
-// - new_month
-// Return:     void
-////////////////////////////////////////////////////////////////////////
-
+/**
+ * @brief set_month
+ * @param _month
+*/
 void Date::set_month(int _month)
 {
 	this->_month = _month;
 }
 
+/**
+ * @brief get_hour
+ * @param 
+*/
 int Date::get_hour()
 {
 	return _hour;
 }
 
+/**
+ * @brief set_hour
+ * @param _hour
+*/
 void Date::set_hour(int _hour)
 {
 	this->_hour = _hour;
 }
 
+/**
+ * @brief get_minute
+ * @param 
+*/
 int Date::get_minute()
 {
 	return _minute;
 }
 
+/**
+ * @brief set_minute
+ * @param _minute
+*/
 void Date::set_minute(int _minute)
 {
 	this->_minute = _minute;
 }
 
+/**
+ * @brief get_second
+ * @param 
+*/
 int Date::get_second()
 {
 	return _second;
 }
 
+/**
+ * @brief set_second
+ * @param _second
+*/
 void Date::set_second(int _second)
 {
 	this->_second = _second;
 }
 
-////////////////////////////////////////////////////////////////////////
-// Name:       Date::to_string()
-// Purpose:    Implementation of Date::to_string()
-// Return:     std::string
-////////////////////////////////////////////////////////////////////////
-
+/**
+ * @brief to_string
+ * @param void
+*/
 string Date::to_string(void)
 {
 	ostringstream oss;
 	oss <<_day << "/" << _month << "/" << _year << "\t\t" << _hour << ":" << _minute << ":" << _second;
 	return oss.str();
 }
-
-////////////////////////////////////////////////////////////////////////
-// Name:       Date::~Date()
-// Purpose:    Implementation of Date::~Date()
-// Return:
-////////////////////////////////////////////////////////////////////////
-
+/**
+ * @brief Date
+ * @param  
+*/
 Date::~Date(){}
