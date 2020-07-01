@@ -1,10 +1,10 @@
-/***********************************************************************
- * Module:  Array.cpp
- * Author:  USUARIO
- * Modified: jueves, 28 de mayo de 2020 19:07:11
- * Purpose: Implementation of the class Array
- ***********************************************************************/
-
+/*
+ * Universidad la Fuerzas Armadas ESPE
+ *
+ * @autor David Munoz & Daniela Orellana
+ * @date Jueves, 28 de mayo de 2020 10:07:14
+ * @function Implementation of Menu
+*/
 #include "Menu.h"
 
 #include <iostream>
@@ -26,6 +26,10 @@
 
 using namespace std;
 
+/**
+ * @brief options
+ * @param  option, index
+*/
 template<typename T>
 int Menu::options(T* option, int index) {
     int selection = 1;
@@ -74,6 +78,10 @@ int Menu::options(T* option, int index) {
     return selection;
 }
 
+/**
+ * @brief options
+ * @param message, option, index
+*/
 template<typename T>
 int Menu::options(char* message, T* option, int index) {
     int selection = 1;
