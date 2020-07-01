@@ -1,10 +1,10 @@
-/***********************************************************************
- * Module:  Array.cpp
- * Author:  USUARIO
- * Modified: jueves, 28 de mayo de 2020 19:07:11
- * Purpose: Implementation of the class Array
- ***********************************************************************/
-
+/*
+ * Universidad la Fuerzas Armadas ESPE
+ *
+ * @autor David Munoz & Daniela Orellana
+ * @date Jueves, 28 de mayo de 2020 10:07:14
+ * @function Implementation of controller
+*/
 #include <iostream>
 #include <stdlib.h>
 #include <stdio.h>
@@ -20,6 +20,10 @@
 
 using namespace std;
 
+/**
+ * @brief _method
+ * @param  
+*/
 void Controller::_method() {
 	screen.hide_cursor();
 	bool flag = true;
@@ -28,6 +32,10 @@ void Controller::_method() {
 	} while (flag);
 }
 
+/**
+ * @brief _menu
+ * @param  flag
+*/
 void Controller::_selection_menu(bool* flag)
 {
 
@@ -56,6 +64,10 @@ void Controller::_selection_menu(bool* flag)
 	}
 }
 
+/**
+ * @brief _set_menu
+ * @param  
+*/
 int Controller::_set_menu() {
 	char** option = (char**)malloc(6 * sizeof(char*));
 
