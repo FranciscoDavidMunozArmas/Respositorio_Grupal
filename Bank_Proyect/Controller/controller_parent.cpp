@@ -1,9 +1,10 @@
-/***********************************************************************
- * Module:  Array.cpp
- * Author:  USUARIO
- * Modified: jueves, 28 de mayo de 2020 19:07:11
- * Purpose: Implementation of the class Array
- ***********************************************************************/
+/*
+ * Universidad la Fuerzas Armadas ESPE
+ *
+ * @autor David Munoz & Daniela Orellana
+ * @date Jueves, 28 de mayo de 2020 10:07:14
+ * @function Implementation of controller_parent
+*/
 
 #include <iostream>
 #include <stdlib.h>
@@ -18,6 +19,10 @@
 
 using namespace std;
 
+/**
+ * @brief Controller_Parent
+ * @param  
+*/
 Controller_Parent::Controller_Parent() {}
 
 void Controller_Parent::init() {
