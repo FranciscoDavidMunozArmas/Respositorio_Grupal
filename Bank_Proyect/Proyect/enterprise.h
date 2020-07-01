@@ -1,10 +1,10 @@
-/***********************************************************************
- * Module:  Enterprise.h
- * Author:  USUARIO
- * Modified: jueves, 4 de junio de 2020 20:33:40
- * Purpose: Declaration of the class Enterprise
- ***********************************************************************/
-
+/*
+ * Universidad la Fuerzas Armadas ESPE
+ *
+ * @autor David Munoz & Daniela Orellana
+ * @date Jueves, 4 de Junio de 2020
+ * @function Declaration of the class enterprise
+*/
 #if !defined(__Bank_Model_Enterprise_h)
 #define __Bank_Model_Enterprise_h
 
