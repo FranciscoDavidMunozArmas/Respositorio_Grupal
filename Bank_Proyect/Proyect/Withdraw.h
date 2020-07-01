@@ -1,10 +1,10 @@
-/***********************************************************************
- * Module:  Withdraw.h
- * Author:  David Muñoz & Daniela Orellana
- * Modified: lunes, 1 de junio de 2020 14:34:17
- * Purpose: Declaration of the class Withdraw
- ***********************************************************************/
-
+/*
+ * Universidad la Fuerzas Armadas ESPE
+ *
+ * @autor David Munoz & Daniela Orellana
+ * @date Lunes, 1 de Junio de 2020
+ * @function Declaration of the class Withdraw
+*/
 #if !defined(__Bank_Model_Withdraw_h)
 #define __Bank_Model_Withdraw_h
 
