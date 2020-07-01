@@ -1,10 +1,10 @@
-/***********************************************************************
- * Module:  Array_dinamic.cpp
- * Author:  USUARIO
- * Modified: lunes, 1 de junio de 2020 15:30:20
- * Purpose: Implementation of the class Array_dinamic
- ***********************************************************************/
-
+/*
+ * Universidad la Fuerzas Armadas ESPE
+ *
+ * @autor David Munoz & Daniela Orellana
+ * @date Jueves, 28 de mayo de 2020 10:07:14
+ * @function Implementation of Array_dinamic
+*/
 #include "Array_dinamic.h"
 #include "Input.cpp"
 #include "To_number.cpp"
@@ -16,15 +16,10 @@
 
 using namespace std;
 
-////////////////////////////////////////////////////////////////////////
-// Name:       Array_dynamic::create_array(int _size, T* _array)
-// Purpose:    Implementation of Array_dynamic::create_array(int _size, T* _array)
-// Parameters:
-// - _array
-// - _size
-// Return:     T
-////////////////////////////////////////////////////////////////////////
-
+/**
+ * @brief _create_array
+ * @param _size, _array
+*/
 template<typename T>
 T* Array_dynamic::_create_array(int _size, T* _array)
 {
@@ -33,15 +28,10 @@ T* Array_dynamic::_create_array(int _size, T* _array)
 	return aux;
 }
 
-////////////////////////////////////////////////////////////////////////
-// Name:       Array_dynamic::set_cero(int _size, T* _array)
-// Purpose:    Implementation of Array_dynamic::set_cero(int _size, T* _array)
-// Parameters:
-// - _array
-// - _size
-// Return:     void
-////////////////////////////////////////////////////////////////////////
-
+/**
+ * @brief _set_cero
+ * @param _array
+*/
 template<typename T>
 void Array_dynamic::_set_cero(T* _array)
 {
@@ -51,15 +41,10 @@ void Array_dynamic::_set_cero(T* _array)
 	}
 }
 
-////////////////////////////////////////////////////////////////////////
-// Name:       Array_dynamic::input_num(T* _array, string input_text, int _size)
-// Purpose:    Implementation of Array_dynamic::input_num(T* _array, string input_text, int _size)
-// Parameters:
-// - _array
-// - _size
-// Return:     void
-////////////////////////////////////////////////////////////////////////
-
+/**
+ * @brief _input_num
+ * @param _array, input_text
+*/
 template<typename T>
 void Array_dynamic::_input_num(T* _array, string input_text)
 {
@@ -70,15 +55,10 @@ void Array_dynamic::_input_num(T* _array, string input_text)
 	}
 }
 
-////////////////////////////////////////////////////////////////////////
-// Name:       Array_dynamic::print_array(T* _array)
-// Purpose:    Implementation of Array_dynamic::print_array(T* _array, int _size)
-// Parameters:
-// - _array
-// - _size
-// Return:     void
-////////////////////////////////////////////////////////////////////////
-
+/**
+ * @brief _print_array
+ * @param _array
+*/
 template<typename T>
 void Array_dynamic::_print_array(T* _array)
 {
@@ -89,14 +69,10 @@ void Array_dynamic::_print_array(T* _array)
 	printf("\n");
 }
 
-////////////////////////////////////////////////////////////////////////
-// Name:       Array_dynamic::_sort(T* _array)
-// Purpose:    Implementation of Array_dynamic::_sort(T* _array, int _size)
-// Parameters:
-// - _array
-// - _size
-// Return:     void
-////////////////////////////////////////////////////////////////////////
+/**
+ * @brief _sort
+ * @param _array
+*/
 template<typename T>
 void Array_dynamic::_sort(T* _array)
 {
@@ -115,11 +91,19 @@ void Array_dynamic::_sort(T* _array)
 	}
 }
 
+/**
+ * @brief _dynamic_size
+ * @param _array
+*/
 template<typename T>
 int Array_dynamic::_dynamic_size(T* _array) {
 	return _msize(_array) / sizeof(T);
 }
 
+/**
+ * @brief _resize
+ * @param _array, _new_size
+*/
 template<typename T>
 T* Array_dynamic::_resize(T* _array, int _new_size) {
 	T* _aux_array;
