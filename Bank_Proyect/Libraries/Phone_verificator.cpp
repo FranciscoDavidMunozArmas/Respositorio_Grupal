@@ -1,10 +1,10 @@
-/***********************************************************************
- * Module:  ID_verificator.cpp
- * Author:  USUARIO
- * Modified: miércoles, 27 de mayo de 2020 15:07:22
- * Purpose: Declaration of the class ID_verificator
- ***********************************************************************/
-
+/*
+ * Universidad la Fuerzas Armadas ESPE
+ *
+ * @autor David Munoz & Daniela Orellana
+ * @date Jueves, 28 de mayo de 2020 10:07:14
+ * @function Implementation of Phone_verificator
+*/
 #include "Phone_verificator.h"
 
 #include "To_number.cpp"
@@ -17,13 +17,10 @@
 
 using namespace std;
 
-////////////////////////////////////////////////////////////////////////
-// Name:       ID_verify(string ID)
-// Purpose:    Implementation of ID_verify(string ID)
-// Parameters:
-// - ID
-// Return:     bool
-////////////////////////////////////////////////////////////////////////
+/**
+ * @brief Phone_verify
+ * @param phone
+*/
 bool Phone_verificator::Phone_verify(char* phone){
 	if (!is_int_number(phone)) {
 		return false;
