@@ -3,7 +3,7 @@
  *
  * @autor David Munoz & Daniela Orellana
  * @date Martes, 2 de Junio de 2020 10:07:14
- * @function Implementation of Controller
+ * @function Implementation of Date
 */
 #include "Date.h"
 #include <ctime>
