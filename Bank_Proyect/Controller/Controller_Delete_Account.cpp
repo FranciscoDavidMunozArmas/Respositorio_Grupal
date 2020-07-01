@@ -1,10 +1,10 @@
-/***********************************************************************
- * Module:  Array.cpp
- * Author:  USUARIO
- * Modified: jueves, 28 de mayo de 2020 19:07:11
- * Purpose: Implementation of the class Array
- ***********************************************************************/
-
+/*
+ * Universidad la Fuerzas Armadas ESPE
+ *
+ * @autor David Munoz & Daniela Orellana
+ * @date Jueves, 28 de mayo de 2020 10:07:14
+ * @function Implementation of Controller_Delete_Account
+*/
 #include <iostream>
 #include <stdlib.h>
 #include <stdio.h>
@@ -22,10 +22,18 @@
 
 using namespace std;
 
+/**
+ * @brief _method
+ * @param  
+*/
 void Controller_Delete_Account::_method() {
 	_delete_record();
 }
 
+/**
+ * @brief _delete_record
+ * @param  
+*/
 void Controller_Delete_Account::_delete_record()
 {
 	system("cls");
@@ -61,6 +69,10 @@ void Controller_Delete_Account::_delete_record()
 	free(_ba);
 }
 
+/**
+ * @brief _set_menu
+ * @param  
+*/
 int Controller_Delete_Account::_set_menu() {
 	char** option = (char**)calloc(2, sizeof(char*));
 
@@ -69,7 +81,10 @@ int Controller_Delete_Account::_set_menu() {
 	return menu.options("Esta seguro que quiere borrar esta cuenta?",option, 2);
 }
 
-
+/**
+ * @brief _get_account_number
+ * @param  
+*/
 char* Controller_Delete_Account::_get_account_number() {
 	Input _input;
 	char* _key;
