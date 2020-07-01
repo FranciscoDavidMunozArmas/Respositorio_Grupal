@@ -1,10 +1,10 @@
-/***********************************************************************
- * Module:  Array_dinamic.h
- * Author:  USUARIO
- * Modified: lunes, 1 de junio de 2020 15:30:20
- * Purpose: Declaration of the class Array_dinamic
- ***********************************************************************/
-
+/*
+ * Universidad la Fuerzas Armadas ESPE
+ *
+ * @autor David Munoz & Daniela Orellana
+ * @date Jueves, 28 de mayo de 2020 19:07:11
+ * @function Declaration of the class Array_dinamic
+*/
 #if !defined(__ObjectOrientedModel_2_Matrix_h)
 #define __ObjectOrientedModel_2_Matrix_h
 
