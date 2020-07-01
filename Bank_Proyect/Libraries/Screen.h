@@ -2,9 +2,10 @@
  * Universidad la Fuerzas Armadas ESPE
  *
  * @autor David Munoz & Daniela Orellana
- * @date Jueves, 28 de mayo de 2020 19:07:11
- * @function Declaration of the class Screen
+ * @date Jueves, 28 de mayo de 2020 10:07:14
+ * @function Declaration of Screen
 */
+
 #if !defined(__Screen)
 #define __Screen
 
@@ -34,6 +35,7 @@ public:
 
     void gotoxy(int x, int y);
     void hide_cursor();
+    void screen_size(int width, int height);
     void color_text(int color);
     //void color_background(int color);
 private:

@@ -3,8 +3,9 @@
  *
  * @autor David Munoz & Daniela Orellana
  * @date Jueves, 28 de mayo de 2020 10:07:14
- * @function Implementation of To_number
+ * @function Implementation of To_Number
 */
+
 #define _GLIBCXX_USE_CXX11_ABI 0
 
 #include "To_number.h"
@@ -19,14 +20,17 @@ using namespace std;
 
 /**
  * @brief to_int
- * @param num
+ * @param num 
+ * @return int
 */
 int to_int(char* num) {
 	return atoi(num);
 }
+
 /**
  * @brief to_int
- * @param num
+ * @param num 
+ * @return int
 */
 int to_int(char num) {
 	return num - '0';
@@ -34,7 +38,8 @@ int to_int(char num) {
 
 /**
  * @brief to_int
- * @param num
+ * @param num 
+ * @return int
 */
 int to_int(string num) {
 	return stoi(num);
@@ -42,7 +47,8 @@ int to_int(string num) {
 
 /**
  * @brief to_float
- * @param num
+ * @param num 
+ * @return float
 */
 float to_float(char* num) {
 	return atof(num);
@@ -50,7 +56,8 @@ float to_float(char* num) {
 
 /**
  * @brief to_float
- * @param num
+ * @param num 
+ * @return float
 */
 float to_float(string num) {
 	return stof(num);
@@ -58,7 +65,8 @@ float to_float(string num) {
 
 /**
  * @brief to_double
- * @param num
+ * @param num 
+ * @return double
 */
 double to_double(char* num) {
 	return atol(num);
@@ -66,7 +74,8 @@ double to_double(char* num) {
 
 /**
  * @brief to_double
- * @param num
+ * @param num 
+ * @return double
 */
 double to_double(std::string num) {
 	return stod(num);

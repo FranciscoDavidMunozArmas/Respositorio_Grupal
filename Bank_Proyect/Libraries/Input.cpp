@@ -5,6 +5,7 @@
  * @date Jueves, 28 de mayo de 2020 10:07:14
  * @function Implementation of Input
 */
+
 #include "Input.h"
 #include "Verify_number.cpp"
 
@@ -21,9 +22,10 @@ using namespace std;
 
 /**
  * @brief input
- * @param  input_phrase
+ * @param input_phrase 
+ * @return string
 */
-std::string Input::input(std::string input_phrase)
+string Input::input(std::string input_phrase)
 {
 	string aux;
 	do {
@@ -43,11 +45,13 @@ std::string Input::input(std::string input_phrase)
 
 	return aux;
 }
+
 /**
  * @brief input_number
- * @param input_phrase
+ * @param input_phrase 
+ * @return string
 */
-std::string Input::input_number(std::string input_phrase)
+string Input::input_number(std::string input_phrase)
 {
 	string aux;
 	do {
@@ -76,10 +80,10 @@ std::string Input::input_number(std::string input_phrase)
 
 /**
  * @brief input_int_number
- * @param input_phrase
+ * @param input_phrase 
+ * @return string
 */
-
-std::string Input::input_int_number(std::string input_phrase)
+string Input::input_int_number(std::string input_phrase)
 {
 	string aux;
 	do {
@@ -108,10 +112,10 @@ std::string Input::input_int_number(std::string input_phrase)
 
 /**
  * @brief input_only_numbers
- * @param input_phrase
+ * @param input_phrase 
+ * @return string
 */
-
-std::string Input::input_only_numbers(std::string input_phrase)
+string Input::input_only_numbers(std::string input_phrase)
 {
 	string aux;
 	int letter;
@@ -135,9 +139,10 @@ std::string Input::input_only_numbers(std::string input_phrase)
 
 /**
  * @brief input_only_int
- * @param input_phrase
+ * @param input_phrase 
+ * @return string
 */
-std::string Input::input_only_int(std::string input_phrase)
+string Input::input_only_int(std::string input_phrase)
 {
 	string aux;
 	int letter;
@@ -159,15 +164,12 @@ std::string Input::input_only_int(std::string input_phrase)
 	return aux;
 }
 
-////////////////////////////////////////////////////////////////////////
-// Name:       Input::input_only_letters(std::string input_phrase)
-// Purpose:    Implementation of Input::input_only_letters(std::string input_phrase)
-// Parameters:
-// - input_phrase
-// Return:     std::string
-////////////////////////////////////////////////////////////////////////
-
-std::string Input::input_only_letters(std::string input_phrase)
+/**
+ * @brief input_only_letters
+ * @param input_phrase 
+ * @return string
+*/
+string Input::input_only_letters(std::string input_phrase)
 {
 	string aux;
 	int letter;
@@ -191,10 +193,11 @@ std::string Input::input_only_letters(std::string input_phrase)
 
 /**
  * @brief input_only_letters
- * @param input_phrase, _case
+ * @param input_phrase 
+ * @param _case 
+ * @return string
 */
-
-std::string Input::input_only_letters(std::string input_phrase, Case _case)
+string Input::input_only_letters(std::string input_phrase, Case _case)
 {
 	string aux;
 	int letter;
@@ -229,10 +232,10 @@ std::string Input::input_only_letters(std::string input_phrase, Case _case)
 
 /**
  * @brief _delete
- * @param string_for_delete
+ * @param string_for_delete 
+ * @return string
 */
-
-std::string Input::_delete(std::string string_for_delete) {
+string Input::_delete(std::string string_for_delete) {
 	string aux = "";
 	for (int i = 0; i < string_for_delete.length() - 1 && string_for_delete != ""; i++) {
 		aux += string_for_delete[i];

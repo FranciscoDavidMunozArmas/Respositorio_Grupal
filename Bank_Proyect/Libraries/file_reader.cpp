@@ -3,8 +3,9 @@
  *
  * @autor David Munoz & Daniela Orellana
  * @date Jueves, 28 de mayo de 2020 10:07:14
- * @function Implementation of file_reader
+ * @function Implementation of File_reader
 */
+
 #include "File_reader.h"
 #include <stdio.h>
 #include <stdlib.h>
@@ -12,9 +13,11 @@
 #include <iostream>
 #include <fstream>
 #include <malloc.h>
+#include <sstream>
 
 #include "Array_dinamic.h"
 #include "InstanceOf.cpp"
+#include "Date.h"
 
 #pragma once
 
@@ -22,7 +25,8 @@ using namespace std;
 
 /**
  * @brief _check_file
- * @param file, file_name
+ * @param file
+ * @param file_name
 */
 void File_reader::_check_file(FILE* file, char* file_name)
 {
@@ -42,7 +46,10 @@ void File_reader::_check_file(FILE* file, char* file_name)
 
 /**
  * @brief _write_in_file
- * @param file, file_name, data
+ * @tparam T
+ * @param file
+ * @param file_name
+ * @param data
 */
 template<typename T>
 void File_reader::_write_in_file(FILE* file, char* file_name, T* data)
@@ -55,7 +62,11 @@ void File_reader::_write_in_file(FILE* file, char* file_name, T* data)
 
 /**
  * @brief _read_file
- * @param file, file_name, data
+ * @tparam T
+ * @param file
+ * @param file_name
+ * @param data
+ * @return T
 */
 template<typename T>
 T* File_reader::_read_file(FILE* file, char* file_name, T* data)
@@ -81,16 +92,21 @@ T* File_reader::_read_file(FILE* file, char* file_name, T* data)
 
 /**
  * @brief _look_by_key
- * @param file, file_name, key, data
+ * @tparam T
+ * @param file
+ * @param file_name
+ * @param key
+ * @param data
 */
 template<typename T>
-void File_reader::_look_by_key(FILE* file, char* file_name, string key, T* data)
-{
-}
+void File_reader::_look_by_key(FILE* file, char* file_name, string key, T* data) {}
 
 /**
  * @brief _delete
- * @param file, file_name, _element
+ * @tparam T
+ * @param file
+ * @param file_name
+ * @param _element
 */
 template<typename T>
 void File_reader::_delete(FILE* file, char* file_name, T& _element)
@@ -108,12 +124,14 @@ void File_reader::_delete(FILE* file, char* file_name, T& _element)
 	}
 
 	free(_auxiliar_array);
-	fclose(file);
 }
 
 /**
- * @brief _check_file
- * @param file, file_name, _data_update
+ * @brief _update
+ * @tparam T
+ * @param file
+ * @param file_name
+ * @param _data_update
 */
 template<typename T>
 void File_reader::_update(FILE* file, char* file_name, T* _data_update) {
@@ -132,6 +150,97 @@ void File_reader::_update(FILE* file, char* file_name, T* _data_update) {
 	}
 
 	free(_auxiliar_array);
+}
+
+/**
+ * @brief _back_up
+ * @param _origin_path 
+*/
+void File_reader::_back_up(char* _origin_path) {
+	Date _date;
+	FILE* file;
+
+	ostringstream _path;
+	ostringstream oss;
+	ostringstream _file;
+
+	_file << _date.create_key() << "_back_up.txt";
+	_path << "..\\BackUp\\" << _file.str();
+
+	oss << "copy " << _origin_path << " " << _path.str();
+
+	file = fopen("../back_up.txt", "at");
+	fputs(_file.str().c_str(), file);
+	fputs("\n", file);
+	fclose(file);
+
+	_check_file(file, _origin_path);
+	system("cls");
+	system(oss.str().c_str());
+
+	system("pause");
+}
+
+/**
+ * @brief _read_txt_file
+ * @param file_name 
+ * @param data 
+ * @return 
+*/
+char** File_reader::_read_txt_file(char* file_name, char** data) {
+	ifstream _in;
+	Array_dynamic _ad;
+	string _aux;
+
+	_in.open(file_name, ios::in);
+
+	int _index = 0;
+
+	try {
+		if (_in.fail()) {
+			throw file_name;
+		}
+
+		data = (char**)malloc((1 + _index) * sizeof(char*));
+
+		while (!_in.eof()) {
+			getline(_in, _aux);
+			data = _ad._resize(data, (_index + 1));
+			*(data + _index) = (char*)malloc(_aux.size() * sizeof(char));
+			strcpy(*(data + _index), _aux.c_str());
+			_index++;
+		}
+	}
+	catch (char* file_name) {
+		system("cls");
+		cout << endl << "ERROR: NO SE PUEDE LEER EL ARCHIVO '" << file_name << "'"<< endl;
+		system("pause");
+	}
+
+	_in.close();
+
+	return data;
+}
+
+/**
+ * @brief _restore_data
+ * @param _original_path 
+ * @param _backup_file_path 
+*/
+void File_reader::_restore_data(char* _original_path, char* _backup_file_path) {
+	Date _date;
+	FILE* file;
+
+	ostringstream oss;
+
+	oss << "copy ..\\BackUp\\" << _backup_file_path << " " << _original_path;
+
+	_check_file(file, _backup_file_path);
+	system("cls");
+	system(oss.str().c_str());
+
+	cout << endl << "RESTAURADO: " << _original_path << endl;
+	system("pause");
 }
 
 /**

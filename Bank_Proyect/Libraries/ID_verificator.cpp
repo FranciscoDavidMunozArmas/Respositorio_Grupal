@@ -5,6 +5,7 @@
  * @date Jueves, 28 de mayo de 2020 10:07:14
  * @function Implementation of ID_verificator
 */
+
 #include "ID_verificator.h"
 
 #include "To_number.cpp"
@@ -19,7 +20,8 @@ using namespace std;
 
 /**
  * @brief ID_verify
- * @param ID
+ * @param ID 
+ * @return bool
 */
 bool ID_verificator::ID_verify(char* ID){
 	if (!is_int_number(ID)) {
@@ -49,19 +51,21 @@ bool ID_verificator::ID_verify(char* ID){
 	return true;
 }
 
-
 /**
  * @brief is_between
- * @param min, number, max
+ * @param min 
+ * @param number 
+ * @param max 
+ * @return bool
 */
 bool ID_verificator::is_between(int min, int number, int max) {
 	return (min < number && number < max);
 }
 
-
 /**
- * @brief nex_ten
- * @param number
+ * @brief next_ten
+ * @param number 
+ * @return int
 */
 int ID_verificator::next_ten(int number) {
 	while (number%10) {
@@ -70,10 +74,10 @@ int ID_verificator::next_ten(int number) {
 	return number;
 }
 
-
 /**
- * @brief check_lastT_digit
- * @param ID
+ * @brief check_last_digit
+ * @param ID 
+ * @return bool
 */
 bool ID_verificator::check_last_digit(char* ID) {
 	int check_number = 0;

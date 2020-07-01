@@ -5,6 +5,7 @@
  * @date Jueves, 28 de mayo de 2020 10:07:14
  * @function Implementation of Look_by
 */
+
 #include "Look_by.h"
 #include <string>
 
@@ -14,20 +15,12 @@
 
 using namespace std;
 
-//int Look_by::look_by_key(char* _key, char** _key_array) {
-//	Array_dynamic _ad;
-//	for (int i = 0; i < _ad._dynamic_size(_key_array); i++) {
-//		if (strcmp(_key, *(_key_array + i)) == 0) {
-//			return i;
-//			break;
-//		}
-//	}
-//	return -1;
-//}
-
 /**
- * @brief look_by_key 
- * @param  _key, _key_array, _index
+ * @brief look_by_key
+ * @param _key 
+ * @param _key_array 
+ * @param _index 
+ * @return int
 */
 int Look_by::look_by_key(char* _key, char** _key_array, int _index) {
 	if (_index <= -1) {

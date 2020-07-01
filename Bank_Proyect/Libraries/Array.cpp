@@ -3,8 +3,9 @@
  *
  * @autor David Munoz & Daniela Orellana
  * @date Jueves, 28 de mayo de 2020 10:07:14
- * @function Implementation of Array
+ * @function Declaration of Array
 */
+
 #include "Array.h"
 
 #include "Input.cpp"
@@ -15,7 +16,8 @@ using namespace std;
 
 /**
  * @brief set_cero
- * @param  r
+ * @tparam T 
+ * @param r 
 */
 template<class T, int _size>
 void set_cero(T(&r)[_size])
@@ -27,7 +29,9 @@ void set_cero(T(&r)[_size])
 
 /**
  * @brief input
- * @param _input_phrase, r
+ * @tparam T 
+ * @param _input_phrase 
+ * @param r 
 */
 template<class T, int _size>
 void input(char* _input_phrase, T(&r)[_size])
@@ -41,7 +45,9 @@ void input(char* _input_phrase, T(&r)[_size])
 
 /**
  * @brief process
- * @param  r
+ * @tparam T 
+ * @param r 
+ * @param number 
 */
 template<class T, int _size>
 void process(T(&r)[_size], int number)
@@ -53,7 +59,8 @@ void process(T(&r)[_size], int number)
 
 /**
  * @brief print_array
- * @param  r
+ * @tparam T 
+ * @param r 
 */
 template<class T, int _size>
 void print_array(T(&r)[_size])
@@ -65,7 +72,9 @@ void print_array(T(&r)[_size])
 
 /**
  * @brief _size
- * @param r
+ * @tparam T 
+ * @param r 
+ * @return int
 */
 template<class T, int N>
 int _size(T(&r)[N])

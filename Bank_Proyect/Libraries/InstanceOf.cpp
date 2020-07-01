@@ -3,8 +3,9 @@
  *
  * @autor David Munoz & Daniela Orellana
  * @date Jueves, 28 de mayo de 2020 10:07:14
- * @function Implementation of InstanceOf
+ * @function Implementation of InstanceOfString
 */
+
 #include <iostream>
 #include <typeinfo>
 #include "InstanceOf.h"
@@ -12,8 +13,10 @@
 using namespace std;
 
 /**
- * @brief instanceOfString
- * @param var
+ * @brief intanceOfString
+ * @tparam T 
+ * @param var 
+ * @return bool
 */
 template<typename T>
 bool intanceOfString(T var) {
@@ -22,7 +25,9 @@ bool intanceOfString(T var) {
 
 /**
  * @brief instanceOfInt
- * @param var
+ * @tparam T 
+ * @param var 
+ * @return bool
 */
 template<typename T>
 bool instanceOfInt(T var) {
@@ -31,7 +36,9 @@ bool instanceOfInt(T var) {
 
 /**
  * @brief instanceOfFloat
- * @param var
+ * @tparam T 
+ * @param var 
+ * @return bool
 */
 template<typename T>
 bool instanceOfFloat(T var) {
@@ -40,7 +47,9 @@ bool instanceOfFloat(T var) {
 
 /**
  * @brief instanceOfDouble
- * @param var
+ * @tparam T 
+ * @param var 
+ * @return bool
 */
 template<typename T>
 bool instanceOfDouble(T var) {
@@ -48,8 +57,10 @@ bool instanceOfDouble(T var) {
 }
 
 /**
- * @brief instanceOfLongDouble 
- * @param var
+ * @brief instanceOfLongDouble
+ * @tparam T 
+ * @param var 
+ * @return bool
 */
 template<typename T>
 bool instanceOfLongDouble(T var) {
@@ -58,7 +69,9 @@ bool instanceOfLongDouble(T var) {
 
 /**
  * @brief instanceOfLongInt
- * @param var
+ * @tparam T 
+ * @param var 
+ * @return bool
 */
 template<typename T>
 bool instanceOfLongInt(T var) {
@@ -67,7 +80,10 @@ bool instanceOfLongInt(T var) {
 
 /**
  * @brief instanceOf
- * @param var_1, var_2
+ * @tparam T 
+ * @param var_1 
+ * @param var_2 
+ * @return bool
 */
 template<typename T>
 bool instanceOf(T var_1, T var_2) {
@@ -76,7 +92,11 @@ bool instanceOf(T var_1, T var_2) {
 
 /**
  * @brief instanceOf
- * @param  var_1, var_2
+ * @tparam T 
+ * @tparam R 
+ * @param var_1 
+ * @param var_2 
+ * @return bool
 */
 template<typename T, typename R>
 bool instanceOf(T var_1, R var_2) {

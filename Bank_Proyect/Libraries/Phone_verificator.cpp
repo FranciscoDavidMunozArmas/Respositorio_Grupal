@@ -5,6 +5,7 @@
  * @date Jueves, 28 de mayo de 2020 10:07:14
  * @function Implementation of Phone_verificator
 */
+
 #include "Phone_verificator.h"
 
 #include "To_number.cpp"
@@ -19,7 +20,8 @@ using namespace std;
 
 /**
  * @brief Phone_verify
- * @param phone
+ * @param phone 
+ * @return bool
 */
 bool Phone_verificator::Phone_verify(char* phone){
 	if (!is_int_number(phone)) {

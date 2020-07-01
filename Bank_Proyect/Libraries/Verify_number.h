@@ -2,9 +2,10 @@
  * Universidad la Fuerzas Armadas ESPE
  *
  * @autor David Munoz & Daniela Orellana
- * @date Jueves, 28 de mayo de 2020 19:07:11
- * @function Declaration of the class Verify_number
+ * @date Jueves, 28 de mayo de 2020 10:07:14
+ * @function Declaration of Verify_number
 */
+
 #if !defined(__Verify_number_h)
 #define __Verify_number_h
 

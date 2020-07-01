@@ -2,11 +2,12 @@
  * Universidad la Fuerzas Armadas ESPE
  *
  * @autor David Munoz & Daniela Orellana
- * @date Jueves, 28 de mayo de 2020 19:07:11
- * @function Declaration of the class Array_dinamic
+ * @date Jueves, 28 de mayo de 2020 10:07:14
+ * @function Declaration of Array_Dynamic
 */
-#if !defined(__ObjectOrientedModel_2_Matrix_h)
-#define __ObjectOrientedModel_2_Matrix_h
+
+#if !defined(__Array_Dynamic)
+#define __Array_Dynamic
 
 #include <iostream>
 using namespace std;

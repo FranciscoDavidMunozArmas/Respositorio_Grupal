@@ -5,6 +5,7 @@
  * @date Jueves, 28 de mayo de 2020 10:07:14
  * @function Implementation of Menu
 */
+
 #include "Menu.h"
 
 #include <iostream>
@@ -28,7 +29,10 @@ using namespace std;
 
 /**
  * @brief options
- * @param  option, index
+ * @tparam T 
+ * @param option 
+ * @param index 
+ * @return int
 */
 template<typename T>
 int Menu::options(T* option, int index) {
@@ -72,7 +76,6 @@ int Menu::options(T* option, int index) {
             flag = false;
             break;
         }
-
     } while (flag);
 
     return selection;
@@ -80,7 +83,68 @@ int Menu::options(T* option, int index) {
 
 /**
  * @brief options
- * @param message, option, index
+ * @tparam T 
+ * @param option 
+ * @param index 
+ * @param color 
+ * @return int
+*/
+template<typename T>
+int Menu::options(T* option, int index, int color) {
+    int selection = 1;
+    int key;
+    bool flag = true;
+    do {
+        system("cls");
+        screen.gotoxy(15, 4 + selection);
+        printf(">");
+
+        for (int i = 0; i < index; i++) {
+            if (selection == i + 1) {
+                screen.color_text(color);
+                screen.gotoxy(16, 5 + i);
+                cout << "  " << *(option + i);
+            }
+            else {
+                screen.color_text(screen.LIGHT_GRAY);
+                screen.gotoxy(16, 5 + i);
+                cout << *(option + i);
+            }
+        }
+
+        do {
+            key = getch();
+        } while (key != UP && key != DOWN && key != ENTER);
+
+        switch (key) {
+        case UP:
+            selection--;
+            if (selection <= 0) {
+                selection = index;
+            }
+            break;
+        case DOWN:
+            selection++;
+            if (selection > index) {
+                selection = 1;
+            }
+            break;
+        case ENTER:
+            flag = false;
+            break;
+        }
+    } while (flag);
+    screen.color_text(screen.LIGHT_GRAY);
+    return selection;
+}
+
+/**
+ * @brief options
+ * @tparam T 
+ * @param message 
+ * @param option 
+ * @param index 
+ * @return int
 */
 template<typename T>
 int Menu::options(char* message, T* option, int index) {
@@ -130,4 +194,117 @@ int Menu::options(char* message, T* option, int index) {
     } while (flag);
 
     return selection;
+}
+
+/**
+ * @brief options
+ * @tparam T 
+ * @param message 
+ * @param option 
+ * @param index 
+ * @param color 
+ * @return int
+*/
+template<typename T>
+int Menu::options(char* message, T* option, int index, int color) {
+    int selection = 1;
+    int key;
+    bool flag = true;
+    do {
+        system("cls");
+        screen.gotoxy(15, 3);
+        cout << message << endl;
+        screen.gotoxy(15, 4 + selection);
+        printf(">");
+
+        for (int i = 0; i < index; i++) {
+            if (selection == i + 1) {
+                screen.color_text(color);
+                screen.gotoxy(16, 5 + i);
+                cout << "  " << *(option + i);
+            }
+            else {
+                screen.color_text(screen.LIGHT_GRAY);
+                screen.gotoxy(16, 5 + i);
+                cout << *(option + i);
+            }
+        }
+
+        do {
+            key = getch();
+        } while (key != UP && key != DOWN && key != ENTER);
+
+        switch (key) {
+        case UP:
+            selection--;
+            if (selection <= 0) {
+                selection = index;
+            }
+            break;
+        case DOWN:
+            selection++;
+            if (selection > index) {
+                selection = 1;
+            }
+            break;
+        case ENTER:
+            flag = false;
+            break;
+        }
+
+    } while (flag);
+    screen.color_text(screen.LIGHT_GRAY);
+    return selection;
+}
+
+/**
+ * @brief yes_no_option
+ * @param message 
+ * @param color 
+ * @return int
+*/
+int Menu::yes_no_option(char* message, int color) {
+    char** _yes_no = (char**)malloc(2*sizeof(char*));
+    *(_yes_no + 0) = "SI";
+    *(_yes_no + 1) = "NO";
+
+    return options(message, _yes_no, 2, color);
+}
+
+/**
+ * @brief yes_no_option
+ * @param message 
+ * @return int
+*/
+int Menu::yes_no_option(char* message) {
+    char** _yes_no = (char**)malloc(2 * sizeof(char*));
+    *(_yes_no + 0) = "SI";
+    *(_yes_no + 1) = "NO";
+
+    return options(message, _yes_no, 2);
+}
+
+/**
+ * @brief yes_no_option
+ * @param color 
+ * @return int
+*/
+int Menu::yes_no_option(int color) {
+    char** _yes_no = (char**)malloc(2 * sizeof(char*));
+    *(_yes_no + 0) = "SI";
+    *(_yes_no + 1) = "NO";
+
+    return options(_yes_no, 2, color);
+}
+
+/**
+ * @brief yes_no_option
+ * @return 
+*/
+int Menu::yes_no_option() {
+    char** _yes_no = (char**)malloc(2 * sizeof(char*));
+    *(_yes_no + 0) = "SI";
+    *(_yes_no + 1) = "NO";
+
+    return options(_yes_no, 2);
 }

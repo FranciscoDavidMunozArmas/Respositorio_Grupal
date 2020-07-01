@@ -3,8 +3,9 @@
  *
  * @autor David Munoz & Daniela Orellana
  * @date Jueves, 28 de mayo de 2020 10:07:14
- * @function Implementation of RUC_verificator
+ * @function Implementation of Ruc_verificatior
 */
+
 #include "RUC_verificator.h"
 
 #include "ID_verificator.cpp"
@@ -18,7 +19,8 @@ using namespace std;
 
 /**
  * @brief RUC_verify
- * @param RUC
+ * @param RUC 
+ * @return bool
 */
 bool RUC_verificator::RUC_verify(char* RUC) {
     if (!is_int_number(RUC))
@@ -63,9 +65,9 @@ bool RUC_verificator::RUC_verify(char* RUC) {
     }
 
     char *last = (char*)calloc(3,sizeof(char));
-    *(last + 0) = RUC[10];
-    *(last + 1) = RUC[11];
-    *(last + 2) = RUC[12];
+    *(last + 0) = *(RUC + 10);
+    *(last + 1) = *(RUC + 11);
+    *(last + 2) = *(RUC + 12);
     if (!last_digits(last)) {
         return false;
     }
@@ -75,7 +77,16 @@ bool RUC_verificator::RUC_verify(char* RUC) {
 
 /**
  * @brief check_for_6
- * @param RUC, coef_1, coef_2, coef_3, coef_4, coef_5, coef_6, coef_7, coef_8
+ * @param RUC 
+ * @param coef_1 
+ * @param coef_2 
+ * @param coef_3 
+ * @param coef_4 
+ * @param coef_5 
+ * @param coef_6 
+ * @param coef_7 
+ * @param coef_8 
+ * @return bool
 */
 bool RUC_verificator::check_for_6(char* RUC, int coef_1, int coef_2, int coef_3, int coef_4, int coef_5, int coef_6, int coef_7, int coef_8) {
     int check_number = 0;
@@ -117,7 +128,17 @@ bool RUC_verificator::check_for_6(char* RUC, int coef_1, int coef_2, int coef_3,
 
 /**
  * @brief check_for_9
- * @param RUC, coef_1, coef_2, coef_3, coef_4, coef_5, coef_6, coef_7, coef_8
+ * @param RUC 
+ * @param coef_1 
+ * @param coef_2 
+ * @param coef_3 
+ * @param coef_4 
+ * @param coef_5 
+ * @param coef_6 
+ * @param coef_7 
+ * @param coef_8 
+ * @param coef_9 
+ * @return bool
 */
 bool RUC_verificator::check_for_9(char* RUC, int coef_1, int coef_2, int coef_3, int coef_4, int coef_5, int coef_6, int coef_7, int coef_8, int coef_9) {
     int check_number = 0;
@@ -161,8 +182,9 @@ bool RUC_verificator::check_for_9(char* RUC, int coef_1, int coef_2, int coef_3,
 }
 
 /**
- * @brief las_digits
- * @param digits
+ * @brief last_digits
+ * @param digits 
+ * @return bool
 */
 bool RUC_verificator::last_digits(char* digits) {
     return (0 <= to_int(digits) && to_int(digits) <= 3);
@@ -170,7 +192,9 @@ bool RUC_verificator::last_digits(char* digits) {
 
 /**
  * @brief get_module
- * @param num, den
+ * @param num 
+ * @param den 
+ * @return int 
 */
 int RUC_verificator::get_module(int num, int den) {
     return den - (num % den);

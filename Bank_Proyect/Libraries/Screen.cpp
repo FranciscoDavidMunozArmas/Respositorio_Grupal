@@ -5,6 +5,7 @@
  * @date Jueves, 28 de mayo de 2020 10:07:14
  * @function Implementation of Screen
 */
+
 #include "Screen.h"
 
 #include <iostream>
@@ -22,7 +23,8 @@ using namespace std;
 
 /**
  * @brief gotoxy
- * @param x, y
+ * @param x 
+ * @param y 
 */
 void Screen::gotoxy(int x, int y)
 {
@@ -35,7 +37,6 @@ void Screen::gotoxy(int x, int y)
 
 /**
  * @brief hide_cursor
- * @param 
 */
 void Screen::hide_cursor()
 {
@@ -47,8 +48,30 @@ void Screen::hide_cursor()
 }
 
 /**
+ * @brief screen_size
+ * @param width 
+ * @param height 
+*/
+void Screen::screen_size(int width, int height) {
+    _COORD size;
+    _SMALL_RECT rect;
+    size.X = width;
+    size.Y = height;
+
+    rect.Top = 0;
+    rect.Left = 0;
+    rect.Right = width - 1;
+    rect.Bottom = height - 1;
+
+    HANDLE _console = GetStdHandle(STD_OUTPUT_HANDLE);
+    SetConsoleScreenBufferSize(_console, size);
+    SetConsoleWindowInfo(_console, TRUE, &rect);
+
+}
+
+/**
  * @brief color_text
- * @param color
+ * @param color 
 */
 void Screen::color_text(int color) {
     HANDLE ColorText = GetStdHandle(STD_OUTPUT_HANDLE);

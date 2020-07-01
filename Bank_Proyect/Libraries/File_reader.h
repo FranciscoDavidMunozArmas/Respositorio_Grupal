@@ -2,9 +2,10 @@
  * Universidad la Fuerzas Armadas ESPE
  *
  * @autor David Munoz & Daniela Orellana
- * @date Jueves, 28 de mayo de 2020 19:07:11
- * @function Declaration of the class File_reader
+ * @date Jueves, 28 de mayo de 2020 10:07:14
+ * @function Declaration of File_reader
 */
+
 #if !defined(__File_Reader_File_reader_h)
 #define __File_Reader_File_reader_h
 
@@ -28,6 +29,11 @@ public:
    void _delete(FILE* file, char* file_name, T& key);
    template<typename T>
    void _update(FILE* file, char* file_name, T* _data_update);
+
+   char** _read_txt_file(char* file_name, char** data);
+
+   void _back_up(char* _orign_path);
+   void _restore_data(char* _original_path, char* _backup_file_path);
 
    void _delete_all(char* file_name);
 protected:

@@ -2,11 +2,12 @@
  * Universidad la Fuerzas Armadas ESPE
  *
  * @autor David Munoz & Daniela Orellana
- * @date Jueves, 28 de mayo de 2020 19:07:11
- * @function Declaration of the class To_number
+ * @date Jueves, 28 de mayo de 2020 10:07:14
+ * @function Declaration of To_Number
 */
-#if !defined(__ID_verificator_h)
-#define __ID_verificator_h
+
+#if !defined(__To_Number)
+#define __To_Number
 
 using namespace std;
 
