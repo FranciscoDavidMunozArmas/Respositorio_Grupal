@@ -1,10 +1,10 @@
-/***********************************************************************
- * Module:  Bank_account.h
- * Author:  David Muñoz & Daniela Orellana
- * Modified: martes, 9 de junio de 2020 16:05:48
- * Purpose: Declaration of the class Bank_account
- ***********************************************************************/
-
+/*
+ * Universidad la Fuerzas Armadas ESPE
+ *
+ * @autor David Munoz & Daniela Orellana
+ * @date Martes, 9 de Junio de 2020
+ * @function Declaration of the class Banck_account
+*/
 #if !defined(__Bank_Model_Bank_account_h)
 #define __Bank_Model_Bank_account_h
 
