@@ -1,9 +1,8 @@
-
 /*
  * Universidad la Fuerzas Armadas ESPE
  *
  * @autor David Munoz & Daniela Orellana
- * @date Jueves, 28 de mayo de 2020 19:07:11
+ * @date Jueves, 28 de mayo de 2020 10:07:14
  * @function Implementation of Controller_All_Record
 */
 
@@ -13,22 +12,23 @@
 #include <malloc.h>
 
 #include "Controller_All_Record.h"
+#include "../Libraries/PDF_Creator.cpp"
 #include "../Libraries/Array_dinamic.cpp"
 #include "../Proyect/Bank_account.cpp"
 #include "../Proyect/Person.h"
 #include "../Libraries/File_reader.cpp"
 
 using namespace std;
+
 /**
  * @brief _method
- * @param 
 */
 void Controller_All_Record::_method() {
 	_show_records();
 }
+
 /**
  * @brief _show_records
- * @param  
 */
 void Controller_All_Record::_show_records()
 {
@@ -48,11 +48,10 @@ void Controller_All_Record::_show_records()
 
 	}
 	catch (int e) {
-		cout << "No hay cuentas disponibles" << endl;
+		cout << "NO HAY CUENTAS DISPONIBLES" << endl;
 		system("pause");
 	}
 
-	//free(_p);
 	free(_ba);
 }
 
@@ -61,7 +60,24 @@ void Controller_All_Record::_show_records()
  * @param _ba
 */
 void Controller_All_Record::_show_information(Bank_account _ba) {
+
+	ostringstream oss;
+	ostringstream o;
+
+	o << _ba.get_account_number() << "_historial.pdf";
+	PDF_Creator _pdf(o.str().c_str());
+
 	system("cls");
 	_ba.print_account();
+
+	system("pause");
+	system("cls");
+	if (menu.yes_no_option("DESEA IMPRIMIR EL HISTORIAL?") == 1) {
+		oss << _ba._get_account_all_data() << endl << endl;
+		_pdf._set_text((oss.str().c_str()));
+		_pdf._save_pdf();
+		cout << endl << endl;
+	}
+	cout << endl << endl;
 	system("pause");
 }

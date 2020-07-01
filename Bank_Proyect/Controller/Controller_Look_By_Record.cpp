@@ -5,6 +5,7 @@
  * @date Jueves, 28 de mayo de 2020 10:07:14
  * @function Implementation of Controller_Look_By_Record
 */
+
 #include <iostream>
 #include <stdlib.h>
 #include <stdio.h>
@@ -16,7 +17,7 @@
 #include "../Proyect/Person.h"
 #include "../Libraries/File_reader.cpp"
 #include "../Libraries/Input.h"
-
+#include "../Libraries/PDF_Creator.cpp"
 #include "../Libraries/Look_by.cpp"
 
 #pragma once
@@ -25,7 +26,6 @@ using namespace std;
 
 /**
  * @brief _method
- * @param  
 */
 void Controller_Look_By_Record::_method() {
 	_show_record();
@@ -33,7 +33,6 @@ void Controller_Look_By_Record::_method() {
 
 /**
  * @brief _show_record
- * @param  
 */
 void Controller_Look_By_Record::_show_record()
 {
@@ -91,22 +90,37 @@ void Controller_Look_By_Record::_show_record()
 
 /**
  * @brief _show_information
- * @param  _ba, index
+ * @param _ba
+ * @param index
 */
 void Controller_Look_By_Record::_show_information(Bank_account* _ba, int index) {
+	ostringstream oss;
+	ostringstream o;
+
 	system("cls");
+	o << (_ba + index)->get_account_number() << "_historial.pdf";
+	PDF_Creator _pdf(o.str().c_str());
 	if (index == -1) {
 		cout << "No hay registro" << endl;
 	}
 	else {
 		(_ba + index)->print_account();
+		system("pause");
+		system("cls");
+		if (menu.yes_no_option("DESEA IMPRIMIR EL HISTORIAL?") == 1) {
+			oss << (_ba + index)->_get_account_all_data() << endl << endl;
+			_pdf._set_text((oss.str().c_str()));
+			_pdf._save_pdf();
+		}
+
+		cout << endl << endl;
 	}
 	system("pause");
 }
 
 /**
  * @brief _set_menu
- * @param  
+ * @return int
 */
 int Controller_Look_By_Record::_set_menu() {
 	char** option = (char**)calloc(2, sizeof(char*));
@@ -118,7 +132,10 @@ int Controller_Look_By_Record::_set_menu() {
 
 /**
  * @brief _find_by_account
- * @param  _key, _ba, _index
+ * @param _key
+ * @param _ba
+ * @param _index
+ * @return int
 */
 int Controller_Look_By_Record::_find_by_account(char* _key, Bank_account* _ba, int _index) {
 	if (_index <= -1) {
@@ -134,7 +151,10 @@ int Controller_Look_By_Record::_find_by_account(char* _key, Bank_account* _ba, i
 
 /**
  * @brief _find_by_name
- * @param  _name, _ba, _index
+ * @param _name
+ * @param _ba
+ * @param _index
+ * @return int
 */
 int Controller_Look_By_Record::_find_by_name(char* _name, Bank_account* _ba, int _index) {
 	if (_index <= -1) {
@@ -166,5 +186,4 @@ char** Controller_Look_By_Record::_get_account_number_record(Bank_account* _ba) 
 	}
 	return _aux;
 }
-
 */

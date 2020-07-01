@@ -3,8 +3,9 @@
  *
  * @autor David Munoz & Daniela Orellana
  * @date Jueves, 28 de mayo de 2020 10:07:14
- * @function Implementation of Controller_Delete_Account
+ * @function Implementation of Controller_Delete
 */
+
 #include <iostream>
 #include <stdlib.h>
 #include <stdio.h>
@@ -24,7 +25,6 @@ using namespace std;
 
 /**
  * @brief _method
- * @param  
 */
 void Controller_Delete_Account::_method() {
 	_delete_record();
@@ -32,7 +32,6 @@ void Controller_Delete_Account::_method() {
 
 /**
  * @brief _delete_record
- * @param  
 */
 void Controller_Delete_Account::_delete_record()
 {
@@ -71,19 +70,19 @@ void Controller_Delete_Account::_delete_record()
 
 /**
  * @brief _set_menu
- * @param  
+ * @return int
 */
 int Controller_Delete_Account::_set_menu() {
 	char** option = (char**)calloc(2, sizeof(char*));
 
 	*(option + 0) = "SI";
 	*(option + 1) = "NO";
-	return menu.options("Esta seguro que quiere borrar esta cuenta?",option, 2);
+	return menu.options("ESTA SEGURO?",option, 2);
 }
 
 /**
  * @brief _get_account_number
- * @param  
+ * @return char*
 */
 char* Controller_Delete_Account::_get_account_number() {
 	Input _input;

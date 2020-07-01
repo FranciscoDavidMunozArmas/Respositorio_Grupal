@@ -1,11 +1,11 @@
-
 /*
  * Universidad la Fuerzas Armadas ESPE
  *
  * @autor David Munoz & Daniela Orellana
- * @date Jueves, 28 de mayo de 2020 19:07:11
+ * @date Jueves, 28 de mayo de 2020 10:07:14
  * @function Implementation of Controller_Create_Enterprise
 */
+
 #include "Controller_Create_Enterprise.h"
 
 #include <iostream>
@@ -21,7 +21,6 @@ using namespace std;
 
 /**
  * @brief _method
- * @param 
 */
 void Controller_Create_Enterprise::_method() {
 	_account_options();
@@ -29,7 +28,6 @@ void Controller_Create_Enterprise::_method() {
 
 /**
  * @brief _account_options
- * @param 
 */
 void Controller_Create_Enterprise::_account_options() {
 	Bank_account _new_account(Account_type::_CHECKING_ACCOUNT, _set_data(), _set_balance(Account_type::_CHECKING_ACCOUNT));
@@ -39,7 +37,7 @@ void Controller_Create_Enterprise::_account_options() {
 
 /**
  * @brief _account_type_option
- * @param
+ * @return int
 */
 int Controller_Create_Enterprise::_account_type_option() {
 	return 0;
@@ -47,7 +45,7 @@ int Controller_Create_Enterprise::_account_type_option() {
 
 /**
  * @brief _set_data
- * @param 
+ * @return Person
 */
 Person Controller_Create_Enterprise::_set_data() {
 	char* _name;
@@ -71,7 +69,7 @@ Person Controller_Create_Enterprise::_set_data() {
 
 /**
  * @brief _set_person
- * @param 
+ * @return char*
 */
 char* Controller_Create_Enterprise::_set_person() {
 	char* _name;

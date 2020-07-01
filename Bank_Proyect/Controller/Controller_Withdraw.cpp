@@ -3,28 +3,32 @@
  *
  * @autor David Munoz & Daniela Orellana
  * @date Jueves, 28 de mayo de 2020 10:07:14
- * @function Implementation of Controller_Withdraw
+ * @function Declaration of Controller_Withdraw
 */
+
 #include "Controller_Withdraw.h"
 
 #include <iostream>
 #include <stdlib.h>
 #include <stdio.h>
+#include <sstream>
 
 #include "../Proyect/Bank_account.cpp"
 #include "../Libraries/Input.h"
 #include "../Libraries/To_number.h"
 #include "Controller_Bank_Operation.cpp"
 #include "../Proyect/Withdraw.cpp"
+#include "../Libraries/PDF_Creator.cpp"
 
 /**
  * @brief _operation
- * @param  
 */
 void Controller_Withdraw::_operation() {
 
 	Bank_account* _ba;
 	File_reader _fr;
+	PDF_Creator _pdf("Comprobante_Retiro.pdf");
+	ostringstream oss;
 
 	_ba = _fr._read_file(file, _path_account, _ba);
 
@@ -44,6 +48,14 @@ void Controller_Withdraw::_operation() {
 
 		system("cls");
 		_wd.print_transaction();
+		system("pause");
+		system("cls");
+		if (menu.yes_no_option("DESEA IMPRIMIR EL COMPROBANTE?") == 1) {
+			oss << (_ba + _index)->_get_account() << endl << _wd._get_transaction() << endl << endl;
+			_pdf._set_text((oss.str().c_str()));
+			_pdf._save_pdf();
+		}
+		cout << endl << endl;
 	}
 	catch (int e) {
 		system("cls");
@@ -56,7 +68,8 @@ void Controller_Withdraw::_operation() {
 
 /**
  * @brief _get_amount
- * @param  _ba
+ * @param _ba
+ * @return double
 */
 double Controller_Withdraw::_get_amount(Bank_account& _ba) {
 	Input _input;

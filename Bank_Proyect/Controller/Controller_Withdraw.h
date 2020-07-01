@@ -3,7 +3,7 @@
  *
  * @autor David Munoz & Daniela Orellana
  * @date Jueves, 28 de mayo de 2020 10:07:14
- * @function Implementation of Controller_Withdraw
+ * @function Declaration of Controller_Withdraw
 */
 
 #if !defined(__Controller_Withdraw)

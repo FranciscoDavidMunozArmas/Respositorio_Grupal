@@ -3,8 +3,9 @@
  *
  * @autor David Munoz & Daniela Orellana
  * @date Jueves, 28 de mayo de 2020 10:07:14
- * @function Implementation of Controller_Parent
+ * @function Declaration of Controller_Parent
 */
+
 #if !defined(__Controller_Parent)
 #define __Controller_Parent
 

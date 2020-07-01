@@ -3,7 +3,7 @@
  *
  * @autor David Munoz & Daniela Orellana
  * @date Jueves, 28 de mayo de 2020 10:07:14
- * @function Implementation of controller_parent
+ * @function Implementation of Controller_Parent
 */
 
 #include <iostream>
@@ -19,12 +19,11 @@
 
 using namespace std;
 
-/**
- * @brief Controller_Parent
- * @param  
-*/
 Controller_Parent::Controller_Parent() {}
 
+/**
+ * @brief init
+*/
 void Controller_Parent::init() {
 	system("cls");
 	_method();

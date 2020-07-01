@@ -3,11 +3,11 @@
  *
  * @autor David Munoz & Daniela Orellana
  * @date Jueves, 28 de mayo de 2020 10:07:14
- * @function Declaration of Controller
+ * @function Declaration of Main_Screen
 */
 
-#if !defined(__Controller)
-#define __Controller
+#if !defined(__Main_screen)
+#define __Main_screen
 
 #include <iostream>
 
@@ -15,14 +15,15 @@
 
 using namespace std;
 
-class Controller: public Controller_Parent
+class Main_screen: public Controller_Parent
 {
 public:
-    Controller() : Controller_Parent() {};
+    Main_screen() : Controller_Parent() {};
 private:
+    const double PI = 3.14159265358979323846;
+
     void _method();
-    void _selection_menu(bool* flag);
-    int _set_menu();
+    void _logo();
 protected:
 };
 

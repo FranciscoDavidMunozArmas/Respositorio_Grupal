@@ -3,11 +3,11 @@
  *
  * @autor David Munoz & Daniela Orellana
  * @date Jueves, 28 de mayo de 2020 10:07:14
- * @function Declaration of Controller
+ * @function Declaration of Controller_Restore
 */
 
-#if !defined(__Controller)
-#define __Controller
+#if !defined(__Controller_Restore)
+#define __Controller_Restore
 
 #include <iostream>
 
@@ -15,14 +15,13 @@
 
 using namespace std;
 
-class Controller: public Controller_Parent
+class Controller_Restore : public Controller_Parent
 {
 public:
-    Controller() : Controller_Parent() {};
+    Controller_Restore() : Controller_Parent() {};
 private:
     void _method();
-    void _selection_menu(bool* flag);
-    int _set_menu();
+    void _restore();
 protected:
 };
 

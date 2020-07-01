@@ -1,10 +1,9 @@
-
 /*
  * Universidad la Fuerzas Armadas ESPE
  *
  * @autor David Munoz & Daniela Orellana
- * @date Jueves, 28 de mayo de 2020 19:07:14
- * @function Implementation of Controller_Bank_Operation
+ * @date Jueves, 28 de mayo de 2020 10:07:14
+ * @function Declaration of Controller_Bank_Operation
 */
 
 #include "Controller_Bank_Operation.h"
@@ -27,7 +26,6 @@ using namespace std;
 
 /**
  * @brief _method
- * @param  
 */
 void Controller_Bank_Operation::_method() {
 	_operation();
@@ -36,6 +34,7 @@ void Controller_Bank_Operation::_method() {
 /**
  * @brief _get_account
  * @param _ba 
+ * @return int
 */
 int Controller_Bank_Operation::_get_account(Bank_account* _ba) {
 	Array_dynamic _ad;

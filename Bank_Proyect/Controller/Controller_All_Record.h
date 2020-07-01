@@ -1,10 +1,11 @@
-
- /* Universidad la Fuerzas Armadas ESPE
+/*
+ * Universidad la Fuerzas Armadas ESPE
  *
  * @autor David Munoz & Daniela Orellana
- * @date Jueves, 28 de mayo de 2020 19:07:11
- * @function Declaration of the class __Controller_All_Record
+ * @date Jueves, 28 de mayo de 2020 10:07:14
+ * @function Declaration of Controller_All_Record
 */
+
 #if !defined(__Controller_All_Record)
 #define __Controller_All_Record
 

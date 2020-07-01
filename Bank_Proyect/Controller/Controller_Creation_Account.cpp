@@ -3,7 +3,7 @@
  *
  * @autor David Munoz & Daniela Orellana
  * @date Jueves, 28 de mayo de 2020 10:07:14
- * @function Implementation of _Controller_Creation_Account
+ * @function Implementation of Controller_Creation_Account
 */
 
 #include "Controller_Creation_Account.h"
@@ -19,8 +19,7 @@
 using namespace std;
 
 /**
- * @brief _method()
- * @param  
+ * @brief _method
 */
 void Controller_Creation_Account::_method() {
 	_options();
@@ -28,7 +27,6 @@ void Controller_Creation_Account::_method() {
 
 /**
  * @brief _options
- * @param  
 */
 void Controller_Creation_Account::_options() {
 	switch (_set_menu()) {
@@ -44,20 +42,24 @@ void Controller_Creation_Account::_options() {
             _cce.init();
 	    }
 		break;
+	default:
+		cout << endl << endl;
+		break;
 	}
 
 	system("pause");
 }
 
 /**
- * @brief _set_menu()
- * @param  
+ * @brief _set_menu
+ * @return int
 */
 int Controller_Creation_Account::_set_menu() {
 
-	char** option = (char**)calloc(2, sizeof(char*));
+	char** option = (char**)calloc(3, sizeof(char*));
 
 	*(option + 0) = "PERSONA NATURAL";
 	*(option + 1) = "PERSONA JURIDICA";
-	return menu.options(option, 2);
+	*(option + 2) = "ATRAS";
+	return menu.options(option, 3);
 }

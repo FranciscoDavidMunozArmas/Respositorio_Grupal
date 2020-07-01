@@ -5,6 +5,7 @@
  * @date Jueves, 28 de mayo de 2020 10:07:14
  * @function Implementation of Controller_Operation
 */
+
 #include <iostream>
 #include <stdlib.h>
 #include <stdio.h>
@@ -17,15 +18,13 @@ using namespace std;
 
 /**
  * @brief _method
- * @param  
 */
 void Controller_Operation::_method() {
 	_options();
 }
 
 /**
- * @brief _options()
- * @param  
+ * @brief _options
 */
 void Controller_Operation::_options() {
 	switch (_set_menu())
@@ -40,17 +39,21 @@ void Controller_Operation::_options() {
 		_wd.init();
 	}
 		break;
+	default:
+		cout << endl << endl;
+		break;
 	}
 }
 
 /**
- * @brief _set_menu()
- * @param  
+ * @brief _set_menu
+ * @return int
 */
 int Controller_Operation::_set_menu() {
-	char** option = (char**)calloc(2, sizeof(char*));
+	char** option = (char**)calloc(3, sizeof(char*));
 
 	*(option + 0) = "DEPOSITAR";
 	*(option + 1) = "RETIRAR";
-	return menu.options(option, 2);
+	*(option + 2) = "ATRAS";
+	return menu.options(option, 3);
 }

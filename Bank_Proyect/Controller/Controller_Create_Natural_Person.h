@@ -1,11 +1,11 @@
-
 /*
  * Universidad la Fuerzas Armadas ESPE
  *
  * @autor David Munoz & Daniela Orellana
- * @date Jueves, 28 de mayo de 2020 19:07:11
- * @function Implementation of the class _Controller_Create_Natural_Person
+ * @date Jueves, 28 de mayo de 2020 10:07:14
+ * @function Declaration of Controller_Create_Natural_Person
 */
+
 #if !defined(__Controller_Create_Natural_Person)
 #define __Controller_Create_Natural_Person
 

@@ -1,11 +1,11 @@
-#pragma once
 /*
  * Universidad la Fuerzas Armadas ESPE
  *
  * @autor David Munoz & Daniela Orellana
  * @date Jueves, 28 de mayo de 2020 10:07:14
- * @function Implementation of Controller_Operation
+ * @function Declaration of Controller_Option
 */
+
 #if !defined(__Controller_Operation)
 #define __Controller_Operation
 

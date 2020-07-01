@@ -3,8 +3,9 @@
  *
  * @autor David Munoz & Daniela Orellana
  * @date Jueves, 28 de mayo de 2020 10:07:14
- * @function Implementation of Controller_Record
+ * @function Declaration of Controller_Record
 */
+
 #if !defined(__Controller_Record)
 #define __Controller_Record
 

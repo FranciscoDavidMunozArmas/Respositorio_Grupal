@@ -3,11 +3,11 @@
  *
  * @autor David Munoz & Daniela Orellana
  * @date Jueves, 28 de mayo de 2020 10:07:14
- * @function Declaration of Controller
+ * @function Declaration of Contribuitors
 */
 
-#if !defined(__Controller)
-#define __Controller
+#if !defined(__Contribuitors)
+#define __Contribuitors
 
 #include <iostream>
 
@@ -15,14 +15,14 @@
 
 using namespace std;
 
-class Controller: public Controller_Parent
+class Contribuitors : public Controller_Parent
 {
 public:
-    Controller() : Controller_Parent() {};
+    Contribuitors() : Controller_Parent() {};
 private:
     void _method();
-    void _selection_menu(bool* flag);
-    int _set_menu();
+    void _group();
+    void _logo();
 protected:
 };
 

@@ -1,11 +1,11 @@
-
 /*
  * Universidad la Fuerzas Armadas ESPE
  *
  * @autor David Munoz & Daniela Orellana
- * @date Jueves, 28 de mayo de 2020 19:07:11
- * @function Implementation of Controller_Create_Natural_Person
+ * @date Jueves, 28 de mayo de 2020 10:07:14
+ * @function Implementation of Controller_Natural_Person
 */
+
 #include "Controller_Create_Natural_Person.h"
 
 #include <iostream>
@@ -21,7 +21,6 @@ using namespace std;
 
 /**
  * @brief _method
- * @param
 */
 void Controller_Create_Natural_Person::_method() {
 	_account_options();
@@ -29,7 +28,6 @@ void Controller_Create_Natural_Person::_method() {
 
 /**
  * @brief _account_options
- * @param
 */
 void Controller_Create_Natural_Person::_account_options() {
 	switch (_account_type_option()) {
@@ -54,7 +52,7 @@ void Controller_Create_Natural_Person::_account_options() {
 
 /**
  * @brief _account_type_option
- * @param 
+ * @return int
 */
 int Controller_Create_Natural_Person::_account_type_option() {
 	char** option = (char**)calloc(2, sizeof(char*));
@@ -66,7 +64,7 @@ int Controller_Create_Natural_Person::_account_type_option() {
 
 /**
  * @brief _set_data
- * @param 
+ * @return Person
 */
 Person Controller_Create_Natural_Person::_set_data() {
 	char* _name;

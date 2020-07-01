@@ -1,11 +1,11 @@
-
 /*
  * Universidad la Fuerzas Armadas ESPE
  *
  * @autor David Munoz & Daniela Orellana
- * @date Jueves, 28 de mayo de 2020 19:07:11
+ * @date Jueves, 28 de mayo de 2020 10:07:14
  * @function Implementation of Controller_Client
 */
+
 #include <iostream>
 #include <stdlib.h>
 #include <stdio.h>
@@ -28,6 +28,7 @@ using namespace std;
 /**
  * @brief _set_balance
  * @param _type 
+ * @return double
 */
 double Controller_Client::_set_balance(Account_type _type) {
 	double _balance;
@@ -54,8 +55,8 @@ double Controller_Client::_set_balance(Account_type _type) {
 /**
  * @brief set_name
  * @param _phrase 
+ * @return char*
 */
-
 char* Controller_Client::set_name(char* _phrase) {
 	string _name;
 	do {
@@ -70,6 +71,7 @@ char* Controller_Client::set_name(char* _phrase) {
 /**
  * @brief set_id
  * @param i 
+ * @return char*
 */
 char* Controller_Client::set_id(int i) {
 	string _id_;
@@ -101,7 +103,7 @@ char* Controller_Client::set_id(int i) {
 
 /**
  * @brief set_phone
- * @param 
+ * @return char*
 */
 char* Controller_Client::set_phone() {
 	Phone_verificator _p;
@@ -117,7 +119,7 @@ char* Controller_Client::set_phone() {
 
 /**
  * @brief set_address
- * @param 
+ * @return char*
 */
 char* Controller_Client::set_address() {
 	string _address;
