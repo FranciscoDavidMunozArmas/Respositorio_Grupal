@@ -1,10 +1,10 @@
-/***********************************************************************
- * Module:  Array.cpp
- * Author:  USUARIO
- * Modified: jueves, 28 de mayo de 2020 19:07:11
- * Purpose: Implementation of the class Array
- ***********************************************************************/
-
+/*
+ * Universidad la Fuerzas Armadas ESPE
+ *
+ * @autor David Munoz & Daniela Orellana
+ * @date Jueves, 28 de mayo de 2020 10:07:14
+ * @function Implementation of Controller_Deposit
+*/
 #include "Controller_Deposit.h"
 
 #include <iostream>
@@ -17,6 +17,10 @@
 #include "../Proyect/Deposit.cpp"
 #include "../Proyect/Bank_account.cpp"
 
+/**
+ * @brief _operation
+ * @param  
+*/
 void Controller_Deposit::_operation() {
 
 	Bank_account* _ba;
@@ -50,7 +54,10 @@ void Controller_Deposit::_operation() {
 	system("pause");
 }
 
-
+/**
+ * @brief _get_amount
+ * @param _ba
+*/
 double Controller_Deposit::_get_amount(Bank_account& _ba) {
 	Input _input;
 	double _amount;
