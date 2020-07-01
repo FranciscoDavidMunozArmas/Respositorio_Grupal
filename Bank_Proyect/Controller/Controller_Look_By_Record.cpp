@@ -1,10 +1,10 @@
-/***********************************************************************
- * Module:  Array.cpp
- * Author:  USUARIO
- * Modified: jueves, 28 de mayo de 2020 19:07:11
- * Purpose: Implementation of the class Array
- ***********************************************************************/
-
+/*
+ * Universidad la Fuerzas Armadas ESPE
+ *
+ * @autor David Munoz & Daniela Orellana
+ * @date Jueves, 28 de mayo de 2020 10:07:14
+ * @function Implementation of Controller_Look_By_Record
+*/
 #include <iostream>
 #include <stdlib.h>
 #include <stdio.h>
@@ -23,10 +23,18 @@
 
 using namespace std;
 
+/**
+ * @brief _method
+ * @param  
+*/
 void Controller_Look_By_Record::_method() {
 	_show_record();
 }
 
+/**
+ * @brief _show_record
+ * @param  
+*/
 void Controller_Look_By_Record::_show_record()
 {
 	system("cls");
@@ -81,6 +89,10 @@ void Controller_Look_By_Record::_show_record()
 	free(_ba);
 }
 
+/**
+ * @brief _show_information
+ * @param  _ba, index
+*/
 void Controller_Look_By_Record::_show_information(Bank_account* _ba, int index) {
 	system("cls");
 	if (index == -1) {
@@ -92,6 +104,10 @@ void Controller_Look_By_Record::_show_information(Bank_account* _ba, int index) 
 	system("pause");
 }
 
+/**
+ * @brief _set_menu
+ * @param  
+*/
 int Controller_Look_By_Record::_set_menu() {
 	char** option = (char**)calloc(2, sizeof(char*));
 
@@ -100,6 +116,10 @@ int Controller_Look_By_Record::_set_menu() {
 	return menu.options(option, 2);
 }
 
+/**
+ * @brief _find_by_account
+ * @param  _key, _ba, _index
+*/
 int Controller_Look_By_Record::_find_by_account(char* _key, Bank_account* _ba, int _index) {
 	if (_index <= -1) {
 		return -1;
@@ -112,6 +132,10 @@ int Controller_Look_By_Record::_find_by_account(char* _key, Bank_account* _ba, i
 	}
 }
 
+/**
+ * @brief _find_by_name
+ * @param  _name, _ba, _index
+*/
 int Controller_Look_By_Record::_find_by_name(char* _name, Bank_account* _ba, int _index) {
 	if (_index <= -1) {
 		return -1;
