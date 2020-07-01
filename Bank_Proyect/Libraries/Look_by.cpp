@@ -1,10 +1,10 @@
-/***********************************************************************
- * Module:  Array.cpp
- * Author:  USUARIO
- * Modified: jueves, 28 de mayo de 2020 19:07:11
- * Purpose: Implementation of the class Array
- ***********************************************************************/
-
+/*
+ * Universidad la Fuerzas Armadas ESPE
+ *
+ * @autor David Munoz & Daniela Orellana
+ * @date Jueves, 28 de mayo de 2020 10:07:14
+ * @function Implementation of Look_by
+*/
 #include "Look_by.h"
 #include <string>
 
@@ -25,7 +25,10 @@ using namespace std;
 //	return -1;
 //}
 
-
+/**
+ * @brief look_by_key 
+ * @param  _key, _key_array, _index
+*/
 int Look_by::look_by_key(char* _key, char** _key_array, int _index) {
 	if (_index <= -1) {
 		return -1;
