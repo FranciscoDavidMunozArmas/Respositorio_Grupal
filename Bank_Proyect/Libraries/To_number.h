@@ -1,10 +1,10 @@
-/***********************************************************************
- * Module:  To_number.h
- * Author:  USUARIO
- * Modified: miércoles, 27 de mayo de 2020 15:07:22
- * Purpose: Declaration of the class ID_verificator
- ***********************************************************************/
-
+/*
+ * Universidad la Fuerzas Armadas ESPE
+ *
+ * @autor David Munoz & Daniela Orellana
+ * @date Jueves, 28 de mayo de 2020 19:07:11
+ * @function Declaration of the class To_number
+*/
 #if !defined(__ID_verificator_h)
 #define __ID_verificator_h
 
