@@ -1,10 +1,10 @@
-/***********************************************************************
- * Module:  Array.cpp
- * Author:  USUARIO
- * Modified: jueves, 19 de junio de 2020 21:56:11
- * Purpose: Implementation of the class Controller_Operations_Bank
- ***********************************************************************/
-
+/*
+ * Universidad la Fuerzas Armadas ESPE
+ *
+ * @autor David Munoz & Daniela Orellana
+ * @date Jueves, 28 de mayo de 2020 10:07:14
+ * @function Implementation of Controller_Operation
+*/
 #include <iostream>
 #include <stdlib.h>
 #include <stdio.h>
@@ -15,10 +15,18 @@
 
 using namespace std;
 
+/**
+ * @brief _method
+ * @param  
+*/
 void Controller_Operation::_method() {
 	_options();
 }
 
+/**
+ * @brief _options()
+ * @param  
+*/
 void Controller_Operation::_options() {
 	switch (_set_menu())
 	{
@@ -35,6 +43,10 @@ void Controller_Operation::_options() {
 	}
 }
 
+/**
+ * @brief _set_menu()
+ * @param  
+*/
 int Controller_Operation::_set_menu() {
 	char** option = (char**)calloc(2, sizeof(char*));
 
