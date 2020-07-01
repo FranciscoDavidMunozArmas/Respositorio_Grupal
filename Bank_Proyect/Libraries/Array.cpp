@@ -1,10 +1,10 @@
-/***********************************************************************
- * Module:  Array.cpp
- * Author:  USUARIO
- * Modified: jueves, 28 de mayo de 2020 19:07:11
- * Purpose: Implementation of the class Array
- ***********************************************************************/
-
+/*
+ * Universidad la Fuerzas Armadas ESPE
+ *
+ * @autor David Munoz & Daniela Orellana
+ * @date Jueves, 28 de mayo de 2020 10:07:14
+ * @function Implementation of Array
+*/
 #include "Array.h"
 
 #include "Input.cpp"
@@ -13,14 +13,10 @@
 
 using namespace std;
 
-////////////////////////////////////////////////////////////////////////
-// Name:       set_cero(T(&r)[_size])
-// Purpose:    Implementation of set_cero(T(&r)[_size])
-// Parameters:
-// - r
-// Return:     void
-////////////////////////////////////////////////////////////////////////
-
+/**
+ * @brief set_cero
+ * @param  r
+*/
 template<class T, int _size>
 void set_cero(T(&r)[_size])
 {
@@ -29,15 +25,10 @@ void set_cero(T(&r)[_size])
 	}
 }
 
-////////////////////////////////////////////////////////////////////////
-// Name:       input(char* _input_phrase, T(&r)[_size])
-// Purpose:    Implementation of input(char* _input_phrase, T(&r)[_size])
-// Parameters:
-// - _input_phrase
-// - r
-// Return:     void
-////////////////////////////////////////////////////////////////////////
-
+/**
+ * @brief input
+ * @param _input_phrase, r
+*/
 template<class T, int _size>
 void input(char* _input_phrase, T(&r)[_size])
 {
@@ -48,14 +39,10 @@ void input(char* _input_phrase, T(&r)[_size])
 
 }
 
-////////////////////////////////////////////////////////////////////////
-// Name:       process(T(&r)[_size], int number)
-// Purpose:    Implementation of process(T(&r)[_size], int number)
-// Parameters:
-// - r
-// Return:     void
-////////////////////////////////////////////////////////////////////////
-
+/**
+ * @brief process
+ * @param  r
+*/
 template<class T, int _size>
 void process(T(&r)[_size], int number)
 {
@@ -64,14 +51,10 @@ void process(T(&r)[_size], int number)
 	}
 }
 
-////////////////////////////////////////////////////////////////////////
-// Name:       print_array(T(&r)[_size])
-// Purpose:    Implementation of print_array(T(&r)[_size])
-// Parameters:
-// - r
-// Return:     void
-////////////////////////////////////////////////////////////////////////
-
+/**
+ * @brief print_array
+ * @param  r
+*/
 template<class T, int _size>
 void print_array(T(&r)[_size])
 {
@@ -80,13 +63,10 @@ void print_array(T(&r)[_size])
 	}
 }
 
-////////////////////////////////////////////////////////////////////////
-// Name:       _size(T(&r)[N])
-// Purpose:    Implementation of _size(T(&r)[N])
-// Parameters:
-// - r
-// Return:     int
-////////////////////////////////////////////////////////////////////////
+/**
+ * @brief _size
+ * @param r
+*/
 template<class T, int N>
 int _size(T(&r)[N])
 {
