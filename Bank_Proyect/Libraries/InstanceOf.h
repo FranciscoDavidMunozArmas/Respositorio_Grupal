@@ -1,10 +1,10 @@
-/***********************************************************************
- * Module:  InstanceOf.h
- * Author:  USUARIO
- * Modified: miércoles, 27 de mayo de 2020 15:31:15
- * Purpose: Declaration of the class InstanceOf
- ***********************************************************************/
-
+/*
+ * Universidad la Fuerzas Armadas ESPE
+ *
+ * @autor David Munoz & Daniela Orellana
+ * @date Jueves, 28 de mayo de 2020 19:07:11
+ * @function Declaration of the class InstanceOf
+*/
 #if !defined(__InstanceOf_h)
 #define __InstanceOf_h
 template<class T>
