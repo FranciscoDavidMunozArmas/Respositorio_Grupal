@@ -1,10 +1,10 @@
-/***********************************************************************
- * Module:  ID_verificator.h
- * Author:  USUARIO
- * Modified: miércoles, 27 de mayo de 2020 15:07:22
- * Purpose: Declaration of the class ID_verificator
- ***********************************************************************/
-
+/*
+ * Universidad la Fuerzas Armadas ESPE
+ *
+ * @autor David Munoz & Daniela Orellana
+ * @date Jueves, 28 de mayo de 2020 19:07:11
+ * @function Declaration of the class Phone_verificator
+*/
 #if !defined(__Phone_verificator_h)
 #define __Phone_verificator_h
 
