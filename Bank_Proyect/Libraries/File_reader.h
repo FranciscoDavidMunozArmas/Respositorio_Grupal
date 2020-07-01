@@ -1,10 +1,10 @@
-/***********************************************************************
- * Module:  File_reader.h
- * Author:  USUARIO
- * Modified: sábado, 6 de junio de 2020 15:26:07
- * Purpose: Declaration of the class File_reader
- ***********************************************************************/
-
+/*
+ * Universidad la Fuerzas Armadas ESPE
+ *
+ * @autor David Munoz & Daniela Orellana
+ * @date Jueves, 28 de mayo de 2020 19:07:11
+ * @function Declaration of the class File_reader
+*/
 #if !defined(__File_Reader_File_reader_h)
 #define __File_Reader_File_reader_h
 
