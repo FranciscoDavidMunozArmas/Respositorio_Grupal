@@ -3,7 +3,7 @@
  *
  * @autor David Munoz & Daniela Orellana
  * @date Jueves, 28 de mayo de 2020 10:07:14
- * @function Implementation of Controller
+ * @function Implementation of _Controller_Creation_Account
 */
 
 #include "Controller_Creation_Account.h"
