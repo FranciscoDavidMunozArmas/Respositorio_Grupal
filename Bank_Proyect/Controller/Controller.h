@@ -3,7 +3,7 @@
  * Universidad la Fuerzas Armadas ESPE
  *
  * @autor David Munoz & Daniela Orellana
- * @date Jueves, 28 de mayp de 2020 19:07:11
+ * @date Jueves, 28 de mayo de 2020 19:07:11
  * @function Declaration of the class Controller
 */
 #if !defined(__Controller)
