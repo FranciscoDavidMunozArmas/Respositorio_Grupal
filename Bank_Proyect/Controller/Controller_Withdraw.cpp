@@ -1,10 +1,10 @@
-/***********************************************************************
- * Module:  Array.cpp
- * Author:  USUARIO
- * Modified: jueves, 28 de mayo de 2020 19:07:11
- * Purpose: Implementation of the class Array
- ***********************************************************************/
-
+/*
+ * Universidad la Fuerzas Armadas ESPE
+ *
+ * @autor David Munoz & Daniela Orellana
+ * @date Jueves, 28 de mayo de 2020 10:07:14
+ * @function Implementation of Controller_Withdraw
+*/
 #include "Controller_Withdraw.h"
 
 #include <iostream>
@@ -17,6 +17,10 @@
 #include "Controller_Bank_Operation.cpp"
 #include "../Proyect/Withdraw.cpp"
 
+/**
+ * @brief _operation
+ * @param  
+*/
 void Controller_Withdraw::_operation() {
 
 	Bank_account* _ba;
@@ -50,7 +54,10 @@ void Controller_Withdraw::_operation() {
 	system("pause");
 }
 
-
+/**
+ * @brief _get_amount
+ * @param  _ba
+*/
 double Controller_Withdraw::_get_amount(Bank_account& _ba) {
 	Input _input;
 	double _amount;
