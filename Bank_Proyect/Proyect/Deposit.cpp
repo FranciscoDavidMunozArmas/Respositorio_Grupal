@@ -1,10 +1,10 @@
-/***********************************************************************
- * Module:  Deposit.h
- * Author:  David Muñoz & Daniela Orellana
- * Modified: lunes, 1 de junio de 2020 14:34:26
- * Purpose: Declaration of the class Deposit
- ***********************************************************************/
-
+/*
+ * Universidad la Fuerzas Armadas ESPE
+ *
+ * @autor David Munoz & Daniela Orellana
+ * @date Lunes, 1 de junio de 2020 10:07:14
+ * @function Implementation of Deposit
+*/
 #include "Deposit.h"
 #include "Bank_account.h"
 
@@ -12,14 +12,10 @@
 
 using namespace std;
 
-////////////////////////////////////////////////////////////////////////
-// Name:       Deposit::bank_method(const Bank_account _account)
-// Purpose:    Implementation of Deposit::bank_method()
-// Parameters:
-// - _account
-// Return:
-////////////////////////////////////////////////////////////////////////
-
+/**
+ * @brief bank_method
+ * @param _account
+*/
 double Deposit::bank_method(Bank_account* _account)
 {
 	double balance = _account->get_bank_balance() + _amount;
