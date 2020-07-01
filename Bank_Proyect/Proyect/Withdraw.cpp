@@ -1,11 +1,10 @@
-
-/***********************************************************************
- * Module:  Withdraw.h
- * Author:  David Muñoz & Daniela Orellana
- * Modified: lunes, 1 de junio de 2020 14:34:17
- * Purpose: Declaration of the class Withdraw
- ***********************************************************************/
-
+/*
+ * Universidad la Fuerzas Armadas ESPE
+ *
+ * @autor David Munoz & Daniela Orellana
+ * @date Lunes, 1 de Junio de 2020 10:07:14
+ * @function Implementation of Controller
+*/
 #include "Withdraw.h"
 #include "Bank_account.h"
 
@@ -13,14 +12,10 @@
 
 using namespace std;
 
-////////////////////////////////////////////////////////////////////////
-// Name:       Withdraw::bank_method(const Bank_account _account)
-// Purpose:    Implementation of Withdraw::bank_method()
-// Parameters:
-// - _account
-// Return:
-////////////////////////////////////////////////////////////////////////
-
+/**
+ * @brief bank_method
+ * @param _account
+*/
 double Withdraw::bank_method(Bank_account* _account)
 {
 	double balance = _account->get_bank_balance() - _amount;
