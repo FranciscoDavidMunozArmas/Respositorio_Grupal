@@ -1,9 +1,10 @@
-/***********************************************************************
- * Module:  Verify_number.cpp
- * Author:  USUARIO
- * Modified: miércoles, 27 de mayo de 2020 15:07:22
- * Purpose: Declaration of the class Verify_number
- ***********************************************************************/
+/*
+ * Universidad la Fuerzas Armadas ESPE
+ *
+ * @autor David Munoz & Daniela Orellana
+ * @date Jueves, 28 de mayo de 2020 10:07:14
+ * @function Implementation of Verify_number
+*/
 #define _GLIBCXX_USE_CXX11_ABI 0
 
 #include "Verify_number.h"
@@ -16,13 +17,10 @@
 
 using namespace std;
 
-////////////////////////////////////////////////////////////////////////
-// Name:       is_int_number(string string_1);
-// Purpose:    Implementation of is_int_number(string string_1);
-// Parameters:
-// - string_1
-// Return:     bool
-////////////////////////////////////////////////////////////////////////
+/**
+ * @brief is_int_number
+ * @param  string_1
+*/
 bool is_int_number(string string_1) {
 	for (char aux: string_1) {
 		if (!isdigit(aux)) {
@@ -33,13 +31,10 @@ bool is_int_number(string string_1) {
 	return true;
 }
 
-////////////////////////////////////////////////////////////////////////
-// Name:       check_float_number(string string_1);
-// Purpose:    Implementation of check_float_number(string string_1);
-// Parameters:
-// - string_1
-// Return:     bool
-////////////////////////////////////////////////////////////////////////
+/**
+ * @brief is_float_number
+ * @param string_1
+*/
 bool is_float_number(string string_1) {
 	for (char aux : string_1) {
 		if (!isdigit(aux) && aux != '.') {
