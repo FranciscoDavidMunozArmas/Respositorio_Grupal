@@ -1,10 +1,10 @@
-/***********************************************************************
- * Module:  Input.cpp
- * Author:  USUARIO
- * Modified: domingo, 31 de mayo de 2020 11:33:33
- * Purpose: Implementation of Input
- ***********************************************************************/
-
+/*
+ * Universidad la Fuerzas Armadas ESPE
+ *
+ * @autor David Munoz & Daniela Orellana
+ * @date Jueves, 28 de mayo de 2020 10:07:14
+ * @function Implementation of Input
+*/
 #include "Input.h"
 #include "Verify_number.cpp"
 
@@ -19,14 +19,10 @@
 
 using namespace std;
 
-////////////////////////////////////////////////////////////////////////
-// Name:       Input::input(std::string input_phrase)
-// Purpose:    Implementation of Input::input(std::string input_phrase)
-// Parameters:
-// - input_phrase
-// Return:     std::string
-////////////////////////////////////////////////////////////////////////
-
+/**
+ * @brief input
+ * @param  input_phrase
+*/
 std::string Input::input(std::string input_phrase)
 {
 	string aux;
@@ -47,15 +43,10 @@ std::string Input::input(std::string input_phrase)
 
 	return aux;
 }
-
-////////////////////////////////////////////////////////////////////////
-// Name:       Input::input_number(std::string input_phrase)
-// Purpose:    Implementation of Input::input_number(std::string input_phrase)
-// Parameters:
-// - input_phrase
-// Return:     std::string
-////////////////////////////////////////////////////////////////////////
-
+/**
+ * @brief input_number
+ * @param input_phrase
+*/
 std::string Input::input_number(std::string input_phrase)
 {
 	string aux;
@@ -83,13 +74,10 @@ std::string Input::input_number(std::string input_phrase)
 	return aux;
 }
 
-////////////////////////////////////////////////////////////////////////
-// Name:       Input::input_int_number(std::string input_phrase)
-// Purpose:    Implementation of Input::input_int_number(std::string input_phrase)
-// Parameters:
-// - input_phrase
-// Return:     std::string
-////////////////////////////////////////////////////////////////////////
+/**
+ * @brief input_int_number
+ * @param input_phrase
+*/
 
 std::string Input::input_int_number(std::string input_phrase)
 {
@@ -118,13 +106,10 @@ std::string Input::input_int_number(std::string input_phrase)
 	return aux;
 }
 
-////////////////////////////////////////////////////////////////////////
-// Name:       Input::input_only_numbers(std::string input_phrase)
-// Purpose:    Implementation of Input::input_only_numbers(std::string input_phrase)
-// Parameters:
-// - input_phrase
-// Return:     std::string
-////////////////////////////////////////////////////////////////////////
+/**
+ * @brief input_only_numbers
+ * @param input_phrase
+*/
 
 std::string Input::input_only_numbers(std::string input_phrase)
 {
@@ -148,14 +133,10 @@ std::string Input::input_only_numbers(std::string input_phrase)
 	return aux;
 }
 
-////////////////////////////////////////////////////////////////////////
-// Name:       Input::input_only_int(std::string input_phrase)
-// Purpose:    Implementation of Input::input_only_int(std::string input_phrase)
-// Parameters:
-// - input_phrase
-// Return:     std::string
-////////////////////////////////////////////////////////////////////////
-
+/**
+ * @brief input_only_int
+ * @param input_phrase
+*/
 std::string Input::input_only_int(std::string input_phrase)
 {
 	string aux;
@@ -208,14 +189,10 @@ std::string Input::input_only_letters(std::string input_phrase)
 	return aux;
 }
 
-////////////////////////////////////////////////////////////////////////
-// Name:       Input::input_only_letters(std::string input_phrase, Case _case)
-// Purpose:    Implementation of Input::input_only_letters(std::string input_phrase, Case _case)
-// Parameters:
-// - input_phrase
-// - _case
-// Return:     std::string
-////////////////////////////////////////////////////////////////////////
+/**
+ * @brief input_only_letters
+ * @param input_phrase, _case
+*/
 
 std::string Input::input_only_letters(std::string input_phrase, Case _case)
 {
@@ -250,13 +227,11 @@ std::string Input::input_only_letters(std::string input_phrase, Case _case)
 	return aux;
 }
 
-////////////////////////////////////////////////////////////////////////
-// Name:       Input::_delete(std::string string_for_delete)
-// Purpose:    Implementation of Input::_delete(std::string string_for_delete)
-// Parameters:
-// - string_for_delete
-// Return:     std::string
-////////////////////////////////////////////////////////////////////////
+/**
+ * @brief _delete
+ * @param string_for_delete
+*/
+
 std::string Input::_delete(std::string string_for_delete) {
 	string aux = "";
 	for (int i = 0; i < string_for_delete.length() - 1 && string_for_delete != ""; i++) {
