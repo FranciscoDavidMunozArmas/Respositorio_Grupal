@@ -1,10 +1,10 @@
-/***********************************************************************
- * Module:  Date.h
- * Author:  USUARIO
- * Modified: martes, 2 de junio de 2020 15:36:25
- * Purpose: Declaration of the class Date
- ***********************************************************************/
-
+/*
+ * Universidad la Fuerzas Armadas ESPE
+ *
+ * @autor David Munoz & Daniela Orellana
+ * @date Martes, 2 de Junio de 2020
+ * @function Declaration of the class Date
+*/
 #if !defined(__Bank_Model_Date_h)
 #define __Bank_Model_Date_h
 
