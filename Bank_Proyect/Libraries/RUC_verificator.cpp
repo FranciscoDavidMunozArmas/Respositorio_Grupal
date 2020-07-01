@@ -1,10 +1,10 @@
-/***********************************************************************
- * Module:  ID_verificator.cpp
- * Author:  USUARIO
- * Modified: miércoles, 27 de mayo de 2020 15:07:22
- * Purpose: Declaration of the class ID_verificator
- ***********************************************************************/
-
+/*
+ * Universidad la Fuerzas Armadas ESPE
+ *
+ * @autor David Munoz & Daniela Orellana
+ * @date Jueves, 28 de mayo de 2020 10:07:14
+ * @function Implementation of RUC_verificator
+*/
 #include "RUC_verificator.h"
 
 #include "ID_verificator.cpp"
@@ -16,6 +16,10 @@
 
 using namespace std;
 
+/**
+ * @brief RUC_verify
+ * @param RUC
+*/
 bool RUC_verificator::RUC_verify(char* RUC) {
     if (!is_int_number(RUC))
     {
@@ -69,6 +73,10 @@ bool RUC_verificator::RUC_verify(char* RUC) {
     return true;
 }
 
+/**
+ * @brief check_for_6
+ * @param RUC, coef_1, coef_2, coef_3, coef_4, coef_5, coef_6, coef_7, coef_8
+*/
 bool RUC_verificator::check_for_6(char* RUC, int coef_1, int coef_2, int coef_3, int coef_4, int coef_5, int coef_6, int coef_7, int coef_8) {
     int check_number = 0;
     for (int i = 0; i < 8; i++) {
@@ -107,6 +115,10 @@ bool RUC_verificator::check_for_6(char* RUC, int coef_1, int coef_2, int coef_3,
     return true;
 }
 
+/**
+ * @brief check_for_9
+ * @param RUC, coef_1, coef_2, coef_3, coef_4, coef_5, coef_6, coef_7, coef_8
+*/
 bool RUC_verificator::check_for_9(char* RUC, int coef_1, int coef_2, int coef_3, int coef_4, int coef_5, int coef_6, int coef_7, int coef_8, int coef_9) {
     int check_number = 0;
     for (int i = 0; i < 9; i++) {
@@ -148,10 +160,18 @@ bool RUC_verificator::check_for_9(char* RUC, int coef_1, int coef_2, int coef_3,
     return true;
 }
 
+/**
+ * @brief las_digits
+ * @param digits
+*/
 bool RUC_verificator::last_digits(char* digits) {
     return (0 <= to_int(digits) && to_int(digits) <= 3);
 }
 
+/**
+ * @brief get_module
+ * @param num, den
+*/
 int RUC_verificator::get_module(int num, int den) {
     return den - (num % den);
 }
