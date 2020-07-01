@@ -1,10 +1,10 @@
-/***********************************************************************
- * Module:  File_reader.cpp
- * Author:  USUARIO
- * Modified: sábado, 6 de junio de 2020 15:26:07
- * Purpose: Implementation of the class File_reader
- ***********************************************************************/
-
+/*
+ * Universidad la Fuerzas Armadas ESPE
+ *
+ * @autor David Munoz & Daniela Orellana
+ * @date Jueves, 28 de mayo de 2020 10:07:14
+ * @function Implementation of File_reader
+*/
 #include "File_reader.h"
 #include <stdio.h>
 #include <stdlib.h>
@@ -17,12 +17,10 @@
 
 using namespace std;
 
-////////////////////////////////////////////////////////////////////////
-// Name:       File_reader::_check_file()
-// Purpose:    Implementation of File_reader::_check_file()
-// Return:     void
-////////////////////////////////////////////////////////////////////////
-
+/**
+ * @brief _check_file
+ * @param  file, file_name
+*/
 void File_reader::_check_file(FILE* file, char* file_name)
 {
 	try {
@@ -39,12 +37,10 @@ void File_reader::_check_file(FILE* file, char* file_name)
 	fclose(file);
 }
 
-////////////////////////////////////////////////////////////////////////
-// Name:       File_reader::_write_in_file()
-// Purpose:    Implementation of File_reader::_write_in_file()
-// Return:     void
-////////////////////////////////////////////////////////////////////////
-
+/**
+ * @brief _write_in_file
+ * @param  file, file_name, data
+*/
 template<typename T>
 void File_reader::_write_in_file(FILE* file, char* file_name, T* data)
 {
@@ -54,12 +50,10 @@ void File_reader::_write_in_file(FILE* file, char* file_name, T* data)
 	fclose(file);
 }
 
-////////////////////////////////////////////////////////////////////////
-// Name:       File_reader::_read_file()
-// Purpose:    Implementation of File_reader::_read_file()
-// Return:     void
-////////////////////////////////////////////////////////////////////////
-
+/**
+ * @brief _read_file
+ * @param  file, file_name, data
+*/
 template<typename T>
 T* File_reader::_read_file(FILE* file, char* file_name, T* data)
 {
@@ -83,16 +77,28 @@ T* File_reader::_read_file(FILE* file, char* file_name, T* data)
 	return data;
 }
 
+/**
+ * @brief _look_by_key
+ * @param  file, file_name, key, data
+*/
 template<typename T>
 void File_reader::_look_by_key(FILE* file, char* file_name, string key, T* data)
 {
 }
 
+/**
+ * @brief _delete
+ * @param  file, file_name, key
+*/
 template<typename T>
 void File_reader::_delete(FILE* file, char* file_name, string key)
 {
 }
 
+/**
+ * @brief _update
+ * @param  file, file_name, _data_update
+*/
 template<typename T>
 void File_reader::_update(FILE* file, char* file_name, T* _data_update) {
 	T* _auxiliar;
@@ -116,6 +122,10 @@ void File_reader::_update(FILE* file, char* file_name, T* _data_update) {
 	free(_auxiliar);
 }
 
+/**
+ * @brief _delete_all
+ * @param file_name
+*/
 void File_reader::_delete_all(char* file_name) {
 	remove(file_name);
 }
