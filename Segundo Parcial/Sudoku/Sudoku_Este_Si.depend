@@ -1,0 +1,42 @@
+# depslib dependency file v1.0
+1594419741 source:c:\users\dany\desktop\estructura de datos\parcial 2\deberes\sudoku_este_si\main.cpp
+	<iostream>
+	"Regiones.h"
+	"Ingreso.h"
+	<sstream>
+	<math.h>
+	"Sudoku.h"
+
+1594414096 source:c:\users\dany\desktop\estructura de datos\parcial 2\deberes\sudoku_este_si\src\ingreso.cpp
+	"Ingreso.h"
+	<iostream>
+	"Validar.h"
+
+1594414072 c:\users\dany\desktop\estructura de datos\parcial 2\deberes\sudoku_este_si\include\ingreso.h
+	<iostream>
+	"Validar.h"
+
+1594419240 source:c:\users\dany\desktop\estructura de datos\parcial 2\deberes\sudoku_este_si\src\sudoku.cpp
+	"Sudoku.h"
+	<string>
+	<iostream>
+	<ctime>
+
+1594419240 c:\users\dany\desktop\estructura de datos\parcial 2\deberes\sudoku_este_si\include\sudoku.h
+
+1594414136 source:c:\users\dany\desktop\estructura de datos\parcial 2\deberes\sudoku_este_si\src\validar.cpp
+	"Validar.h"
+	<iostream>
+
+1594414173 c:\users\dany\desktop\estructura de datos\parcial 2\deberes\sudoku_este_si\include\validar.h
+	<iostream>
+
+1594418048 c:\users\dany\desktop\estructura de datos\parcial 2\deberes\sudoku_este_si\include\regiones.h
+
+1594418273 source:c:\users\dany\desktop\estructura de datos\parcial 2\deberes\sudoku_este_si\src\regiones.cpp
+	"Regiones.h"
+	<iostream>
+	<math.h>
+	"Ingreso.h"
+	<sstream>
+
