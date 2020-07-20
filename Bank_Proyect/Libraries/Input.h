@@ -11,23 +11,28 @@
 
 #include <iostream>
 
+using namespace std;
+
 class Input {
 public:
+
+	Input() {};
+
 	enum Case
 	{
 		UPPER_CASE,
 		LOWER_CASE
 	};
 
-	std::string input(std::string input_phrase);
-	std::string input_number(std::string input_phrase);
-	std::string input_int_number(std::string input_phrase);
-	std::string input_only_numbers(std::string input_phrase);
-	std::string input_only_int(std::string input_phrase);
-	std::string input_only_letters(std::string input_phrase);
-	std::string input_only_letters(std::string input_phrase, Case _case);
+	string input(std::string input_phrase);
+	string input_number(std::string input_phrase);
+	string input_int_number(std::string input_phrase);
+	string input_only_numbers(std::string input_phrase);
+	string input_only_int(std::string input_phrase);
+	string input_only_letters(std::string input_phrase);
+	string input_only_letters(std::string input_phrase, Case _case);
 private:
-	std::string _delete(std::string string_for_delete);
+	string _delete(std::string string_for_delete);
 };
 
 #endif

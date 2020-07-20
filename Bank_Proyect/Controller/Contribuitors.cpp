@@ -27,8 +27,8 @@ using namespace std;
  * @brief _method
 */
 void Contribuitors::_method() {
-    _logo();
-    system("cls");
+    //_logo();
+    //system("cls");
 	_group();
 }
 

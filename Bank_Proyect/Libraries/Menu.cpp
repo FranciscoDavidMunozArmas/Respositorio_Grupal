@@ -40,19 +40,17 @@ int Menu::options(T* option, int index) {
     int key;
     bool flag = true;
     do {
-        system("cls");
-        screen.gotoxy(15, 4 + selection);
-        printf(">");
-
         for (int i = 0; i < index; i++) {
             if (selection == i+1) {
+                screen.color_text(screen.YELLOW);
                 screen.gotoxy(16, 5 + i);
-                cout << "  " << *(option + i);
+                cout << *(option + i);
             }
             else {
                 screen.gotoxy(16, 5 + i);
                 cout << *(option + i);
             }
+            screen.color_text(screen.LIGHT_GRAY);
         }
 
         do {
@@ -95,21 +93,18 @@ int Menu::options(T* option, int index, int color) {
     int key;
     bool flag = true;
     do {
-        system("cls");
-        screen.gotoxy(15, 4 + selection);
-        printf(">");
 
         for (int i = 0; i < index; i++) {
             if (selection == i + 1) {
                 screen.color_text(color);
                 screen.gotoxy(16, 5 + i);
-                cout << "  " << *(option + i);
+                cout << *(option + i);
             }
             else {
-                screen.color_text(screen.LIGHT_GRAY);
                 screen.gotoxy(16, 5 + i);
                 cout << *(option + i);
             }
+            screen.color_text(screen.LIGHT_GRAY);
         }
 
         do {
@@ -134,7 +129,6 @@ int Menu::options(T* option, int index, int color) {
             break;
         }
     } while (flag);
-    screen.color_text(screen.LIGHT_GRAY);
     return selection;
 }
 
@@ -152,21 +146,20 @@ int Menu::options(char* message, T* option, int index) {
     int key;
     bool flag = true;
     do {
-        system("cls");
         screen.gotoxy(15, 3);
         cout << message << endl;
-        screen.gotoxy(15, 4 + selection);
-        printf(">");
 
         for (int i = 0; i < index; i++) {
             if (selection == i + 1) {
+                screen.color_text(screen.YELLOW);
                 screen.gotoxy(16, 5 + i);
-                cout << "  " << *(option + i);
+                cout << *(option + i);
             }
             else {
                 screen.gotoxy(16, 5 + i);
                 cout << *(option + i);
             }
+            screen.color_text(screen.LIGHT_GRAY);
         }
 
         do {
@@ -211,23 +204,20 @@ int Menu::options(char* message, T* option, int index, int color) {
     int key;
     bool flag = true;
     do {
-        system("cls");
         screen.gotoxy(15, 3);
         cout << message << endl;
-        screen.gotoxy(15, 4 + selection);
-        printf(">");
 
         for (int i = 0; i < index; i++) {
             if (selection == i + 1) {
                 screen.color_text(color);
                 screen.gotoxy(16, 5 + i);
-                cout << "  " << *(option + i);
+                cout << *(option + i);
             }
             else {
-                screen.color_text(screen.LIGHT_GRAY);
                 screen.gotoxy(16, 5 + i);
                 cout << *(option + i);
             }
+            screen.color_text(screen.LIGHT_GRAY);
         }
 
         do {

@@ -29,6 +29,7 @@ private:
     void _method();
     void _show_records();
     void _show_information(Bank_account _ba);
+    void _get_temporal(Bank_account _ba);
 protected:
 };
 

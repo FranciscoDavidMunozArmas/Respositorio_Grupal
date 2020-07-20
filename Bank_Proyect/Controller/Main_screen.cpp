@@ -16,6 +16,7 @@
 
 #include "../Libraries/Menu.cpp"
 #include "../Libraries/Screen.h"
+#include "../Libraries/lib/bitmap_image.hpp"
 #include "../Libraries/Pixel.cpp"
 
 #define ENTER 13
@@ -39,24 +40,35 @@ void Main_screen::_method() {
 */
 void Main_screen::_logo()
 {
-	Pixel _brush(5);
+
+	Pixel _brush(1);
+	bitmap_image _image("PRESS_START.bmp");
+
+	int  _width = _image.height();
+	int _height = _image.width();
 	int x = 25;
 	int y = 25;
 
-	for (int i = 0; i < 20; i++) {
-		_brush.draw_pixel(255, 255, 255, x - 10, (y + 10) - i);
+	for (int i = 0; i < _height; i++) {
+		for (int j = 0; j < _width; j++) {
+			_brush.draw_pixel((int)_image.get_pixel(i, j).red, (int)_image.get_pixel(i, j).green, (int)_image.get_pixel(i, j).blue, i+10, j+10);
+		}
 	}
 
-	for (double i = 0; i < PI * 2; i += 0.05) {
-		_brush.draw_pixel(255, 255, 255, (x - 10 * cos(4 * i)), (y + 10 * sin(i)));
-	}
+	//for (int i = 0; i < 20; i++) {
+	//	_brush.draw_pixel(255, 255, 255, x - 10, (y + 10) - i);
+	//}
 
-	for (double i = 0; i < PI * 2; i += 0.05) {
-		_brush.draw_pixel(0, 255, 0, (x + (20 / i) * cos(i)), (y + 20 * sin(i)));
-	}
+	//for (double i = 0; i < PI * 2; i += 0.05) {
+	//	_brush.draw_pixel(255, 255, 255, (x - 10 * cos(4 * i)), (y + 10 * sin(i)));
+	//}
 
-	//Circle
-	for (double i = 0; i < PI * 2; i += 0.05) {
-		_brush.draw_pixel(255, 255, 0, (x + 20 * cos(i)), (y + 20 * sin(i)));
-	}
+	//for (double i = 0; i < PI * 2; i += 0.05) {
+	//	_brush.draw_pixel(0, 255, 0, (x + (20 / i) * cos(i)), (y + 20 * sin(i)));
+	//}
+
+	////Circle
+	//for (double i = 0; i < PI * 2; i += 0.05) {
+	//	_brush.draw_pixel(255, 255, 0, (x + 20 * cos(i)), (y + 20 * sin(i)));
+	//}
 }

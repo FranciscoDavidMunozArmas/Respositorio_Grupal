@@ -25,6 +25,7 @@ using namespace std;
 class Transaction
 {
 public:
+	Transaction() {};
 	Transaction(const bool _type): _type(_type){};
 	double get_amount();
 	void set_amount(const double _amount);

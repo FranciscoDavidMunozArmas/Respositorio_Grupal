@@ -19,6 +19,7 @@
 #include "../Libraries/Input.h"
 #include "../Libraries/PDF_Creator.cpp"
 #include "../Libraries/Look_by.cpp"
+#include "../Libraries/Printer.cpp"
 
 #pragma once
 
@@ -104,13 +105,15 @@ void Controller_Look_By_Record::_show_information(Bank_account* _ba, int index) 
 		cout << "No hay registro" << endl;
 	}
 	else {
-		(_ba + index)->print_account();
+		cout << (_ba + index)->_get_account_all_data() << endl;
 		system("pause");
 		system("cls");
 		if (menu.yes_no_option("DESEA IMPRIMIR EL HISTORIAL?") == 1) {
 			oss << (_ba + index)->_get_account_all_data() << endl << endl;
 			_pdf._set_text((oss.str().c_str()));
 			_pdf._save_pdf();
+			cout << endl << endl;
+			_get_temporal(*(_ba + index));
 		}
 
 		cout << endl << endl;
@@ -146,6 +149,39 @@ int Controller_Look_By_Record::_find_by_account(char* _key, Bank_account* _ba, i
 	}
 	else {
 		_find_by_account(_key, _ba, _index - 1);
+	}
+}
+
+void Controller_Look_By_Record::_get_temporal(Bank_account _ba) {
+	Array_dynamic _ad;
+	ostringstream o;
+	ostringstream oss;
+	ostringstream _aux;
+	Printer _printer;
+
+	char** _text;
+
+	o << _ba.get_account_number() << "_temporal.pdf";
+	oss << "../Auxiliar/" << _ba.get_account_number() << ".txt";
+
+	if (_fr._file_exists(file, (char*)oss.str().c_str())) {
+		PDF_Creator _pdf(o.str().c_str());
+
+		basic_ifstream<TCHAR> _temporal_file(TEXT(oss.str().c_str()));
+
+		_text = _fr._read_txt_file((char*)oss.str().c_str(), _text);
+
+		for (int i = 0; i < _ad._dynamic_size(_text); i++) {
+			_aux << *(_text + i) << endl;
+		}
+
+		_pdf._set_text(_aux.str().c_str());
+		_pdf._save_pdf();
+
+		_printer.print_file(_temporal_file);
+		_temporal_file.close();
+
+		_fr._delete_all((char*)oss.str().c_str());
 	}
 }
 

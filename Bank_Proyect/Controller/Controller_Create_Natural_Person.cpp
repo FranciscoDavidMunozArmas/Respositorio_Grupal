@@ -72,17 +72,18 @@ Person Controller_Create_Natural_Person::_set_data() {
 	char* _address;
 	char* _phone;
 
-	screen.gotoxy(15,5);
 	_name = set_name("CLIENTE: ");
-	screen.gotoxy(15, 5);
-	_id = set_id(0);
-	screen.gotoxy(15, 5);
+	_id = set_id();
 	_address = set_address();
-	screen.gotoxy(15, 5);
 	_phone = set_phone();
 	system("cls");
 
 	Natural_person person(_id, _name, _address, _phone);
+
+	delete _name;
+	delete _id;
+	delete _address;
+	delete _phone;
 
 	return person;
 }

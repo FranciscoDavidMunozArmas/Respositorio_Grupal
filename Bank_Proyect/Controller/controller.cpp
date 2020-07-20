@@ -16,7 +16,6 @@
 #include "Controller_Delete_Account.cpp"
 #include "Controller_Operation.cpp"
 
-#include "Main_screen.cpp"
 #include "Contribuitors.cpp"
 #include "Controller_Restore.cpp"
 
@@ -30,14 +29,11 @@ using namespace std;
  * @brief _method
 */
 void Controller::_method() {
-	//screen.screen_size(100, 15);
-	Main_screen _ms;
-	screen.hide_cursor();
-	_ms.init();
 	bool flag = true;
 	do {
 		screen.hide_cursor();
 		_selection_menu(&flag);
+		system("cls");
 	} while (flag);
 
 	cout << endl << endl;

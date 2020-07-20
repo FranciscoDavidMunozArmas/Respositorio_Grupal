@@ -36,7 +36,7 @@ private:
 protected:
     double _set_balance(Account_type _type);
     char* set_name(char* _phrase);
-    char* set_id(int i);
+    char* set_id();
     char* set_phone();
     char* set_address();
     virtual void _method() = 0;

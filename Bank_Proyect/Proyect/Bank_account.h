@@ -45,7 +45,8 @@ public:
 	void set_creation_date(const Date _creation_date);
 
 	void add_transaction(Transaction _operation);
-	void print_account();
+
+	void temporal(Transaction _operation);
 
 	friend ostream& operator << (ostream& o, const Bank_account& p);
 
@@ -66,7 +67,6 @@ private:
    Array_dynamic _ad;
 
    string _create_key();
-   void print_transactions();
    string _all_transactions();
 };
 

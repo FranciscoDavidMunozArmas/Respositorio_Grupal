@@ -21,9 +21,9 @@ using namespace std;
 
 /**
  * @brief _create_array
- * @tparam T 
- * @param _size 
- * @param _array 
+ * @tparam T
+ * @param _size
+ * @param _array
  * @return T
 */
 template<typename T>
@@ -36,8 +36,8 @@ T* Array_dynamic::_create_array(int _size, T* _array)
 
 /**
  * @brief _set_cero
- * @tparam T 
- * @param _array 
+ * @tparam T
+ * @param _array
 */
 template<typename T>
 void Array_dynamic::_set_cero(T* _array)
@@ -50,9 +50,9 @@ void Array_dynamic::_set_cero(T* _array)
 
 /**
  * @brief _input_num
- * @tparam T 
- * @param _array 
- * @param input_text 
+ * @tparam T
+ * @param _array
+ * @param input_text
 */
 template<typename T>
 void Array_dynamic::_input_num(T* _array, string input_text)
@@ -66,8 +66,8 @@ void Array_dynamic::_input_num(T* _array, string input_text)
 
 /**
  * @brief _print_array
- * @tparam T 
- * @param _array 
+ * @tparam T
+ * @param _array
 */
 template<typename T>
 void Array_dynamic::_print_array(T* _array)
@@ -81,10 +81,10 @@ void Array_dynamic::_print_array(T* _array)
 
 /**
  * @brief _sort
- * @tparam T 
- * @param _array 
+ * @tparam T
+ * @param _array
 */
-template<typename T>
+/*template<typename T>
 void Array_dynamic::_sort(T* _array)
 {
 	T aux;
@@ -100,12 +100,12 @@ void Array_dynamic::_sort(T* _array)
 			}
 		}
 	}
-}
+}*/
 
 /**
  * @brief _dynamic_size
- * @tparam T 
- * @param _array 
+ * @tparam T
+ * @param _array
  * @return int
 */
 template<typename T>
@@ -115,9 +115,9 @@ int Array_dynamic::_dynamic_size(T* _array) {
 
 /**
  * @brief _resize
- * @tparam T 
- * @param _array 
- * @param _new_size 
+ * @tparam T
+ * @param _array
+ * @param _new_size
  * @return T
 */
 template<typename T>

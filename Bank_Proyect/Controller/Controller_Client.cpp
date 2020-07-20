@@ -10,6 +10,7 @@
 #include <stdlib.h>
 #include <stdio.h>
 #include <string.h>
+#include <exception>
 
 #include "Controller_Client.h"
 #include "../Proyect/Bank_account.h"
@@ -20,6 +21,7 @@
 #include "../Libraries/ID_verificator.cpp"
 #include "../Libraries/To_number.cpp"
 #include "../Libraries/Phone_verificator.cpp"
+#include "../Libraries/Banner.cpp"
 
 #pragma once
 
@@ -27,10 +29,11 @@ using namespace std;
 
 /**
  * @brief _set_balance
- * @param _type 
+ * @param _type
  * @return double
 */
 double Controller_Client::_set_balance(Account_type _type) {
+	Banner _banner;
 	double _balance;
 
 	switch (_type)
@@ -38,14 +41,28 @@ double Controller_Client::_set_balance(Account_type _type) {
 	case Account_type::_SAVING_ACCOUNT:
 		do {
 			system("cls");
-			_balance = to_double(input.input_number("INGRESE EL SALDO INICIAL: "));
-		} while (_balance < 0);
+			_banner._banner_right_left("INGRESE EL SALDO INICIAL: ", 0, 0);
+			if (_kbhit()) {
+				screen.gotoxy(0, 1);
+				_balance = to_double(input.input_number("$"));
+				if (_balance > 0) {
+					break;
+				}
+			}
+		} while (true);
 		break;
 	case Account_type::_CHECKING_ACCOUNT:
 		do {
 			system("cls");
-			_balance = to_double(input.input_number("INGRESE EL SALDO INICIAL ($500 min): $"));
-		} while (_balance < 500);
+			_banner._banner_right_left("INGRESE EL SALDO INICIAL ($500 min): ", 0, 0);
+			if (_kbhit()) {
+				screen.gotoxy(0, 1);
+				_balance = to_double(input.input_number("$"));
+				if (_balance >= 500) {
+					break;
+				}
+			}
+		} while (true);
 		break;
 	}
 
@@ -54,50 +71,53 @@ double Controller_Client::_set_balance(Account_type _type) {
 
 /**
  * @brief set_name
- * @param _phrase 
+ * @param _phrase
  * @return char*
 */
 char* Controller_Client::set_name(char* _phrase) {
 	string _name;
+	Banner _banner;
+	char* _aux;
 	do {
 		system("cls");
-		_name = input.input(_phrase);
-	} while (_name.size() > 10);
-	char* _aux = (char*)calloc(_name.size(), sizeof(char));
-	strcpy(_aux, _name.c_str());
+		_banner._banner_right_left(_phrase, 0, 0);
+		if (_kbhit()) {
+			screen.gotoxy(0, 1);
+			_name = input.input("");
+			_aux = (char*)calloc(_name.size(), sizeof(char));
+			strcpy(_aux, _name.c_str());
+			if (_name.size() <= 10 && _name.size() != 0) {
+				break;
+			}
+		}
+	} while (true);
+	_phrase = NULL;
+	delete _phrase;
 	return _aux;
 }
 
 /**
  * @brief set_id
- * @param i 
+ * @param i
  * @return char*
 */
-char* Controller_Client::set_id(int i) {
+char* Controller_Client::set_id() {
+	Banner _banner;
 	string _id_;
 	char* _aux;
-	switch (i)
-	{
-	case 0:
-		do {
-			system("cls");
-			_id_ = input.input_int_number("INGRESE EL RUC: ");
+	do {
+		system("cls");
+		//_banner._banner_right_left("INGRESE EL RUC: ", 0, 0);
+		if (_kbhit()) {
+			screen.gotoxy(0, 1);
+			_id_ = input.input_int_number("");
 			_aux = (char*)calloc(_id_.size(), sizeof(char));
 			strcpy(_aux, _id_.c_str());
-		} while (!_ruc.RUC_verify(_aux));
-		break;
-	case 1:
-		do {
-			system("cls");
-			_id_ = input.input_int_number("INGRESE LA CEDULA: ");
-			_aux = (char*)calloc(_id_.size(), sizeof(char));
-			strcpy(_aux, _id_.c_str());
-		} while (!_id.ID_verify(_aux));
-		break;
-	}
-
-	_aux = (char*)calloc(_id_.size(), sizeof(char));
-	strcpy(_aux, _id_.c_str());
+			if (_ruc.RUC_verify(_aux)) {
+				break;
+			}
+		}
+	} while (true);
 	return _aux;
 }
 
@@ -106,12 +126,20 @@ char* Controller_Client::set_id(int i) {
  * @return char*
 */
 char* Controller_Client::set_phone() {
+	Banner _banner;
 	Phone_verificator _p;
-	string _phone;
+	string _phone = " ";
 	do {
 		system("cls");
-		_phone = input.input("TELEFONO: ");
-	} while (!_p.Phone_verify((char*)_phone.c_str()));
+		_banner._banner_right_left("TELEFONO: ", 0, 0);
+		if (_kbhit()) {
+			screen.gotoxy(0, 1);
+			_phone = input.input("");
+			if (_p.Phone_verify((char*)_phone.c_str())) {
+				break;
+			}
+		}
+	} while (true);
 	char* _aux = (char*)malloc(_phone.size()*sizeof(char));
 	strcpy(_aux, _phone.c_str());
 	return _aux;
@@ -122,11 +150,19 @@ char* Controller_Client::set_phone() {
  * @return char*
 */
 char* Controller_Client::set_address() {
+	Banner _banner;
 	string _address;
 	do {
 		system("cls");
-		_address = input.input("DIRECCION: ");
-	} while (_address.size()>10);
+		_banner._banner_right_left("DIRECCION: ", 0, 0);
+		if (_kbhit()) {
+			screen.gotoxy(0, 1);
+			_address = input.input("");
+			if (_address.size() <= 10) {
+				break;
+			}
+		}
+	} while (10);
 	char* _aux = (char*)calloc(_address.size(), sizeof(char));
 	strcpy(_aux, _address.c_str());
 	return _aux;

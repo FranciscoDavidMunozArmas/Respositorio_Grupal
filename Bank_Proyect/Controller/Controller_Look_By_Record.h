@@ -32,6 +32,7 @@ private:
     void _show_information(Bank_account* _ba, int index);
     int _find_by_name(char* _name, Bank_account* _ba, int _index);
     int _set_menu();
+    void _get_temporal(Bank_account _ba);
     //char** _get_name_record(Bank_account* _ba);
     //char** _get_account_number_record(Bank_account* _ba);
 protected:

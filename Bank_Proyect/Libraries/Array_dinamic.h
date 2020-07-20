@@ -24,8 +24,8 @@ public:
 	void _input_num(T* _array, string input_text);
 	template<typename T>
 	void _print_array(T* _array);
-	template<typename T>
-	void _sort(T* _array);
+	/*template<typename T>
+	void _sort(T* _array);*/
 	template<typename T>
 	int _dynamic_size(T* _array);
 	template<typename T>

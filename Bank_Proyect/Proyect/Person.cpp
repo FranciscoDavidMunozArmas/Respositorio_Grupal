@@ -9,19 +9,21 @@
 #include <sstream>
 #include <string>
 
+#pragma once
+
 /**
  * @brief Person
- * @return 
+ * @return
 */
 Person::Person() {}
 
 /**
  * @brief Person
- * @param _id 
- * @param _name 
- * @param _address 
- * @param _phone 
- * @return 
+ * @param _id
+ * @param _name
+ * @param _address
+ * @param _phone
+ * @return
 */
 Person::Person(const char _id[13], const char _name[10], const char _address[10], const char _phone[10])
 {
@@ -42,7 +44,7 @@ char* Person::get_id()
 
 /**
  * @brief set_id
- * @param _id 
+ * @param _id
 */
 void Person::set_id(char* _id)
 {
@@ -60,7 +62,7 @@ char* Person::get_name()
 
 /**
  * @brief set_name
- * @param _name 
+ * @param _name
 */
 void Person::set_name(char* _name)
 {
@@ -78,7 +80,7 @@ char* Person::get_address()
 
 /**
  * @brief set_address
- * @param _address 
+ * @param _address
 */
 void Person::set_address(char* _address)
 {
@@ -96,7 +98,7 @@ char* Person::get_phone()
 
 /**
  * @brief set_phone
- * @param _phone 
+ * @param _phone
 */
 void Person::set_phone(char* _phone)
 {
@@ -105,8 +107,8 @@ void Person::set_phone(char* _phone)
 
 /**
  * @brief <<
- * @param o 
- * @param p 
+ * @param o
+ * @param p
  * @return ostream&
 */
 ostream& operator << (ostream& o, const Person& p) {
@@ -116,6 +118,6 @@ ostream& operator << (ostream& o, const Person& p) {
 
 /**
  * @brief ~Person
- * @return 
+ * @return
 */
 Person::~Person(){}

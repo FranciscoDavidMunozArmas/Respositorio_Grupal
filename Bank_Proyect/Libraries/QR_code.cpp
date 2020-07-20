@@ -8,6 +8,7 @@
 
 #include "QR_code.h"
 #include "lib/QrCode.cpp"
+#include "Pixel.cpp"
 
 #include <iostream>
 #include <stdio.h>
@@ -34,13 +35,18 @@ void QR_code::_create_QR(const char* _code) {
 */
 void QR_code::_print_QR(const QrCode& _code) {
 	int _border = 2;
+	Pixel _brush(5);
 
 	for (int y = -_border; y < _code.getSize() + _border; y++) {
 		for (int x = -_border; x < _code.getSize() + _border; x++) {
-			int _pixel = (_code.getModule(x, y)) ? 32 : 219;
-			cout << (char)_pixel << (char)_pixel;
+			if (_code.getModule(x, y)) {
+				_brush.draw_pixel(0,0,0, x + _border, y + _border);
+			}
+			else {
+				_brush.draw_pixel(255, 255, 255, x + _border, y + _border);
+			}
 		}
-		cout << endl;
 	}
-	cout << endl;
+
+	cin.ignore();
 }

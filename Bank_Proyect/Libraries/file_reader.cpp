@@ -10,18 +10,28 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string>
+#include <string.h>
 #include <iostream>
 #include <fstream>
-#include <malloc.h>
 #include <sstream>
 
 #include "Array_dinamic.h"
 #include "InstanceOf.cpp"
-#include "Date.h"
+#include "Date.cpp"
 
 #pragma once
 
 using namespace std;
+
+bool File_reader::_file_exists(FILE* file, char* file_name)
+{
+	bool _exists = true;
+	if ((file = fopen(file_name, "r")) == NULL) {
+		_exists = false;
+	}
+	fclose(file);
+	return _exists;
+}
 
 /**
  * @brief _check_file
@@ -154,7 +164,7 @@ void File_reader::_update(FILE* file, char* file_name, T* _data_update) {
 
 /**
  * @brief _back_up
- * @param _origin_path 
+ * @param _origin_path
 */
 void File_reader::_back_up(char* _origin_path) {
 	Date _date;
@@ -182,10 +192,34 @@ void File_reader::_back_up(char* _origin_path) {
 }
 
 /**
+ * @brief _write_txt_file
+ * @param file_name
+ * @param data
+*/
+template<typename T>
+void File_reader::_write_txt_file(const char* file_name, T* data) {
+	FILE* file;
+	Array_dynamic _ad;
+	ostringstream oss;
+	oss << data;
+
+	file = fopen(file_name, "at");
+	fputs(oss.str().c_str(), file);
+	fclose(file);
+}
+
+void File_reader::_add_line(char* file_name) {
+	FILE* file;
+	file = fopen(file_name, "at");
+	fputs("\n", file);
+	fclose(file);
+}
+
+/**
  * @brief _read_txt_file
- * @param file_name 
- * @param data 
- * @return 
+ * @param file_name
+ * @param data
+ * @return
 */
 char** File_reader::_read_txt_file(char* file_name, char** data) {
 	ifstream _in;
@@ -224,8 +258,8 @@ char** File_reader::_read_txt_file(char* file_name, char** data) {
 
 /**
  * @brief _restore_data
- * @param _original_path 
- * @param _backup_file_path 
+ * @param _original_path
+ * @param _backup_file_path
 */
 void File_reader::_restore_data(char* _original_path, char* _backup_file_path) {
 	Date _date;
@@ -238,6 +272,7 @@ void File_reader::_restore_data(char* _original_path, char* _backup_file_path) {
 	_check_file(file, _backup_file_path);
 	system("cls");
 	system(oss.str().c_str());
+
 
 	cout << endl << "RESTAURADO: " << _original_path << endl;
 	system("pause");

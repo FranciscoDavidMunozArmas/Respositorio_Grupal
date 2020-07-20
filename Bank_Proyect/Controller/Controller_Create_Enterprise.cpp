@@ -53,17 +53,19 @@ Person Controller_Create_Enterprise::_set_data() {
 	char* _address;
 	char* _phone;
 
-	screen.gotoxy(15, 5);
 	_name = set_name("EMPRESA: ");
-	screen.gotoxy(15, 5);
-	_id = set_id(0);
-	screen.gotoxy(15, 5);
+	_id = set_id();
 	_address = set_address();
-	screen.gotoxy(15, 5);
 	_phone = set_phone();
 	system("cls");
 
 	Enterprise person(_id, _name, _address, _phone, _set_person());
+
+	delete _name;
+	delete _id;
+	delete _address;
+	delete _phone;
+
 	return person;
 }
 
