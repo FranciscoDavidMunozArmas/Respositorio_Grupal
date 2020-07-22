@@ -57,6 +57,7 @@ double Controller_Client::_set_balance(Account_type _type) {
 			_banner._banner_right_left("INGRESE EL SALDO INICIAL ($500 min): ", 0, 0);
 			if (_kbhit()) {
 				screen.gotoxy(0, 1);
+				fflush(stdin);
 				_balance = to_double(input.input_number("$"));
 				if (_balance >= 500) {
 					break;
@@ -83,6 +84,7 @@ char* Controller_Client::set_name(char* _phrase) {
 		_banner._banner_right_left(_phrase, 0, 0);
 		if (_kbhit()) {
 			screen.gotoxy(0, 1);
+			fflush(stdin);
 			_name = input.input("");
 			_aux = (char*)calloc(_name.size(), sizeof(char));
 			strcpy(_aux, _name.c_str());
@@ -107,10 +109,10 @@ char* Controller_Client::set_id() {
 	char* _aux;
 	do {
 		system("cls");
-		//_banner._banner_right_left("INGRESE EL RUC: ", 0, 0);
+		_banner._banner_right_left("INGRESE EL RUC: ", 0, 0);
 		if (_kbhit()) {
 			screen.gotoxy(0, 1);
-			_id_ = input.input_int_number("");
+			_id_ = input.input_int_number("a");
 			_aux = (char*)calloc(_id_.size(), sizeof(char));
 			strcpy(_aux, _id_.c_str());
 			if (_ruc.RUC_verify(_aux)) {

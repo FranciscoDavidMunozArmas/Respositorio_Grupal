@@ -40,6 +40,7 @@ int Menu::options(T* option, int index) {
     int key;
     bool flag = true;
     do {
+
         for (int i = 0; i < index; i++) {
             if (selection == i+1) {
                 screen.color_text(screen.YELLOW);
@@ -96,8 +97,8 @@ int Menu::options(T* option, int index, int color) {
 
         for (int i = 0; i < index; i++) {
             if (selection == i + 1) {
-                screen.color_text(color);
                 screen.gotoxy(16, 5 + i);
+                screen.color_text(color);
                 cout << *(option + i);
             }
             else {
@@ -129,6 +130,7 @@ int Menu::options(T* option, int index, int color) {
             break;
         }
     } while (flag);
+    screen.color_text(screen.LIGHT_GRAY);
     return selection;
 }
 
@@ -146,6 +148,7 @@ int Menu::options(char* message, T* option, int index) {
     int key;
     bool flag = true;
     do {
+        system("cls");
         screen.gotoxy(15, 3);
         cout << message << endl;
 
@@ -204,6 +207,7 @@ int Menu::options(char* message, T* option, int index, int color) {
     int key;
     bool flag = true;
     do {
+        system("cls");
         screen.gotoxy(15, 3);
         cout << message << endl;
 

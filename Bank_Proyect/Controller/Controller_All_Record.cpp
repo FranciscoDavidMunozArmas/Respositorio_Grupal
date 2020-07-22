@@ -116,4 +116,5 @@ void Controller_All_Record::_get_temporal(Bank_account _ba) {
 
 		_fr._delete_all((char*)oss.str().c_str());
 	}
+	free(_text);
 }

@@ -36,11 +36,10 @@ void QR_code::_create_QR(const char* _code) {
 void QR_code::_print_QR(const QrCode& _code) {
 	int _border = 2;
 	Pixel _brush(5);
-
 	for (int y = -_border; y < _code.getSize() + _border; y++) {
 		for (int x = -_border; x < _code.getSize() + _border; x++) {
 			if (_code.getModule(x, y)) {
-				_brush.draw_pixel(0,0,0, x + _border, y + _border);
+				_brush.draw_pixel(0 ,0 ,0 , x + _border, y + _border);
 			}
 			else {
 				_brush.draw_pixel(255, 255, 255, x + _border, y + _border);

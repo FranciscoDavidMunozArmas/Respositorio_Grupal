@@ -12,6 +12,7 @@ using namespace std;
 
 Banner::Banner() {}
 
+
 void Banner::_banner_right_left(string _text, int x, int y) {
 	Array_dynamic _ad;
 	Screen screen;
@@ -26,14 +27,17 @@ void Banner::_banner_right_left(string _text, int x, int y) {
 		Sleep(100);
 	}
 
-	for (int i = _ad._dynamic_size(_banner) - 1; i >= 0; i--) {
-		screen.gotoxy(x + i, y);
-		cout << " ";
+	for (int i = 0; i < _ad._dynamic_size(_banner); i++) {
+		for (int j = 0; j < _ad._dynamic_size(_banner) - 1; j++) {
+			*(_banner + j) = *(_banner + j + 1);
+			if (j + 1 == _ad._dynamic_size(_banner) - 1 && i == 0) {
+				*(_banner + j + 1) = ' ';
+			}
+		}
+		screen.gotoxy(x, y);
+		cout << _banner;
 		Sleep(100);
 	}
-
-	oss.clear();
-	free(_banner);
 }
 
 void Banner::_banner_left_right(string _text, int x, int y) {
@@ -54,8 +58,6 @@ void Banner::_banner_left_right(string _text, int x, int y) {
 		cout << " ";
 		Sleep(100);
 	}
-	oss.clear();
-	free(_banner);
 }
 
 Banner::~Banner() {}
