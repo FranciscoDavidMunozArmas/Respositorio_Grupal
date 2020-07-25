@@ -1,0 +1,109 @@
+# depslib dependency file v1.0
+1595705780 source:c:\users\usuario\desktop\c++\semestre iii\reverse_polish\main.cpp
+	<iostream>
+	<string>
+	"Libraries/Input.cpp"
+	"Reverse_Polish.cpp"
+	"Controller.cpp"
+
+1593640752 c:\users\usuario\desktop\c++\semestre iii\reverse_polish\libraries\input.cpp
+	"Input.h"
+	"Verify_number.cpp"
+	<iostream>
+	<string>
+	<conio.h>
+	<stdlib.h>
+	<stdio.h>
+	<string.h>
+
+1593640227 c:\users\usuario\desktop\c++\semestre iii\reverse_polish\libraries\input.h
+	<iostream>
+
+1595690465 c:\users\usuario\desktop\c++\semestre iii\reverse_polish\libraries\verify_number.cpp
+	"Verify_number.h"
+	<iostream>
+	<string>
+	<ctype.h>
+
+1595690434 c:\users\usuario\desktop\c++\semestre iii\reverse_polish\libraries\verify_number.h
+
+1595705966 c:\users\usuario\desktop\c++\semestre iii\reverse_polish\reverse_polish.cpp
+	<iostream>
+	<sstream>
+	<stdio.h>
+	<stdlib.h>
+	<string>
+	"Libraries/Verify_number.cpp"
+	"Libraries/Stack.cpp"
+	"Libraries/Node.cpp"
+	"Reverse_Polish.h"
+
+1595698782 c:\users\usuario\desktop\c++\semestre iii\reverse_polish\libraries\stack.cpp
+	<sstream>
+	<string>
+	"Stack.h"
+	"Node.cpp"
+
+1595691169 c:\users\usuario\desktop\c++\semestre iii\reverse_polish\libraries\stack.h
+	<iostream>
+	<sstream>
+	<string>
+	"Node.h"
+
+1595689414 c:\users\usuario\desktop\c++\semestre iii\reverse_polish\libraries\node.h
+	<iostream>
+
+1594570114 c:\users\usuario\desktop\c++\semestre iii\reverse_polish\libraries\node.cpp
+	<iostream>
+	<stdio.h>
+	<stdlib.h>
+	<sstream>
+	"Node.h"
+
+1595703463 c:\users\usuario\desktop\c++\semestre iii\reverse_polish\reverse_polish.h
+	<iostream>
+
+1595706399 c:\users\usuario\desktop\c++\semestre iii\reverse_polish\controller.cpp
+	<iostream>
+	<sstream>
+	<stdio.h>
+	<stdlib.h>
+	<string>
+	"Libraries/Input.cpp"
+	"Libraries/Menu.cpp"
+	"Controller.h"
+	"Reverse_Polish.cpp"
+
+1593640699 c:\users\usuario\desktop\c++\semestre iii\reverse_polish\libraries\menu.cpp
+	"Menu.h"
+	<iostream>
+	<stdio.h>
+	<stdlib.h>
+	<conio.h>
+	<time.h>
+	<windows.h>
+	<ctype.h>
+	<mmsystem.h>
+	"Screen.cpp"
+
+1593640184 c:\users\usuario\desktop\c++\semestre iii\reverse_polish\libraries\menu.h
+	<iostream>
+	"Screen.h"
+
+1594955606 c:\users\usuario\desktop\c++\semestre iii\reverse_polish\libraries\screen.h
+	<iostream>
+
+1594955856 c:\users\usuario\desktop\c++\semestre iii\reverse_polish\libraries\screen.cpp
+	"Screen.h"
+	<iostream>
+	<stdio.h>
+	<stdlib.h>
+	<conio.h>
+	<time.h>
+	<windows.h>
+	<ctype.h>
+	<mmsystem.h>
+
+1595704760 c:\users\usuario\desktop\c++\semestre iii\reverse_polish\controller.h
+	<iostream>
+
