@@ -9,10 +9,16 @@
 #if !defined(__Look_by)
 #define __Look_by
 
+#include "List_Circle_Double.h"
+
+#include <iostream>
+
 using namespace std;
 
 class Look_by{
 public:
+	template<typename R, class T>
+	int look_by_key(R _key, List_Circle_Double<T>* _list);
 	//int look_by_key(char* _key, char**_key_array);
 	int look_by_key(char* _key, char** _key_array, int _index);
 };

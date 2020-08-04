@@ -21,6 +21,8 @@ public:
     void _delete_end();
     void _delete_in(int position);
 
+    T get_in(int _index);
+
     Node_Double<T>* _get_node();
     Node_Double<T>* _get_end_node();
 

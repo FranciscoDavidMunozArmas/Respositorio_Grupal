@@ -11,15 +11,18 @@
 
 #include "Array_dinamic.cpp"
 
+#include "List_Circle_Double.cpp"
+#include "Node_Double.cpp"
+
 #pragma once
 
 using namespace std;
 
 /**
  * @brief look_by_key
- * @param _key 
- * @param _key_array 
- * @param _index 
+ * @param _key
+ * @param _key_array
+ * @param _index
  * @return int
 */
 int Look_by::look_by_key(char* _key, char** _key_array, int _index) {
@@ -31,4 +34,22 @@ int Look_by::look_by_key(char* _key, char** _key_array, int _index) {
 	else {
 		look_by_key(_key, _key_array, _index - 1);
 	}
+}
+
+template<typename R, class T>
+int Look_by::look_by_key(R _key, List_Circle_Double<T>* _list) {
+	int _index = 0;
+	Node_Double<T>* _node = _list->_get_node();
+	Node_Double<T>* _last_node = _list->_get_end_node();
+	while ((_node != _last_node)&&!(_node->_get_data() == _key)) {
+		_node = _node->_get_next_node();
+		_index++;
+	}
+	if (_last_node == _node) {
+		if (!(_last_node->_get_data() == _key)) {
+			_index = -1;
+		}
+	}
+
+	return _index;
 }

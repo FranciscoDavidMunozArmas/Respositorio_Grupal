@@ -53,6 +53,7 @@ public:
 	string _get_account();
 	string _get_account_all_data();
 
+	bool operator == (char* _phrase);
 	bool operator == (const Bank_account& p);
 
    ~Bank_account();

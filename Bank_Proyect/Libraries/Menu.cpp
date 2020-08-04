@@ -29,9 +29,9 @@ using namespace std;
 
 /**
  * @brief options
- * @tparam T 
- * @param option 
- * @param index 
+ * @tparam T
+ * @param option
+ * @param index
  * @return int
 */
 template<typename T>
@@ -77,15 +77,17 @@ int Menu::options(T* option, int index) {
         }
     } while (flag);
 
+    delete option;
+
     return selection;
 }
 
 /**
  * @brief options
- * @tparam T 
- * @param option 
- * @param index 
- * @param color 
+ * @tparam T
+ * @param option
+ * @param index
+ * @param color
  * @return int
 */
 template<typename T>
@@ -130,16 +132,18 @@ int Menu::options(T* option, int index, int color) {
             break;
         }
     } while (flag);
-    screen.color_text(screen.LIGHT_GRAY);
+
+    delete option;
+
     return selection;
 }
 
 /**
  * @brief options
- * @tparam T 
- * @param message 
- * @param option 
- * @param index 
+ * @tparam T
+ * @param message
+ * @param option
+ * @param index
  * @return int
 */
 template<typename T>
@@ -148,7 +152,6 @@ int Menu::options(char* message, T* option, int index) {
     int key;
     bool flag = true;
     do {
-        system("cls");
         screen.gotoxy(15, 3);
         cout << message << endl;
 
@@ -188,17 +191,19 @@ int Menu::options(char* message, T* option, int index) {
         }
 
     } while (flag);
-
+    
+    delete option;
+    delete message;
     return selection;
 }
 
 /**
  * @brief options
- * @tparam T 
- * @param message 
- * @param option 
- * @param index 
- * @param color 
+ * @tparam T
+ * @param message
+ * @param option
+ * @param index
+ * @param color
  * @return int
 */
 template<typename T>
@@ -247,14 +252,16 @@ int Menu::options(char* message, T* option, int index, int color) {
         }
 
     } while (flag);
-    screen.color_text(screen.LIGHT_GRAY);
+    
+    delete option;
+    delete message;
     return selection;
 }
 
 /**
  * @brief yes_no_option
- * @param message 
- * @param color 
+ * @param message
+ * @param color
  * @return int
 */
 int Menu::yes_no_option(char* message, int color) {
@@ -267,7 +274,7 @@ int Menu::yes_no_option(char* message, int color) {
 
 /**
  * @brief yes_no_option
- * @param message 
+ * @param message
  * @return int
 */
 int Menu::yes_no_option(char* message) {
@@ -280,25 +287,25 @@ int Menu::yes_no_option(char* message) {
 
 /**
  * @brief yes_no_option
- * @param color 
+ * @param color
  * @return int
 */
 int Menu::yes_no_option(int color) {
     char** _yes_no = (char**)malloc(2 * sizeof(char*));
-    *(_yes_no + 0) = "SI";
-    *(_yes_no + 1) = "NO";
+    *(_yes_no + 0) = (char*)"SI";
+    *(_yes_no + 1) = (char*)"NO";
 
     return options(_yes_no, 2, color);
 }
 
 /**
  * @brief yes_no_option
- * @return 
+ * @return
 */
 int Menu::yes_no_option() {
     char** _yes_no = (char**)malloc(2 * sizeof(char*));
-    *(_yes_no + 0) = "SI";
-    *(_yes_no + 1) = "NO";
+    *(_yes_no + 0) = (char*)"SI";
+    *(_yes_no + 1) = (char*)"NO";
 
     return options(_yes_no, 2);
 }

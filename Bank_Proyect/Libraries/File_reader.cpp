@@ -46,7 +46,12 @@ void File_reader::_check_file(FILE* file, char* file_name)
 }
 
 bool File_reader::_file_exists(FILE* file, char* file_name) {
-	return ((file = fopen(file_name, "r")) == NULL) ? false : true;
+	bool flag = true;
+	if ((file = fopen(file_name, "r")) == NULL) {
+		flag = false;
+	}
+	fclose(file);
+	return  flag;
 }
 
 /**
@@ -280,5 +285,6 @@ void File_reader::_restore_data(char* _original_path, char* _backup_file_path) {
  * @param file_name
 */
 void File_reader::_delete_all(char* file_name) {
+	FILE* file;
 	remove(file_name);
 }

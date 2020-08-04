@@ -128,7 +128,7 @@ void PDF_Creator::_set_aligment(bool _alignment) {
  * @brief _save_pdf
 */
 void PDF_Creator::_save_pdf() {
-	char* _aux_path = "_auxiliar.txt";
+	char* _aux_path = (char*)"_auxiliar.txt";
 	FILE* file;
 	File_reader _fr;
 

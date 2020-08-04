@@ -81,7 +81,6 @@ void Controller_All_Record::_show_information(Bank_account _ba) {
 		_get_temporal(_ba);
 	}
 	cout << endl << endl;
-	system("pause");
 }
 
 void Controller_All_Record::_get_temporal(Bank_account _ba) {
@@ -94,27 +93,25 @@ void Controller_All_Record::_get_temporal(Bank_account _ba) {
 	char** _text;
 
 	o << _ba.get_account_number() << "_temporal.pdf";
-	oss << "../Auxiliar/" << _ba.get_account_number() << ".txt";
+	oss << "../Auxiliar/Auxiliar_" << _ba.get_account_number() << ".txt";
 
 	if (_fr._file_exists(file, (char*)oss.str().c_str())) {
 
 		PDF_Creator _pdf(o.str().c_str());
 
-		basic_ifstream<TCHAR> _temporal_file(TEXT(oss.str().c_str()));
-
 		_text = _fr._read_txt_file((char*)oss.str().c_str(), _text);
-
 		for (int i = 0; i < _ad._dynamic_size(_text); i++) {
 			_aux << *(_text + i) << endl;
 		}
-
 		_pdf._set_text(_aux.str().c_str());
 		_pdf._save_pdf();
 
+		basic_ifstream<TCHAR> _temporal_file(TEXT(oss.str().c_str()));
 		_printer.print_file(_temporal_file);
 		_temporal_file.close();
 
 		_fr._delete_all((char*)oss.str().c_str());
+
 	}
 	free(_text);
 }

@@ -22,6 +22,7 @@
 #include "../Libraries/To_number.cpp"
 #include "../Libraries/Phone_verificator.cpp"
 #include "../Libraries/Banner.cpp"
+#include "../Libraries/Verify_number.cpp"
 
 #pragma once
 
@@ -81,19 +82,18 @@ char* Controller_Client::set_name(char* _phrase) {
 	char* _aux;
 	do {
 		system("cls");
-		_banner._banner_right_left(_phrase, 0, 0);
+		_banner._banner_right_left_left_right(_phrase, 0, 0);
 		if (_kbhit()) {
 			screen.gotoxy(0, 1);
 			fflush(stdin);
 			_name = input.input("");
 			_aux = (char*)calloc(_name.size(), sizeof(char));
 			strcpy(_aux, _name.c_str());
-			if (_name.size() <= 10 && _name.size() != 0) {
+			if (_name.size() <= 10 && _name.size() != 0 && is_alpha(_aux)) {
 				break;
 			}
 		}
 	} while (true);
-	_phrase = NULL;
 	delete _phrase;
 	return _aux;
 }
@@ -103,23 +103,56 @@ char* Controller_Client::set_name(char* _phrase) {
  * @param i
  * @return char*
 */
-char* Controller_Client::set_id() {
+char* Controller_Client::set_id(int _option) {
 	Banner _banner;
 	string _id_;
 	char* _aux;
+	bool flag = true;
 	do {
 		system("cls");
-		_banner._banner_right_left("INGRESE EL RUC: ", 0, 0);
+		_banner._banner_right_left("INGRESE EL ID: ", 0, 0);
+		switch (_option) {
+		case 1:
+			if (_kbhit()) {
+				screen.gotoxy(0, 1);
+				_id_ = input.input_int_number("");
+				_aux = (char*)calloc(_id_.size(), sizeof(char));
+				strcpy(_aux, _id_.c_str());
+				if (_ruc.ID_verify(_aux)) {
+					flag = false;
+				}
+			}
+			break;
+		case 2:
+			if (_kbhit()) {
+				screen.gotoxy(0, 1);
+				_id_ = input.input_int_number("");
+				if (_id_.length() == 10) {
+					_id_ += "001";
+				}
+				_aux = (char*)calloc(_id_.size(), sizeof(char));
+				strcpy(_aux, _id_.c_str());
+				if (_ruc.RUC_verify(_aux)) {
+					flag = false;
+				}
+			}
+			break;
+		}
+	} while (flag);
+	
+	/*do {
+		system("cls");
+		//_banner._banner_right_left("INGRESE EL RUC: ", 0, 0);
 		if (_kbhit()) {
 			screen.gotoxy(0, 1);
-			_id_ = input.input_int_number("a");
+			_id_ = input.input_int_number("Hola");
 			_aux = (char*)calloc(_id_.size(), sizeof(char));
 			strcpy(_aux, _id_.c_str());
 			if (_ruc.RUC_verify(_aux)) {
 				break;
 			}
 		}
-	} while (true);
+	} while (true);*/
 	return _aux;
 }
 
@@ -131,7 +164,7 @@ char* Controller_Client::set_phone() {
 	Banner _banner;
 	Phone_verificator _p;
 	string _phone = " ";
-	do {
+	while (true){
 		system("cls");
 		_banner._banner_right_left("TELEFONO: ", 0, 0);
 		if (_kbhit()) {
@@ -141,7 +174,7 @@ char* Controller_Client::set_phone() {
 				break;
 			}
 		}
-	} while (true);
+	}
 	char* _aux = (char*)malloc(_phone.size()*sizeof(char));
 	strcpy(_aux, _phone.c_str());
 	return _aux;
@@ -156,7 +189,7 @@ char* Controller_Client::set_address() {
 	string _address;
 	do {
 		system("cls");
-		_banner._banner_right_left("DIRECCION: ", 0, 0);
+		_banner._banner_right_left_left_right("DIRECCION: ", 0, 0);
 		if (_kbhit()) {
 			screen.gotoxy(0, 1);
 			_address = input.input("");

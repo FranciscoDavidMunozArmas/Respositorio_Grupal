@@ -151,7 +151,7 @@ void Bank_account::temporal(Transaction _operation) {
 	ostringstream o;
 	ostringstream data;
 
-	o << "../Auxiliar/" << _account_number << ".txt";
+	o << "../Auxiliar/Auxiliar_" << _account_number << ".txt";
 	char* _file_path = (char*)malloc(o.str().size() * sizeof(char));
 	strcpy(_file_path, o.str().c_str());
 
@@ -179,6 +179,10 @@ ostream& operator << (ostream& o, const Bank_account& p) {
  * @param p
  * @return bool
 */
+bool Bank_account::operator == (char* _phrase) {
+	return ((strcmp(this->_account_number, _phrase) == 0)||(strcmp(this->_client.get_name(), _phrase) == 0));
+}
+
 bool Bank_account::operator == (const Bank_account& p) {
 	return (strcmp(this->_account_number, p._account_number) == 0);
 }

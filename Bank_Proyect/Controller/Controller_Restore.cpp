@@ -30,11 +30,14 @@ void Controller_Restore::_restore() {
 	File_reader _fr;
 	char** _data;
 	Array_dynamic _ad;
+	int _size;
+	//Development of the function
 	_data = _fr._read_txt_file("../back_up.txt", _data);
-	strcpy(*(_data + _ad._dynamic_size(_data)- 1), "ATRAS");
-	int _index = menu.options("QUE ARCHIVO DESEA RESTAURAR: ", _data, _ad._dynamic_size(_data));
-
-	if (_index < _ad._dynamic_size(_data)) {
+	_size = _ad._dynamic_size(_data) - 1;
+	strcpy(*(_data + _ad._dynamic_size(_data) - 1), "ATRAS");
+	int _index = menu.options("QUE ARCHIVO DESEA RESTAURAR: ", _data, _size + 1);
+	//Restore Data
+	if (_index < _size) {
 		_fr._restore_data("..\\File\\account_record.txt", *(_data + _index - 1));
 	}
 }

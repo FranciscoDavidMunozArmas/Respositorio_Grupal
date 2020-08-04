@@ -27,7 +27,7 @@ private:
 protected:
     File_reader _fr;
     FILE* file;
-    char* _path_account = "../File/account_record.txt";
+    char* _path_account = (char*)"../File/account_record.txt";
     virtual void _method() = 0;
 };
 

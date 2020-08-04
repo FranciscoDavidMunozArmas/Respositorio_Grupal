@@ -31,9 +31,11 @@ using namespace std;
 void Controller::_method() {
 	bool flag = true;
 	do {
+		fflush(stdout);
 		screen.hide_cursor();
 		_selection_menu(&flag);
 		system("cls");
+		fflush(stdout);
 	} while (flag);
 
 	cout << endl << endl;
@@ -81,20 +83,21 @@ void Controller::_selection_menu(bool* flag)
 }
 
 /**
+
  * @brief _set_menu
  * @return int
 */
 int Controller::_set_menu() {
 	char** option = (char**)malloc(8 * sizeof(char*));
 
-	*(option + 0) = "CREAR CUENTA";
-	*(option + 1) = "REGISTROS";
-	*(option + 2) = "OPERACION BANCARIA";
-	*(option + 3) = "BORRAR CUENTA";
-	*(option + 4) = "CONTRIBUIDORES";
-	*(option + 5) = "COPIA DE SEGURIDAD";
-	*(option + 6) = "RESTAURAR";
-	*(option + 7) = "SALIR";
+	*(option + 0) = (char*)"CREAR CUENTA";
+	*(option + 1) = (char*)"REGISTROS";
+	*(option + 2) = (char*)"OPERACION BANCARIA";
+	*(option + 3) = (char*)"BORRAR CUENTA";
+	*(option + 4) = (char*)"CONTRIBUIDORES";
+	*(option + 5) = (char*)"COPIA DE SEGURIDAD";
+	*(option + 6) = (char*)"RESTAURAR";
+	*(option + 7) = (char*)"SALIR";
 
 	return menu.options(option, 8, screen.YELLOW);
 }

@@ -18,8 +18,8 @@
 #include "../Proyect/Bank_account.cpp"
 #include "../Libraries/File_reader.cpp"
 #include "../Libraries/Input.h"
-
 #include "../Libraries/Look_by.cpp"
+#include "../Libraries/List_Circle_Double.cpp"
 
 using namespace std;
 
@@ -41,10 +41,15 @@ void Controller_Delete_Account::_delete_record()
 	File_reader _fr;
 	Controller_Look_By_Record _clbr;
 
+	List_Circle_Double<Bank_account> _list;
+	Look_by _lb;
 	_ba =_fr._read_file(file, _path_account, _ba);
 
+	_list._array_to_list(_ba);
+
 	char* _key = _get_account_number();
-	int _index = _clbr._find_by_account(_key, _ba, _ad._dynamic_size(_ba) - 1);
+	int _index = _lb.look_by_key(_key, &_list);
+	//int _index = _clbr._find_by_account(_key, _ba, _ad._dynamic_size(_ba) - 1);
 
 	try {
 		if (_index == -1) {
@@ -59,6 +64,7 @@ void Controller_Delete_Account::_delete_record()
 	{
 	case 1: {
 		_fr._delete(file, _path_account, *(_ba + _index));
+		//_fr._delete(file, _path_account, _list.get_in(_index));
 	}
 		break;
 	default: {}
@@ -75,9 +81,9 @@ void Controller_Delete_Account::_delete_record()
 int Controller_Delete_Account::_set_menu() {
 	char** option = (char**)calloc(2, sizeof(char*));
 
-	*(option + 0) = "SI";
-	*(option + 1) = "NO";
-	return menu.options("ESTA SEGURO?",option, 2);
+	*(option + 0) = (char*)"SI";
+	*(option + 1) = (char*)"NO";
+	return menu.options((char*)"ESTA SEGURO?",option, 2);
 }
 
 /**

@@ -58,8 +58,8 @@ int Controller_Creation_Account::_set_menu() {
 
 	char** option = (char**)calloc(3, sizeof(char*));
 
-	*(option + 0) = "PERSONA NATURAL";
-	*(option + 1) = "PERSONA JURIDICA";
-	*(option + 2) = "ATRAS";
+	*(option + 0) = (char*)"PERSONA NATURAL";
+	*(option + 1) = (char*)"PERSONA JURIDICA";
+	*(option + 2) = (char*)"ATRAS";
 	return menu.options(option, 3);
 }

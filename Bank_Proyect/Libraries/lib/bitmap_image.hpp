@@ -2989,7 +2989,7 @@ inline double find_nearest_wave_length(const rgb_t& c, const double increment = 
    const double max_wave_length = 800.0; //800nm
 
    double min_wave_length = 0.0;
-   double min_d           = std::numeric_limits<double>::max();
+   double min_d = std::numeric_limits<double>::max();
 
    for (double i = 0.0; i < max_wave_length; i += increment)
    {

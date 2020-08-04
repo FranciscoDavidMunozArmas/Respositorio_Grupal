@@ -35,7 +35,7 @@ void Controller_Create_Natural_Person::_account_options() {
 		{
 			system("cls");
 			Bank_account _new_account(Account_type::_CHECKING_ACCOUNT, _set_data(), _set_balance(Account_type::_CHECKING_ACCOUNT));
-			cout << endl << _new_account << endl;
+			cout << _new_account << endl;
 			_fr._write_in_file(file,_path_account, &_new_account);
 		}
 		break;
@@ -43,7 +43,7 @@ void Controller_Create_Natural_Person::_account_options() {
 		{
 			system("cls");
 			Bank_account _new_account_2(Account_type::_SAVING_ACCOUNT, _set_data(), _set_balance(Account_type::_SAVING_ACCOUNT));
-			cout << endl << _new_account_2 << endl;
+			cout << _new_account_2 << endl;
 			_fr._write_in_file(file,_path_account, &_new_account_2);
 			break;
 		}
@@ -57,8 +57,8 @@ void Controller_Create_Natural_Person::_account_options() {
 int Controller_Create_Natural_Person::_account_type_option() {
 	char** option = (char**)calloc(2, sizeof(char*));
 
-	*(option + 0) = "CUENTA CORRIENTE";
-	*(option + 1) = "CUENTA DE AHORRO";
+	*(option + 0) = (char*)"CUENTA CORRIENTE";
+	*(option + 1) = (char*)"CUENTA DE AHORRO";
 	return menu.options(option, 2);
 }
 
@@ -72,18 +72,12 @@ Person Controller_Create_Natural_Person::_set_data() {
 	char* _address;
 	char* _phone;
 
-	_name = set_name("CLIENTE: ");
-	_id = set_id();
+	_name = set_name((char*)"CLIENTE: ");
+	_id = set_id(1);
 	_address = set_address();
 	_phone = set_phone();
 	system("cls");
-
 	Natural_person person(_id, _name, _address, _phone);
-
-	delete _name;
-	delete _id;
-	delete _address;
-	delete _phone;
 
 	return person;
 }

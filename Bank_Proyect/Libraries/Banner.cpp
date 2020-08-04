@@ -3,6 +3,7 @@
 #include <stdio.h>
 #include <string>
 #include <sstream>
+#include <new>
 
 #include "Banner.h"
 #include "Array_dinamic.cpp"
@@ -16,14 +17,18 @@ Banner::Banner() {}
 void Banner::_banner_right_left(string _text, int x, int y) {
 	Array_dynamic _ad;
 	Screen screen;
-	char* _banner = (char*)malloc(_text.length()*sizeof(char));
-	strcpy(_banner, _text.c_str());
+	char* _banner;
 	ostringstream oss;
 
-	for (int i = _ad._dynamic_size(_banner) - 1; i >= 0 ; i--) {
-		screen.gotoxy(x + i, y);
-		oss << *(_banner + _ad._dynamic_size(_banner) - i - 1);
+	_banner = (char*)malloc(_text.length() * sizeof(char));
+	strcpy(_banner, _text.c_str());
+
+	int _index = _text.length() - 1;
+	for (char aux: _text) {
+		screen.gotoxy(x + _index, y);
+		oss << aux;
 		cout << oss.str();
+		_index--;
 		Sleep(100);
 	}
 
@@ -34,6 +39,37 @@ void Banner::_banner_right_left(string _text, int x, int y) {
 				*(_banner + j + 1) = ' ';
 			}
 		}
+		screen.gotoxy(x, y);
+		cout << _banner;
+		Sleep(100);
+	}
+}
+
+void Banner::_banner_right_left_left_right(string _text, int x, int y) {
+	Array_dynamic _ad;
+	Screen screen;
+	char* _banner;
+	ostringstream oss;
+
+	_banner = (char*)malloc(_text.length() * sizeof(char));
+	strcpy(_banner, _text.c_str());
+
+	int _index = _text.length() - 1;
+	for (char aux : _text) {
+		screen.gotoxy(x + _index, y);
+		oss << aux;
+		cout << oss.str();
+		_index--;
+		Sleep(100);
+	}
+
+	Sleep(200);
+
+	for (int i = 0; i < _ad._dynamic_size(_banner); i++) {
+		for (int j = _ad._dynamic_size(_banner) - 1; j >= i; j--) {
+			*(_banner + j) = *(_banner + j - 1);
+		}
+		*(_banner + i) = ' ';
 		screen.gotoxy(x, y);
 		cout << _banner;
 		Sleep(100);

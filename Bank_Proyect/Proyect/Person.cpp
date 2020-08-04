@@ -112,7 +112,7 @@ void Person::set_phone(char* _phone)
  * @return ostream&
 */
 ostream& operator << (ostream& o, const Person& p) {
-	o << p._name << "\tID: " << p._id;
+	o << p._name << "\t\tID: " << p._id;
 	return o;
 }
 

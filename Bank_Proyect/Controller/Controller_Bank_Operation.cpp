@@ -13,8 +13,10 @@
 #include "../Libraries/Input.h"
 #include "../Libraries/Array_dinamic.h"
 #include "../Proyect/Bank_account.h"
-
 #include "../Libraries/To_number.h"
+
+#include "../Libraries/Look_by.cpp"
+#include "../Libraries/List_Circle_Double.cpp"
 
 #include <iostream>
 #include <stdlib.h>
@@ -41,12 +43,18 @@ int Controller_Bank_Operation::_get_account(Bank_account* _ba) {
 	Controller_Look_By_Record _clbr;
 	Input _input;
 
+	List_Circle_Double<Bank_account> _list;
+	Look_by _lb;
+
+	_list = _list._array_to_list(_ba);
+
 	system("cls");
 	char* _key;
 	string _aux = _input.input_int_number("NUMERO DE CUENTA: ").c_str();
 	_key = (char*)malloc(_aux.size() * sizeof(char));
 	strcpy(_key, _aux.c_str());
-	int _index = _clbr._find_by_account(_key, _ba, _ad._dynamic_size(_ba) - 1);
+	//int _index = _clbr._find_by_account(_key, _ba, _ad._dynamic_size(_ba) - 1);
+	int _index = _lb.look_by_key(_key, &_list);
 
 	return _index;
 }
